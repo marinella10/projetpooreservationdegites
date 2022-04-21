@@ -1,0 +1,38 @@
+#my-div{float:left;height:28px;width:auto;background-color:white;position:relative;z-index:50;cursor:default;padding:2px;}
+input[drp=true]{color:transparent;text-shadow:0 0 0 #000;outline:none;border-radius:3px;border:0px;text-align:center;cursor:pointer;width:100px;height:26px;float:left;}
+.ui-drp-arrow{float:left;}
+input[duration=true]{color:transparent;text-shadow:0 0 0 #000;outline:none;border-radius:3px;border:0px;text-align:center;margin-left:5px;cursor:pointer;background-color:transparent;width:50px;height:26px;float:left;}
+.ui-drp-fade{display:none;background:#000;position:fixed;left:0;top:0;width:100%;height:100%;opacity:.10;z-index:99998;}
+*html .ui-drp-fade{position:absolute;opacity:80;}
+.ui-drp-popup{display:none;background:#fff;padding:10px;font-size:1.2em;position:absolute;z-index:99999;border-radius:5px;overflow:hidden;}
+*html .ui-drp-popup{position:absolute;}
+.ui-drp-popup::selection{background:transparent;}
+.ui-drp-arrow{cursor:default;}
+.ui-drp-panel{margin:10px;width:330px;position:absolute;}
+.ui-drp-header{font-weight:400;text-align:center;position:relative;margin-top:5px;}
+.ui-drp-month{cursor:default;width:300px;}
+.ui-drp-week{margin-top:15px;}
+.ui-drp-week-table{border-collapse:collapse;cursor:default;}
+.ui-drp-week-days{text-align:center;font-size:small;font-weight:500;width:44px;height:20px;text-align:center;vertical-align:middle;}
+.ui-drp-table{position:relative;margin-top:5px;}
+.ui-drp-calendar{border-collapse:collapse;}
+.ui-drp-passed{color:LightGrey;height:43px;width:43px;text-align:center;cursor:default;}
+.ui-drp-today, .ui-drp-default{height:43px;width:43px;text-align:center;cursor:pointer;}
+.ui-drp-selected, .ui-drp-selected:hover{background-color:rgb(0,166,153);color:white;cursor:pointer;}
+.ui-drp-range{background-color:rgb(102,226,218);color:white;cursor:pointer;}
+.ui-drp-range:hover{background-color:rgb(51,218,205);cursor:pointer;}
+.ui-drp-dynamicrange, .ui-drp-dynamicrange:hover{background-color:rgb(178,241,236);cursor:pointer;}
+.ui-drp-today:hover, .ui-drp-default:hover{background-color:rgb(178,241,236);cursor:pointer;}
+.ui-drp-next-month{outline:none;position:absolute;top:15px;right:15px;width:44px;height:34px;z-index:99999;cursor:pointer;text-align:center;}
+.ui-drp-next-month:active{background-color:rgb(242,242,242);}
+.ui-drp-previous-month{outline:none;position:absolute;top:15px;left:15px;width:44px;height:34px;z-index:99999;cursor:pointer;text-align:center;}
+.ui-drp-previous-month img,
+.ui-drp-next-month img{height:20px;margin-top:7px;}
+.ui-drp-previous-month:active{background-color:rgb(242,242,242);}
+.ui-drp-out-of-range:not(.ui-drp-week-days):hover{background-color:lightgrey;}
+#divConteneur_dateRangePicker{background:url(/imgs_defaut/dateRangePicker/calendrier.svg) no-repeat;background-size:20px 19px;background-position:right 10px center;padding-right:31px;height:100%;}
+.drp-start-container,
+.separator,
+.drp-end-container{float:left;}
+.separator img{width:19px;display:block;}
+#divConteneur_dateRangePicker-ui-drp{left:-100% !important;right:-100% !important;margin:auto;}

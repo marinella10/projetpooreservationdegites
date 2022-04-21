@@ -1,0 +1,946 @@
+window.initClickOnglet = false;
+window.aClicqueDansFiche = false; // permet de savoir si on a fait une action sur la fiche, donc on suppose que le changement de date a été fait, ce n'est pas quand on on arrive de la liste, que l'on va scrollé sur les tarifs chambres
+window.ongletActif = "#onglet-photos";
+window.htmlChambreResponsive = false;
+window.orgElementResa = jQuery('#colonneDroiteInfosResa');
+
+jQuery(document).ready(function () {
+
+    jQuery("meta[name='viewport']").remove();
+    jQuery('head').append('<meta name="viewport" content="user-scalable=no,width=device-width" />');
+
+    jQuery('input').bind('focusin focus', function (e) {
+        e.preventDefault();
+    })
+
+    init_blocResaForTablette();
+    fngf_initSimuleinputCalend();
+    fngf_lanceDiapoTapPhoto();
+
+    document.addEventListener('cookieChoicesCharge', function (e) {
+        repositionneBoutonReserver()
+    }, true);
+    jQuery(window).scroll(function () {
+        repositionneBoutonReserver();
+    });
+
+    window.offsetMenu = jQuery(".div_ongletsNav").outerHeight() * -1;
+
+    init_btVoirDetailPrix();
+
+    init_onglets();
+    init_ongletsNavMobile();
+    init_focusWhenScroll();
+
+    init_FixedOngletsNav();
+    init_FixedBlocResa();
+
+    init_simuleActionOnglets();
+    init_accesPromo();
+
+    init_afficheMasqueDesc();
+    init_actionLocalisation();
+
+    init_afficheMasqueBlocEquipements();
+    if (jQuery(window).width() <= 700) {
+        jQuery(".closable").each(function () {
+            fermeBloc(this);
+        });
+    }
+
+    init_affTousThemes();
+
+    jQuery("#div_fiche_albumJquery li").outerWidth(jQuery("#div_fiche_albumJquery").width() / 7);
+
+    init_packDivDatesTarifs();
+
+    init_afficheAvisClients();
+
+    initEvents_viaFrance();
+
+    init_boutonsBlocResaResponsive();
+
+    init_partage();
+
+    init_afficheInfosProp();
+
+    init_btDispoChambreForResponsive();
+
+    jQuery(window).resize(function () {
+        init_limitBlocResa();
+        init_btDispoChambreForResponsive();
+        init_blocResaForTablette();
+    });
+
+    positionnerLienAFNOR();
+    jQuery(window).resize(function () {
+        positionnerLienAFNOR();
+    });
+
+    init_titleOptions();
+
+    jQuery("body").click(function () {
+        if (!window.aClicqueDansFiche) {
+            window.aClicqueDansFiche = true;
+        }
+    });
+
+    initSlideHistoriqueheber();
+
+    if (jQuery(".div_alerteDernieresVisites").length == 0) {
+        jQuery(".div_ficheBlocResaInfoTariEtBtn").addClass("sansAlerte");
+    }
+
+    jQuery(".select_nbPers").selectmenu({
+        // menuWidth:200,
+        width: 50
+    });
+
+    initAfficheDetailChambresMobile();
+    jQuery(window).resize(function () {
+        initAfficheDetailChambresMobile();
+    });
+
+
+    gereOuvertureThematiques();
+
+    if (jQuery("#div_locaguideAncre").length > 0) {
+        jQuery("#div_locaguideAncre a").click(function () {
+            jQuery(window).animate({
+                scrollTop: jQuery('#div_locaguide').offset().top - 20
+            });
+
+        });
+        
+        if(jQuery('#scrollTo').length>0){
+	        var valueScroll = jQuery('.scrollBot').scrollTop();
+	        jQuery('.scrollBot').animate({
+	            scrollTop: jQuery('#scrollTo').offset().top - valueScroll
+	        });
+	    }
+        
+    }
+
+    if (jQuery('#inpt_changementExercice').length > 0) {
+        jQuery(".bt_accesResaResponsive a").trigger("click");
+    }
+
+    // si langue étrangère, on affiche le desc traduit en priorité si il est présent (338530)
+    setTimeout(function () { // le temps que le widget de trad charge la langue current
+        if (jQuery('html').attr('lang') != 'fr') {
+            var langueCurr = jQuery('html').attr('lang'); // "en" par exemple
+            var langueCurrLbl = 'empty';
+            switch (langueCurr) { // ajouter des cas quand besoin
+                case 'en':
+                    langueCurrLbl = 'ANGLAIS';
+                    break;
+                default:
+                    langueCurrLbl = 'empty';
+            }
+            var elemDescEtranger = jQuery('.description_environnement' + langueCurrLbl);
+            if (elemDescEtranger.length > 0) {
+                jQuery('.description_environnement').hide();
+                elemDescEtranger.show();
+            }
+
+            afficheNumeroContactResaPlus33();
+        }
+    }, 2000);
+
+    jQuery('.a_btn_cont_prop, .a_btn_cont_centrale').click(function () {
+        jQuery("html, body").animate({
+            scrollTop: 0
+        }, 500);
+    });
+
+    initClickAjoutPanier();
+
+});
+
+function afficheNumeroContactResaPlus33() {
+    var telPrincipal = jQuery('#spanContactTel1').text();
+    var telEtranger = telPrincipal.replace('Tél. : 0', '+33 (0) ');
+
+    jQuery('#spanContactTel1').html(telEtranger);
+    
+//    if(jQuery(window).width <= 650) {
+//        var telEtrangerMobile = telPrincipal.str.replace('[^0-9]', '');
+//        jQuery('#spanContactTel1').html(telEtrangerMobile);
+//    }
+}
+
+function initClickAjoutPanier() {
+    jQuery('.a_ajoutPanier').click(function () {
+        jQuery(window).animate({
+            scrollTop: 0
+        }, 500);
+    });
+}
+
+function gereOuvertureThematiques() {
+
+    jQuery('#div_ficheDescriptionEtThematiques .thematiquesPrincipales .a_afficheTousThemes').click(function () {
+        jQuery('#unBlocEquipementsRubriques').addClass('open');
+    });
+
+    jQuery('#unBlocEquipementsRubriques>.titre').click(function () {
+        if (jQuery('#unBlocEquipementsRubriques').hasClass('open')) {
+            jQuery('#unBlocEquipementsRubriques').removeClass('open');
+        } else {
+            jQuery('#unBlocEquipementsRubriques').addClass('open');
+        }
+    });
+
+}
+
+
+function initSlideHistoriqueheber() {
+    var loop = false;
+    if (jQuery('.owl-carouselDerniershebergements > div').length > 4) {
+        loop = true;
+    }
+
+    if (jQuery(".owl-carouselDerniershebergements").length > 0) {
+        jQuery('.owl-carouselDerniershebergements').owlCarousel({
+            loop: loop,
+            margin: 6,
+            nav: true,
+            navText: ["<div><div><img src='/img/css/fiche/prev-album2.png'></div></div>", "<div><div><img src='/img/css/fiche/next-album2.png'></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 2
+                },
+                768: {
+                    items: 4
+                }
+            }
+        })
+    }
+
+    var viewport = jQuery(window).width();
+    var itemCount = jQuery(".owl-stage > div").length;
+
+    if (viewport >= 768 && itemCount > 4) {
+        jQuery('.owl-controls').show();
+    } else {
+        jQuery('.owl-controls').hide();
+    }
+}
+
+function init_titleOptions() {
+    jQuery(".lblOption").qtip({
+        content: {
+            text: jQuery(this).attr('title')
+        },
+        position: {
+            my: 'bottom left',
+            at: 'top left'
+        },
+        show: 'mouseover',
+        hide: 'mouseout'
+    })
+}
+
+function init_btDispoChambreForResponsive() {
+    if (jQuery(window).width() <= 700) {
+        jQuery(".a_btVoirDispoChambre").bind("click", function () {
+            jQuery("#colonneDroiteInfosResa").show();
+        })
+    }
+}
+
+function init_partage() {
+    if (jQuery(window).width() >= 768 && jQuery(window).width() <= 1024) {
+        jQuery(".div_ficheActionPartage > a").click(function () {
+            if (jQuery(this).next(".div_ficheActionPartageContent").hasClass("open")) {
+                jQuery(this).next(".div_ficheActionPartageContent").removeClass("open");
+                jQuery(this).removeClass("open");
+            } else {
+                jQuery(this).addClass("open");
+                jQuery(this).next(".div_ficheActionPartageContent").addClass("open");
+            }
+        });
+    } else {
+        jQuery(".div_ficheActionPartage > a").click(function () {
+            if (jQuery(this).next(".div_ficheActionPartageContent").is(":hidden")) {
+                jQuery(this).next(".div_ficheActionPartageContent").show();
+            } else {
+                jQuery(this).next(".div_ficheActionPartageContent").hide();
+            }
+        });
+    }
+}
+
+function init_boutonsBlocResaResponsive() {
+    jQuery(".a_fermeBlocResaResponsive").click(function () {
+        jQuery("#colonneDroiteInfosResa").hide();
+        /* Correction */
+        fngf_fermePopinResa();
+    });
+    jQuery(".bt_accesResaResponsive a, .div_btAffichePrixResponsive a").click(function () {
+        jQuery("#colonneDroiteInfosResa").show();
+    })
+}
+
+function init_accesPromo() {
+    jQuery(".enpromo").click(function () {
+        var div = jQuery(this).attr("data-div-rel");
+        Effect.ScrollTo(div, {
+            offset: window.offsetMenu
+        });
+    });
+}
+
+function init_afficheAvisClients() {
+    jQuery("#div_ficheHead .sp_recapAvisLblBaseSur").click(function () {
+        jQuery(".div_ongletsNav").find("a[data-action='affiche-avis']").trigger("click");
+    });
+
+    if (jQuery(window).width() <= 1024) {
+        jQuery("#div_ficheHead .div_recapAvisLibelle").click(function () {
+            jQuery(".div_ongletsNav").find("a[data-action='affiche-avis']").trigger("click");
+        });
+    }
+
+    if (jQuery(window).width > 700) {
+        jQuery("#unBlocAvis .sp_recapAvisLblBaseSur").css("padding-left", jQuery("#unBlocAvis .sp_recapAvisLblNote").outerWidth());
+    }
+
+    jQuery("#unBlocAvis .sp_recapAvisLblBaseSur").click(function () {
+        jQuery(".boutonMoreAvisClients").trigger("click");
+        jQuery(".div_ongletsNav").find("a[data-action='affiche-avis']").trigger("click");
+    });
+
+
+}
+
+function foncQdFini_masqueAvisClient() {
+    init_limitBlocResa();
+    jQuery(".div_ongletsNav").find("a[data-action='affiche-avis']").trigger("click");
+}
+
+function foncQdFini_afficheAvisClient() {
+    init_limitBlocResa();
+}
+
+function init_affTousThemes() {
+    jQuery(".a_afficheTousThemes").click(function () {
+        var div = jQuery(this).attr("data-div");
+
+        Effect.ScrollTo(div, {
+            offset: window.offsetMenu
+        });
+        ouvreBloc("#" + div);
+
+    })
+}
+
+function init_afficheMasqueBlocEquipements() {
+    jQuery(".closable p.titre").click(function () {
+        var div = jQuery(this).parent();
+
+        if (jQuery(div).hasClass("opened")) {
+            fermeBloc(div);
+        } else {
+            ouvreBloc(div);
+        }
+    });
+}
+
+function fermeBloc(div) {
+    jQuery(div).removeClass("opened").addClass("closed");
+}
+
+function ouvreBloc(div) {
+    jQuery(div).removeClass("closed").addClass("opened");
+}
+
+function init_actionLocalisation() {
+    jQuery(".dib_btCalculerItineraire").find("a").toggle(
+        function () {
+            jQuery("#div_cartoItineraire").show();
+            jQuery("#div_cartoGmap").hide();
+            jQuery(this).html(jQuery(this).attr("data-alt"));
+        },
+        function () {
+            jQuery("#div_cartoItineraire").hide();
+            jQuery("#div_cartoGmap").show();
+            jQuery(this).html(jQuery(this).attr("data-defaut"));
+        }
+    );
+}
+
+function init_afficheMasqueDesc() {
+    jQuery(".afficheMasquedescription").find("a").toggle(
+        function () {
+            jQuery(".unDescTech").show();
+        },
+        function () {
+            jQuery(".unDescTech").hide();
+        }
+    )
+}
+
+function init_simuleActionOnglets() {
+    jQuery(".a_simuleClickOnglet").click(function () {
+        var action = jQuery(this).attr("data-action");
+        jQuery(".div_ongletsNav").find("a[data-action='" + action + "']").trigger("click");
+    });
+}
+
+function init_btVoirDetailPrix() {
+    jQuery(".a_btVoirDetailPrix").click(function () {
+        var divRel = jQuery(this).attr("data-rel");
+        var classe = jQuery(this).attr("data-class");
+
+        if (jQuery("#" + divRel).hasClass(classe)) {
+            jQuery("#" + divRel).removeClass(classe);
+        } else {
+            jQuery("#" + divRel).addClass(classe);
+        }
+
+    })
+}
+
+function init_onglets() {
+    jQuery(".div_ongletsNav a").click(function () {
+        if (jQuery(this).attr("data-scroll") == 'true') {
+            var init = jQuery(this).attr("data-init"); // permet de revenir en haut de page du site.
+
+            if (init == "true") {
+                Effect.ScrollTo('headerEtMenu', {
+                    duration: '0.3'
+                });
+                focusOnglet("#onglet-photos");
+            } else {
+                var divRel = jQuery(this).attr("data-rel");
+
+                var divParent = jQuery("#" + divRel).attr("data-div-rel");
+
+                jQuery(".div_ongletsNav").find("li").removeClass("current");
+                jQuery(".div_ongletsNav").find("a[data-rel='" + divRel + "']").parent().addClass("current");
+
+                var paddingTop = parseInt(jQuery("#" + divParent + " > .titre").css("padding-top"));
+
+                if (jQuery(window).width() > 700) {
+                    if (paddingTop > 0) {
+                        var offset = window.offsetMenu + (paddingTop / 2);
+                    } else {
+                        var offset = window.offsetMenu;
+                    }
+                } else {
+                    offset = paddingTop * -1;
+                }
+
+                Effect.ScrollTo(divRel, {
+                    offset: offset,
+                    duration: '0.3'
+                });
+            }
+        } else if (jQuery(this).attr("data-reserver") == 'true') {
+            if (jQuery("#colonneDroiteInfosResa").hasClass("affichePopin")) {
+                fngf_fermePopinResa();
+            } else {
+                fngf_ouvrePopinResa();
+            }
+        }
+    });
+}
+
+function init_FixedOngletsNav() {
+    jQuery('.div_ongletsNav').addClass('originalNav').clone().insertBefore('#contentCentre').addClass('clonedNav').css('position', 'fixed').css('top', '0').css('z-index', '105').removeClass('originalNav').hide();
+
+    definePositionOnglets();
+    jQuery(window).scroll(function () {
+        definePositionOnglets();
+    });
+    jQuery(window).resize(function () {
+        definePositionOnglets();
+    });
+}
+
+function definePositionOnglets() {
+    var orgElementPos = jQuery('.originalNav').offset();
+    orgElementTop = orgElementPos.top;
+
+    if (jQuery(window).scrollTop() >= (orgElementTop-10)) {
+        // scrolled past the original position; now only show the cloned, sticky element.
+        // Cloned element should always have same left position and width as original element.     
+        orgElement = jQuery('.originalNav');
+        coordsOrgElement = orgElement.offset();
+        leftOrgElement = coordsOrgElement.left;
+        widthOrgElement = orgElement.css('width');
+        jQuery('.clonedNav').css('left', leftOrgElement + 'px').css('top', 0).css('width', widthOrgElement).show();
+        jQuery('.originalNav').css('visibility', 'hidden');
+
+        if (!window.initClickOnglet) {
+            init_onglets();
+            window.initClickOnglet = true;
+        }
+    } else {
+        // not scrolled past the menu; only show the original menu.
+        jQuery('.clonedNav').hide();
+        jQuery('.originalNav').css('visibility', 'visible');
+    }
+}
+
+function init_FixedBlocResa() {
+    if (jQuery(window).width() > 700) {
+        window.orgBlocResaPos = jQuery('#colonneDroiteInfosResa').offset();
+        window.orgBlocResaTop = window.orgBlocResaPos.top;
+        window.leftOrgElementResa = window.orgBlocResaPos.left;
+        window.widthOrgElementResa = jQuery('#colonneDroiteInfosResa').outerWidth();
+
+        init_limitBlocResa();
+
+        if (jQuery(window).height() > jQuery("#colonneDroiteInfosResa").outerHeight()) {
+            jQuery(window).scroll(function () {
+                if (jQuery(window).scrollTop() >= window.orgBlocResaTop && jQuery(window).scrollTop() <= window.limitBlocResa) {
+                    window.orgElementResa = jQuery('#colonneDroiteInfosResa');
+                    window.orgElementResa.css('left', window.leftOrgElementResa + 'px').css('top', 0).css("position", "fixed").css('width', window.widthOrgElementResa);
+                    //jQuery("#colonneDroiteInfosResa").css("padding-top",orgElement.outerHeight() + parseInt(orgElement.css("margin-bottom")));
+                } else if (jQuery(window).scrollTop() > window.limitBlocResa) {
+                    window.orgElementResa = jQuery('#colonneDroiteInfosResa');
+                    window.orgElementResa.css('left', window.leftOrgElementResa + 'px').css('top', '').css("bottom", 0).css("position", "absolute").css('width', window.widthOrgElementResa);
+                } else {
+                    jQuery('#colonneDroiteInfosResa').css('left', '').css('top', 0).css("position", "").css('width', '');
+                    //jQuery("#colonneDroiteInfosResa").css("padding-top",'');
+                }
+            });
+        }
+    }
+}
+window.onresize = function (event) { //242539
+    if (jQuery(window).width() > 700) {
+        window.leftOrgElementResa = jQuery('#div_ficheDetail .colonneGauche').width() + jQuery('#div_ficheDetail .colonneGauche').offset().left;
+        if (jQuery(window).scrollTop() >= window.orgBlocResaTop && jQuery(window).scrollTop() <= window.limitBlocResa) {
+            window.orgElementResa.css('left', window.leftOrgElementResa + 'px');
+        }
+    }
+}
+
+function init_limitBlocResa() {
+    window.limitBlocResa = jQuery("#content").outerHeight() - jQuery("footer").outerHeight() - jQuery("#div_locaguide").outerHeight() + jQuery("#headerEtMenu").outerHeight() - 50;
+}
+
+function init_focusWhenScroll() {
+
+    jQuery(window).scroll(function () {
+        clearTimeout(jQuery.data(jQuery(window), "scrollCheck"));
+
+        jQuery.data(jQuery(window), "scrollCheck", setTimeout(function () {
+
+            jQuery(".ancre").each(function () {
+                var div = jQuery(this).attr("data-div-rel");
+                var positionsDiv = jQuery("#" + div).offset();
+                var positionTop = positionsDiv.top - jQuery(".div_ongletsNav").outerHeight() - 1;
+                var positionBottom = positionTop + jQuery("#" + div).outerHeight();
+
+                if (jQuery(window).scrollTop() >= positionTop && jQuery(window).scrollTop() <= positionBottom) {
+                    focusOnglet(this);
+                    if (div == "unBlocTarifsDispo" && jQuery('.div_tarifUneChambre_lancerResa').length > 0 && jQuery('.div_tarifUneChambre_lancerResa.sansDates').length == 0) {
+                        if (jQuery('.div_btnResa').is(':visible')) {
+                            jQuery('.div_btnResa').slideUp('fast');
+                        }
+                        if (jQuery('.bt_accesResaResponsive').is(':visible')) {
+                            jQuery('.bt_accesResaResponsive').slideUp('fast');
+                        }
+                    } else {
+                        if (jQuery('.div_btnResa').is(':hidden')) {
+                            jQuery('.div_btnResa').slideDown('fast');
+                        }
+                        if (jQuery('.bt_accesResaResponsive').is(':hidden')) {
+                            jQuery('.bt_accesResaResponsive').slideDown('fast');
+                        }
+                    }
+                }
+
+            });
+
+        }, 301));
+
+    });
+
+}
+
+function focusOnglet(obj) {
+    jQuery(".div_ongletsNav, .div_ongletsNavResponsive").find("li").removeClass("current");
+    jQuery(".div_ongletsNav, .div_ongletsNavResponsive").find("a[data-rel='" + jQuery(obj).attr("id") + "']").parent().addClass("current");
+}
+
+function initEvents_viaFrance() {
+    (function ($) {
+
+        $(".div_plusDeViafrance a").click(function () {
+            if ($(".ul_viaFrance_listeElements.viafranceClosed").length > 0) {
+                $(".ul_viaFrance_listeElements.viafranceClosed").show().addClass("viafranceOpened").removeClass("viafranceClosed");
+                $(this).html($(this).attr("data-lblMoins"));
+            } else {
+                $(".ul_viaFrance_listeElements.viafranceClosable").hide().removeClass("viafranceOpened").addClass("viafranceClosed");
+                $(this).html($(this).attr("data-lblPlus"));
+            }
+        })
+
+        $('.a_viaFranceDetail, .lagenda_vignette img').live('click', function () {
+            var id = $(this).attr('data-id');
+            var type = $(this).attr('data-type');
+            var div = $(this).parents('.div_lagendaContent');
+            // TODO : récupérer le détail
+
+            $.ajax({
+                type: 'POST',
+                url: '/lib_2/ajax/infosDist.php',
+                data: {
+                    info: 'getHTMLDetail_viaFrance',
+                    id: id,
+                    type: type
+                },
+                success: function (result) {
+                    if (result.length > 0) {
+                        div.find('.div_viaFrance_detailElement').html(result).show();
+                        div.find('.viafranceOpened').hide();
+                        div.find('.div_viaFrance_retourListe').show();
+                        div.find('.div_plusDeViafrance').hide();
+                        viaFrance_intClickOnglets();
+                        Effect.ScrollTo("unBlocEquipementsViafrance", {
+                            offset: window.offsetMenu,
+                            duration: '0.3'
+                        });
+                    } else {
+
+                    }
+                }
+            });
+        });
+
+        $('.sp_viaFrance_retourListeElements').live('click', function () {
+            $(".div_lagendaContent").find('.viafranceOpened').show();
+            $(".div_lagendaContent").find('.div_plusDeViafrance').show();
+            $(".div_lagendaContent").find('.div_viaFrance_detailElement').hide();
+            $(".div_lagendaContent").find('.div_viaFrance_detailElement').empty();
+            $(this).parent().hide();
+        });
+    })(jQuery);
+}
+
+function majDivChambres_packDivDatesTarifs_foncQdFini() {
+    if (window.aClicqueDansFiche) {
+        if (jQuery(window).width() > 700) {
+            jQuery(".div_ongletsNav").find("a[data-action='affiche-tarifs']").trigger("click");
+        } else {
+            jQuery(".div_ongletsNavResponsive").find("a[data-action='affiche-tarifs']").trigger("click");
+        }
+
+        if (jQuery(window).width() <= 1024) {
+            fngf_fermePopinResa();
+        }
+        if (jQuery(window).width() <= 700) {
+            jQuery("#colonneDroiteInfosResa").hide();
+        }
+    }
+}
+
+function setInputDates_packDivDatesTarifs_foncQdFini() {
+    fngf_ouvrePopinResa();
+}
+
+function ouvreDatePickerDateDeb_packDivDatesTarifs_foncQdFini() {
+    fngf_ouvrePopinResa();
+}
+
+function init_ongletsNavMobile() {
+    jQuery(".div_ongletsNavResponsive .openMenuResponsive").click(function () {
+        if (jQuery(".div_ongletsNavResponsive").hasClass("opened")) {
+            jQuery(".div_ongletsNavResponsive").removeClass("opened");
+        } else {
+            jQuery(".div_ongletsNavResponsive").addClass("opened");
+        }
+    });
+
+    jQuery(window).scroll(function () {
+        jQuery(".div_ongletsNavResponsive").removeClass("opened");
+    })
+
+    init_FixedOngletsNavMobile();
+    init_clickOngletsMobile();
+}
+
+function init_clickOngletsMobile() {
+    jQuery(".div_ongletsNavResponsive a").click(function () {
+        var init = jQuery(this).attr("data-init"); // permet de revenir en haut de page du site.
+
+        if (init == "true") {
+            Effect.ScrollTo('headerEtMenu', {
+                duration: '0.3'
+            });
+            focusOnglet("#onglet-photos");
+        } else {
+            var divRel = jQuery(this).attr("data-rel");
+
+            var divParent = jQuery("#" + divRel).attr("data-div-rel");
+
+            jQuery(".div_ongletsNavResponsive").find("li").removeClass("current");
+            jQuery(".div_ongletsNavResponsive").find("a[data-rel='" + divRel + "']").parent().addClass("current");
+
+            var offset = parseInt(jQuery("#" + divParent + " > .titre").css("padding-top"));
+
+
+            Effect.ScrollTo(divRel, {
+                offset: offset,
+                duration: '0.3'
+            });
+        }
+
+    });
+}
+
+function init_FixedOngletsNavMobile() {
+    jQuery(window).scroll(function () {
+        var orgElementPos = jQuery('#unBlocDescription').offset();
+        orgElementTop = orgElementPos.top;
+
+        if (jQuery(window).scrollTop() >= (orgElementTop)) {
+            jQuery(".div_ongletsNavResponsive").show();
+        } else {
+            jQuery(".div_ongletsNavResponsive").hide();
+        }
+    });
+}
+
+function init_afficheInfosProp() {
+    jQuery(".div_btAfficheInfosProprio a").click(function () {
+        jQuery("#colonneDroiteInfosResa").hide();
+        jQuery(".div_ongletsNavResponsive").find("a[data-action='affiche-proprietaire']").trigger("click");
+    });
+
+    if (jQuery(".pictoPortesOuvertes").length > 0) {
+        jQuery(".pictoPortesOuvertes").click(function () {
+            jQuery(".div_ongletsNavResponsive").find("a[data-action='affiche-proprietaire']").trigger("click");
+        })
+    }
+
+}
+
+function ouvreDatePicker_partiellementDispo_foncAvant() {
+    jQuery(".div_ongletsNav").find("a[data-action='affiche-tarifs']").trigger("click");
+}
+
+function repositionneBoutonReserver() {
+    if (jQuery("#cookieChoiceInfo").is(":visible")) {
+        var bottom = jQuery("#cookieChoiceInfo").outerHeight() + 10;
+        jQuery(".bt_accesResaResponsive").css("bottom", bottom);
+    } else {
+        jQuery(".bt_accesResaResponsive").css("bottom", '');
+    }
+}
+
+function positionnerLienAFNOR() {
+    (function ($) {
+        var titreAvis = $('#unBlocAvis .titre>span');
+        var lienAFNOR = $('.blocLogoAfnor');
+
+        if ($(window).width() <= 700) {
+            lienAFNOR.css('left', titreAvis.width() + 25 + 'px');
+        } else if ($(window).width() <= 1024) {
+            lienAFNOR.css('left', titreAvis.width() + 15 + 'px');
+        } else {
+            lienAFNOR.css('left', titreAvis.width() + 10 + 'px');
+        }
+    })(jQuery);
+}
+
+function init_blocResaForTablette() {
+    if (jQuery(window).width() <= 1024 && jQuery(window).width() > 700) {
+        if (!window.blocResaInit) {
+            window.blocResaInit = jQuery("#colonneDroiteInfosResa");
+        }
+        jQuery('#unBlocPhotos').after(window.blocResaInit);
+
+        jQuery(window).scroll(function () {
+            if (!jQuery("#colonneDroiteInfosResa").hasClass("affichePopin")) {
+                var bottomBlocResa = jQuery("#div_ficheBlocResa").offset().top + jQuery("#div_ficheBlocResa").outerHeight() - jQuery(".div_ongletsNav.clonedNav").outerHeight();
+                if (jQuery(window).scrollTop() > bottomBlocResa) {
+                    jQuery(".div_ongletsNav").addClass("afficheBtnReserver");
+                } else {
+                    jQuery(".div_ongletsNav").removeClass("afficheBtnReserver");
+                }
+            }
+        });
+
+    } else if (window.blocResaInit) {
+        jQuery('#div_ficheDetail .colonneGauche').after(window.blocResaInit);
+    }
+
+    jQuery("#div_ficheBlocResaPopinClose").click(function () {
+        fngf_fermePopinResa()
+    });
+
+    if (jQuery(".div_btAfficheTelephoneProp").length > 0) {
+        jQuery("#div_ficheBlocResa").addClass("avecTelephone");
+    }
+    if (jQuery(".calendrier_resa").length == 0) {
+        jQuery("#div_ficheBlocResa").addClass("sansDispo");
+    }
+}
+
+function fixeHeightDivPlaceHolderBlocResa() {
+    jQuery("#div_ficheBlocResaPopinPlaceHolder").height(jQuery("#div_ficheBlocResa").height());
+}
+
+function fngf_desactiveScrollTouch() {
+    document.ontouchmove = function (e) {
+        e.preventDefault();
+    }
+}
+
+function fngf_activeScrollTouch() {
+    document.ontouchmove = function (e) {
+        return true;
+    }
+}
+
+function fngf_fermePopinResa() {
+    jQuery('#colonneDroiteInfosResa').removeClass("affichePopin");
+    fngf_activeScrollTouch();
+}
+
+function fngf_ouvrePopinResa() {
+    jQuery("#colonneDroiteInfosResa").addClass("affichePopin");
+    fngf_desactiveScrollTouch();
+    fixeHeightDivPlaceHolderBlocResa();
+    if (jQuery(window).width() <= 700) {
+        jQuery("#colonneDroiteInfosResa").show();
+    }
+}
+
+function fngf_initSimuleinputCalend() {
+    window.ouvertCalendDebut = false;
+    window.ouvertCalendFin = false;
+
+    jQuery('.sp_simuleDateDeb').click(function () {
+        if (!window.ouvertCalendDebut) {
+            initInputDateDeb();
+            window.ouvertCalendDebut = true;
+        } else {
+            window.ouvertCalendDebut = false;
+        }
+    });
+
+    jQuery('.sp_simuleDateFin').click(function () {
+        if (!window.ouvertCalendFin) {
+            initInputDateFin();
+            window.ouvertCalendFin = true;
+        } else {
+            window.ouvertCalendFin = false;
+        }
+    });
+
+    setInterval(function () {
+        if (jQuery("#div_calendrierDeb").is(":hidden")) {
+            window.ouvertCalendDebut = false;
+            jQuery('#inpt_resaDateDebCal').removeClass("focus");
+        }
+        if (jQuery("#div_calendrierFin").is(":hidden")) {
+            window.ouvertCalendFin = false;
+            jQuery('#inpt_resaDateFinCal').removeClass("focus");
+        }
+    }, 500);
+
+}
+
+function fngf_lanceDiapoTapPhoto() {
+    $(document).on('touchstart', function () {
+        detectTap = true; //detects all touch events
+    });
+    $(document).on('touchmove', function () {
+        detectTap = false; //Excludes the scroll events from touch events
+    });
+
+    jQuery(".div_sliderMobileContent img").bind("touchend", function () {
+        if (detectTap) {
+            jQuery('.a_sliderMobileZoom').trigger('click');
+        }
+    });
+
+    jQuery(".div_sliderMobileContent img").bind("click", function () {
+        jQuery('.a_sliderMobileZoom').trigger('click');
+    });
+}
+
+function initAfficheDetailChambresMobile() {
+    if (jQuery(window).width() <= 700 && !window.htmlChambreResponsive) {
+        jQuery(".div_tarifUneChambre").each(function () {
+
+            var $cloneImage = jQuery(this).find('.div_imgChambre').clone();
+            $cloneImage.wrap('<div>');
+            var htmlImage = '';
+            var classeHtmlTarifEtPhoto = ''
+            if ($cloneImage.parent().html() != undefined) {
+                htmlImage = $cloneImage.parent().html();
+            } else {
+                classeHtmlTarifEtPhoto = 'sansPhoto';
+            }
+
+            var $cloneTarif = jQuery(this).find('.div_tarifUneChambre_infosTarifs').clone();
+            $cloneTarif.wrap('<div>');
+            var htmlTarif = '';
+            if ($cloneTarif.parent().html() != undefined) {
+                var htmlTarif = $cloneTarif.parent().html();
+            }
+
+
+
+            jQuery(this).find('.p_titreChambre').after('<div class="div_imgChambreEtTarif ' + classeHtmlTarifEtPhoto + '"><div class="imgDetailChambreContent">' + htmlImage + '</div>' + htmlTarif + '</div>');
+
+            var $cloneDetailTarif = jQuery(this).find('.div_tarifUneChambre_tarifs').clone();
+            $cloneDetailTarif.wrap('<div>');
+            if ($cloneDetailTarif.parent().html() != undefined) {
+                jQuery(this).find('.div_imgChambreEtTarif').after($cloneDetailTarif.parent().html());
+            }
+
+        });
+
+        initFancyBoxDeBase();
+        initClicPhotoChambreHotes();
+        window.htmlChambreResponsive = true;
+
+        init_detailChambreAfficheTarifs();
+
+        jQuery('.div_info_desc_chmb').each(function () {
+            if (jQuery(this).height() > 48) {
+                var heightDivTxt = jQuery(this).height();
+                jQuery(this).next().click(function () {
+                    var btn = jQuery(this);
+                    if (btn.prev().hasClass("open")) {
+                        btn.prev().removeClass("open").animate({
+                            height: 48
+                        }, 200, function () {
+                            btn.html(btn.attr('data-lblPlus'));
+                        });
+                    } else {
+                        btn.prev().addClass("open").animate({
+                            height: heightDivTxt
+                        }, 200, function () {
+                            btn.html(btn.attr('data-lblMoins'));
+                        });
+
+                    }
+
+                })
+                jQuery(this).addClass("texteTropLong");
+            }
+        });
+
+
+
+    }
+}
+
+function foncQdFini_endVideoYoutube() {
+    jQuery('#div_ficheYoutubeApiJs').hide();
+    jQuery('#div_diaporamaQuandVideo').show();
+    jQuery('#div_liensMediasSupp').removeClass('avecVideoEnPrincipale');
+}

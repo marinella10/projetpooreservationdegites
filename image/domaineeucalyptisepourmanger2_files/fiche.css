@@ -1,0 +1,4236 @@
+.block { display:block; }
+.inline { display:inline; }
+.none { display:none; }
+.inline-block { display:inline-block; }
+.absolute { position:absolute; }
+.fixed { position:fixed; }
+.relative { position:relative; }
+.hide { overflow:hidden; }
+.visible { overflow:visible; }
+.overauto { overflow:auto; }
+.novisible { visibility:hidden; }
+.underline { text-decoration:underline; }
+.tnone { text-decoration:none; }
+.barre { text-decoration:line-through; }
+.center { text-align:center; }
+.right { text-align:right; }
+.left { text-align:left; }
+.justify { text-align:justify; }
+.fright { float:right; }
+.fleft { float:left; }
+.clear { clear:both; }
+.cleft { clear:left; }
+.cright { clear:right; }
+.italic { font-style:italic; }
+.bold { font-weight:bold; }
+.normal { font-weight:normal; }
+.uppercase { text-transform:uppercase; }
+.lowercase { text-transform:lowercase; }
+.capitalize { text-transform:capitalize; }
+.pointer { cursor:pointer; }
+.auto { margin:0 auto; }
+.arial { font-family:'Arial', sans-serif; }
+.box {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+.nowrap {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.cover { background-size:cover; }
+.raleway {
+  font-family:'Mulish', sans-serif;
+  font-variant-ligatures:none;
+  -webkit-font-variant-ligatures:none;
+}
+.fontFngf {
+  font-family:'icomoon' !important;
+  speak:none;
+  font-style:normal;
+  font-weight:normal;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.spriteListe {
+  background-image:url(/img/css/sprite-liste.png);
+  background-repeat:no-repeat;
+}
+.spriteFiche {
+  background-image:url(/img/css/sprite-fiche.png);
+  background-repeat:no-repeat;
+}
+.spriteFooter {
+  background-image:url(/img/css/sprite-footer.png);
+  background-repeat:no-repeat;
+}
+* {
+  font-smooth:always;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+body { padding-top:0; }
+#content {
+  font-weight:500;
+  max-width:inherit;
+  padding:0;
+}
+#contentCentre {
+  padding-bottom:100px;
+  position:relative;
+}
+@media screen and (max-width: 700px) {
+  #contentCentre { padding-bottom:20px; }
+}
+#div_ficheFNGF2015 {
+  margin:0 auto;
+  position:relative;
+}
+.spriteFiche2 {
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#content { color:#333; }
+#content * {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+.colonneGauche { width:66%; }
+.colonneDroite { padding-left:25px; }
+@media screen and (max-width: 700px) {
+  .colonneGauche, .colonneDroite {
+    float:none;
+    width:100%;
+  }
+  footer #footer_menu { padding-bottom:30px; }
+}
+.contentAvecPadding { padding-left:20px; }
+@media screen and (max-width: 700px) {
+  .contentAvecPadding { padding-left:0; }
+}
+#itea_divNavigFiche { display:none; }
+#div_ficheContentFilAriane {
+  font-size:0.9em;
+  padding:0;
+  margin:20px auto;
+  width:100%;
+  max-width:1200px;
+  padding:0 10px;
+}
+#div_ficheContentFilAriane .elemFilAriane { display:inline; }
+#div_ficheContentFilAriane a {
+  color:#333;
+  text-decoration:none;
+}
+#div_ficheContentFilAriane a:hover { text-decoration:underline; }
+@media screen and (max-width: 700px) {
+  #div_ficheContentFilAriane { display:none !important; }
+}
+#div_ficheHead {
+  display:table;
+  width:100%;
+  margin:0 0 10px;
+  position:relative;
+  max-width:1200px;
+  margin:0 auto;
+  padding:30px 10px;
+}
+#div_ficheHead > div {
+  display:table-cell;
+  vertical-align:middle;
+}
+#div_ficheHead:before {
+  content:'';
+  position:absolute;
+  background:#e3f2ea;
+  left:-9999px;
+  right:-9999px;
+  z-index:-1;
+  top:0;
+  bottom:-43px;
+}
+#div_ficheHead .div_recapAvisLibelle { text-align:center; }
+#div_ficheHead .div_recapAvisLibelle .sp_recapAvisLblNote {
+  font-size:1.6em;
+  margin:0 0 3px;
+  display:block;
+}
+#div_ficheHead .div_recapAvisLibelle .sp_recapAvisLblNote:after, #div_ficheHead .div_recapAvisLibelle .sp_recapAvisLblNote:before { content:'"'; }
+#div_ficheHead .div_recapAvisLibelle .sp_recapAvisLblBaseSur {
+  display:block;
+  padding:3px 0 0;
+  text-decoration:underline;
+  font-size:0.8em;
+  cursor:pointer;
+}
+#div_ficheHead .div_recapAvisLibelle .sp_recapAvisLblBaseSur:hover { text-decoration:none; }
+#div_ficheHead .div_recapAvisLibelle .sp_recapAvisNoteMoyenne, #div_ficheHead .div_recapAvisLibelle .avis_noteMaxi {
+  font-size:1.3em;
+  margin-left:5px;
+}
+#div_ficheHead .div_recapAvisLibelle .sp_recapAvisNoteMoyenne {
+  position:relative;
+  bottom:2px;
+}
+#div_ficheHead .div_recapAvisLibelle img { height:19px; }
+#div_ficheHead .div_recapAvisLibelle.sansNoteGlobale { font-size:1.4em; }
+#div_ficheHead .div_recapAvisLibelle.sansNoteGlobale .sp_recapAvisLblBaseSurNb {
+  padding-left:25px;
+  padding-top:0;
+  background-position:left -683px;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_ficheHead .div_titreFiche { overflow:hidden; }
+#div_ficheHead .div_titreFiche h1 {
+  margin:0 20px 0 0;
+  display:inline-block;
+  font-size:2em;
+  font-weight:600;
+}
+#div_ficheHead .div_titreFiche h1 .ref {
+  font-size:0.6em;
+  font-weight:400;
+}
+#div_ficheHead .div_titreFiche .enpromo {
+  display:inline-block;
+  vertical-align:middle;
+  cursor:pointer;
+  color:#ff5f32;
+  text-decoration:underline;
+  margin-left:20px;
+}
+#div_ficheHead .div_titreFiche .enpromo:hover { text-decoration:none; }
+#div_ficheHead .span_classement_GFRAN {
+  float:left;
+  display:block;
+  padding:5px 0 0;
+  margin-right:10px;
+}
+#div_ficheHead .span_classement_GFRAN img {
+  display:block;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_ficheHead .span_classement_GFRAN .img_classement_GFRAN_1 {
+  width:17px;
+  height:17px;
+}
+#div_ficheHead .span_classement_GFRAN .img_classement_GFRAN_2 {
+  width:37px;
+  height:17px;
+}
+#div_ficheHead .span_classement_GFRAN .img_classement_GFRAN_3 {
+  width:57px;
+  height:17px;
+}
+#div_ficheHead .span_classement_GFRAN .img_classement_GFRAN_4 {
+  width:77px;
+  height:17px;
+}
+#div_ficheHead .span_classement_GFRAN .img_classement_GFRAN_5 {
+  width:97px;
+  height:17px;
+}
+#div_ficheHead .span_classement_GFRAN .img_classement_GFRAN_3_V, #div_ficheHead .span_classement_GFRAN .img_classement_GFRAN_4_V, #div_ficheHead .span_classement_GFRAN .img_classement_GFRAN_5_V {
+  width:54px;
+  height:17px;
+}
+#div_ficheHead .span_classement_GFRAN .img_classement_GFRAN_3_V { background-position:0 -129px; }
+#div_ficheHead .span_classement_GFRAN .img_classement_GFRAN_4_V { background-position:0 -156px; }
+#div_ficheHead .span_classement_GFRAN .img_classement_GFRAN_5_V { background-position:0 -102px; }
+#div_ficheHead .span_classement_GFRAN .img_reclassmentEnCourt, #div_ficheHead .span_classement_GFRAN .img_classmentEnCourt {
+  width:16px;
+  height:7px;
+  background:url(../../img/css/liste/sprite.png) no-repeat -20px -1817px !important;
+}
+#div_ficheHead.G .span_classement_GFRAN img, #div_ficheHead.E .span_classement_GFRAN img, #div_ficheHead.T .span_classement_GFRAN img { background-position:0 -48px; }
+#div_ficheHead.C .span_classement_GFRAN img { background-position:0 -21px; }
+#div_ficheHead.H .span_classement_GFRAN img { background-position:0 -75px; }
+#div_ficheHead .div_sousTitreFiche {
+  display:inline;
+  margin:0 10px 0 0;
+  font-size:1em;
+}
+#div_ficheHead .div_sousTitreFiche #refGite .sp_reference { font-weight:bold; }
+#div_ficheHead .a_afficheLocalisation {
+  display:inline-block;
+  height:20px;
+  line-height:20px;
+  background:url(/img/css/place.svg) no-repeat;
+  background-size:12px 20px;
+  color:#333;
+  text-decoration:underline;
+  padding-left:17px;
+}
+#div_ficheHead .a_afficheLocalisation:hover { text-decoration:none; }
+@media screen and (max-width: 700px) {
+  #div_ficheHead {
+    display:block;
+    padding-left:15px;
+    padding-right:15px;
+  }
+  #div_ficheHead > div { display:block; }
+  #div_ficheHead .colonneGauche, #div_ficheHead .colonneDroite { padding-left:0; }
+  #div_ficheHead .div_recapAvisLibelle {
+    float:left;
+    padding-top:10px;
+  }
+  #div_ficheHead .div_recapAvisLibelle .sp_recapAvisLblNote { display:none; }
+  #div_ficheHead .div_recapAvisLibelle .sp_recapAvisLblBaseSur {
+    display:inline;
+    padding:0 0 0 5px;
+  }
+  #div_ficheHead .div_recapAvisLibelle .sp_recapAvisLblBaseSur:before { content:"("; }
+  #div_ficheHead .div_recapAvisLibelle .sp_recapAvisLblBaseSur:after { content:")"; }
+  #div_ficheHead .div_recapAvisLibelle .sp_recapAvisLblBaseSur:hover { text-decoration:underline; }
+  #div_ficheHead .div_titreFiche h1 { margin-right:0; }
+  #div_ficheHead .div_sousTitreFiche { margin:0; }
+  #div_ficheHead .a_afficheLocalisation { display:none; }
+  #div_ficheHead .span_classement_GFRAN {
+    display:inline-block;
+    float:none;
+  }
+  #div_ficheHead:before { bottom:-20px; }
+}
+#div_ficheDetail {
+  overflow:hidden;
+  max-width:1200px;
+  margin:0 auto;
+  font-weight:400;
+  padding:0 10px;
+}
+#div_ficheDetail .colonneGauche { float:left; }
+#div_ficheDetail .colonneDroite {
+  float:right;
+  width:34%;
+}
+@media screen and (max-width: 700px) {
+  #div_ficheDetail { overflow:inherit; }
+  #div_ficheDetail .colonneGauche { float:none; }
+  #div_ficheDetail .colonneDroite {
+    width:inherit;
+    float:none;
+  }
+}
+.unBloc > .titre, .unBloc > .h2_titreDescCompl, .div_locaguide > .titre, .div_locaguide > .h2_titreDescCompl, .groupeMeaTitre > .titre, .groupeMeaTitre > .h2_titreDescCompl, #div_ficheProduit.gestprod .unBloc .uneInfoPlus > .titre, #div_ficheProduit.gestprod .unBloc .uneInfoPlus > .h2_titreDescCompl {
+  padding:50px 0 49px 0;
+  font-size:2.2em;
+  position:relative;
+  font-weight:normal;
+}
+.unBloc > .titre:after, .unBloc > .h2_titreDescCompl:after, .div_locaguide > .titre:after, .div_locaguide > .h2_titreDescCompl:after, .groupeMeaTitre > .titre:after, .groupeMeaTitre > .h2_titreDescCompl:after, #div_ficheProduit.gestprod .unBloc .uneInfoPlus > .titre:after, #div_ficheProduit.gestprod .unBloc .uneInfoPlus > .h2_titreDescCompl:after {
+  content:"";
+  border-top:2px #4bab77 solid;
+  position:absolute;
+  left:0;
+  right:0;
+  top:74px;
+  z-index:0;
+}
+.unBloc > .titre span, .unBloc > .h2_titreDescCompl span, .div_locaguide > .titre span, .div_locaguide > .h2_titreDescCompl span, .groupeMeaTitre > .titre span, .groupeMeaTitre > .h2_titreDescCompl span, #div_ficheProduit.gestprod .unBloc .uneInfoPlus > .titre span, #div_ficheProduit.gestprod .unBloc .uneInfoPlus > .h2_titreDescCompl span {
+  padding:0 20px 0 0;
+  background:#fff;
+  z-index:10;
+  position:relative;
+}
+.groupeMeaTitre { margin-left:-20px; }
+.groupeMeaTitre .titre { text-align:left; }
+.div_locaguide {
+  margin-left:-10px;
+  margin-right:-10px;
+}
+.div_locaguide .titre {
+  max-width:1200px;
+  margin:0 auto;
+}
+@media screen and (max-width: 700px) {
+  .unBloc > .titre span { padding-left:15px; }
+}
+.div_ongletsNav {
+  padding:10px 0;
+  background:#fff;
+  font-size:1.2em;
+  border-radius:15px;
+  box-shadow:0 0 15px -5px rgba(26,26,26,0.5);
+  overflow:hidden;
+  margin-top:10px;
+}
+.div_ongletsNav ul {
+  display:table;
+  width:100%;
+  text-align:center;
+}
+.div_ongletsNav ul li {
+  display:table-cell;
+  position:relative;
+  vertical-align:middle;
+}
+.div_ongletsNav ul li:last-child { padding-right:0; }
+.div_ongletsNav ul li:first-child { padding-left:0; }
+.div_ongletsNav ul li.current:before, .div_ongletsNav ul li:hover:before {
+  content:'';
+  color:#333;
+  position:absolute;
+  bottom:-6px;
+  text-align:center;
+  left:50%;
+  transform:translate(-50%,0);
+  border-width:0 7px 10px 7px;
+  border-style:solid;
+  border-color:transparent transparent #4bab77 transparent;
+}
+.div_ongletsNav ul li.current:after, .div_ongletsNav ul li:hover:after {
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-10px;
+  background:#4bab77;
+  height:5px;
+}
+.div_ongletsNav ul a {
+  display:block;
+  padding:10px 5px;
+  text-decoration:none;
+  position:relative;
+  font-weight:400;
+}
+@media screen and (max-width: 700px) {
+  .div_ongletsNav { display:none !important; }
+}
+.div_ongletsNavResponsive {
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  z-index:101;
+  height:40px;
+  background:#00653f;
+  color:#fff;
+  overflow:hidden;
+  display:none;
+}
+.div_ongletsNavResponsive .openMenuResponsive {
+  float:right;
+  background:url(../../img/css/fiche/nav-menu-responsive.png) no-repeat center;
+  display:block;
+  width:40px;
+  height:40px;
+}
+.div_ongletsNavResponsive.opened { height:inherit; }
+.div_ongletsNavResponsive.opened li {
+  display:block;
+  opacity:0.4;
+}
+.div_ongletsNavResponsive.opened li.current { opacity:1; }
+.div_ongletsNavResponsive li {
+  display:none;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.div_ongletsNavResponsive li.current { display:block; }
+.div_ongletsNavResponsive li a {
+  display:block;
+  line-height:40px;
+  padding:0 5px 0 15px;
+  color:#fff;
+  text-decoration:none;
+  font-size:1.5em;
+}
+@media screen and (min-width: 700px) {
+  .div_ongletsNavResponsive { display:none !important; }
+}
+#unBlocPhotos {
+  margin-top:30px;
+  overflow:hidden;
+}
+#unBlocPhotos #div_mediasPhotos { position:relative; }
+#unBlocPhotos #div_mediasPhotos .etiquettes {
+  position:absolute;
+  left:0;
+  top:15px;
+  z-index:1;
+}
+#unBlocPhotos #div_mediasPhotos .etiquettes .divNouveaute, #unBlocPhotos #div_mediasPhotos .etiquettes .toutInclus {
+  display:inline-block;
+  font-size:1.1em;
+  padding:5px 10px;
+  color:#fff;
+  z-index:100;
+  background:#ff5f32;
+  margin-left:10px;
+  border-radius:50px;
+}
+#unBlocPhotos #div_mediasPhotos .etiquettes .div_pictoTropheesClient {
+  display:inline-block;
+  vertical-align:top;
+  margin-left:10px;
+  background:#fff;
+  border-radius:50%;
+  width:33px;
+  height:33px;
+  text-align:center;
+  padding-top:6px;
+  margin-right:5px;
+}
+#unBlocPhotos #div_mediasPhotos .etiquettes .div_pictoTropheesClient img { width:30px; }
+#unBlocPhotos iframe {
+  display:block;
+  margin:0 auto;
+}
+#unBlocPhotos #div_diaporamaQuandVideo { display:none; }
+#unBlocPhotos #div_liensMediasSupp.avecVideoEnPrincipale .a_linkYoutubeFancyBox { display:none; }
+#unBlocPhotos #div_liensMediasSupp:not(.avecVideoEnPrincipale) .a_lst_lien_disporama { display:none; }
+#unBlocPhotos .a_sliderMobileZoom {
+  position:absolute;
+  top:15px;
+  right:15px;
+  z-index:100;
+  line-height:20px;
+  width:30px;
+  height:30px;
+  overflow:hidden;
+  background:url(/img/css/zoom.svg) no-repeat;
+  background-size:100%;
+  background-position:center center;
+  transition-duration:0.15s;
+  text-indent:-1000px;
+}
+#unBlocPhotos .a_sliderMobileZoom:hover { transform:scale(1.4); }
+#unBlocPhotos .div_sliderMobile {
+  width:100%;
+  display:block;
+  line-height:400px;
+  text-align:center;
+  position:relative;
+}
+#unBlocPhotos .div_sliderMobile img {
+  vertical-align:middle;
+  height:auto;
+  max-height:440px;
+  border-radius:15px;
+}
+#unBlocPhotos .div_sliderMobile .divInfosSlide { display:none; }
+#unBlocPhotos .div_sliderMobile .divInfosSlideNextPrev a {
+  position:absolute;
+  top:0;
+  bottom:0;
+  text-indent:-10000px;
+  overflow:hidden;
+  width:80px;
+  background-position:center center;
+  background-size:60px;
+  background-repeat:no-repeat;
+}
+#unBlocPhotos .div_sliderMobile .divInfosSlideNextPrev a.precedent {
+  background-image:url("../../img/css/prevFF.svg");
+  left:0;
+}
+#unBlocPhotos .div_sliderMobile .divInfosSlideNextPrev a.suivant {
+  background-image:url("../../img/css/nextFF.svg");
+  right:0;
+}
+#unBlocPhotos .div_sliderMobileLegende {
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  max-width:80%;
+}
+#unBlocPhotos .div_sliderMobileLegende .div_sliderMobileLegendeContent {
+  background-color:#4bab77;
+  line-height:initial;
+  color:#fff;
+  padding:5px 15px;
+  border-radius:15px;
+}
+#unBlocPhotos #div_mediasAlbum {
+  margin:15px 0 0;
+  width:100%;
+  position:relative;
+}
+#unBlocPhotos #div_mediasAlbum #div_fiche_albumJquery {
+  width:90%;
+  margin:0 auto;
+}
+#unBlocPhotos #div_mediasAlbum #div_fiche_albumJquery, #unBlocPhotos #div_mediasAlbum #div_fiche_albumJquery li { overflow:hidden; }
+#unBlocPhotos #div_mediasAlbum #div_fiche_albumJquery ul, #unBlocPhotos #div_mediasAlbum #div_fiche_albumJquery li {
+  display:block;
+  list-style:none outside none;
+  margin:0;
+  padding:0;
+  position:relative;
+}
+#unBlocPhotos #div_mediasAlbum #div_fiche_albumJquery ul { width:5000px; }
+#unBlocPhotos #div_mediasAlbum #div_fiche_albumJquery li {
+  padding:0 3px;
+  float:left;
+}
+#unBlocPhotos #div_mediasAlbum #div_fiche_albumJquery li:hover { opacity:0.8; }
+#unBlocPhotos #div_mediasAlbum #div_fiche_albumJquery li img { height:auto; }
+#unBlocPhotos #div_mediasAlbum #div_fiche_albumJquery img {
+  display:block;
+  cursor:pointer;
+  width:100%;
+}
+#unBlocPhotos #div_mediasAlbum #controls a {
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:5%;
+  overflow:hidden;
+  text-indent:-1000px;
+}
+#unBlocPhotos #div_mediasAlbum #controls .nextBtn {
+  background:url("../../img/css/fiche/next-album2.png") no-repeat center;
+  right:0;
+}
+#unBlocPhotos #div_mediasAlbum #controls .prevBtn {
+  background:url("../../img/css/fiche/prev-album2.png") no-repeat center;
+  left:0;
+}
+#unBlocPhotos #div_mediasAlbum .owl-carousel.owl-drag .owl-item:last-child { margin-right:0 !important; }
+#unBlocPhotos #div_liensMediasSupp {
+  padding-left:15px;
+  margin-top:20px;
+}
+#unBlocPhotos #div_liensMediasSupp a {
+  float:left;
+  margin:0 20px 0 0;
+  color:#333;
+  text-decoration:underline;
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:50px;
+  border:1px solid #00653f;
+  text-decoration:none;
+  transition-duration:0.15s;
+  background:#00653f;
+  color:#fff;
+}
+#unBlocPhotos #div_liensMediasSupp a:hover {
+  text-decoration:none;
+  background:#fff;
+  color:#00653f;
+}
+#unBlocPhotos #div_liensMediasSupp a.a_lst_panoramique { display:none; }
+@media screen and (max-width: 700px) {
+  #unBlocPhotos .div_sliderMobile img { max-width:100%; }
+  #unBlocPhotos .div_sliderMobile {
+    height:inherit;
+    line-height:inherit;
+  }
+  #unBlocPhotos #div_mediasAlbum { display:none; }
+  #unBlocPhotos .a_sliderMobileZoom { display:none; }
+  #unBlocPhotos .div_sliderMobileLegende {
+    width:auto;
+    max-width:100%;
+  }
+  #unBlocPhotos .div_sliderMobileLegende {
+    bottom:0;
+    right:0;
+    left:0;
+  }
+  #unBlocPhotos .div_sliderMobileLegende .div_sliderMobileLegendeContent {
+    line-height:1.2em;
+    border-radius:0 0 15px 15px;
+  }
+}
+.p_fiche_accrocheNat, .accrocheGestprod {
+  padding:0;
+  margin:0 0 25px;
+  text-align:justify;
+  line-height:20px;
+  font-size:1.1em;
+  padding:10px 15px;
+  background:#e3f2ea;
+  border-radius:15px;
+}
+.p_fiche_accrocheNat .sp_desc_compl, .accrocheGestprod .sp_desc_compl { margin-bottom:0; }
+.div_fichedesc2colonnes {
+  display:table;
+  width:100%;
+}
+#div_ficheDescriptionEtThematiques {
+  display:table-cell;
+  width:65%;
+  border-right:1px #4bab77 solid;
+  padding:0 20px 0 0;
+}
+#div_ficheDescriptions { font-size:1.1em; }
+#div_ficheDescriptions .unDesc {
+  text-align:justify;
+  line-height:20px;
+  margin:0 0 10px;
+  margin:0 0 10px;
+}
+#div_ficheDescriptions .unDesc.unDescTech { display:none; }
+#div_ficheDescriptions .afficheMasquedescription a { color:#333; }
+#div_ficheDescriptions .afficheMasquedescription a:hover { text-decoration:none; }
+@media screen and (max-width: 700px) {
+  .div_fichescEtCaracteristiques {
+    display:table;
+    width:100%;
+  }
+  .div_fichedesc2colonnes {
+    display:inherit;
+    width:inherit;
+  }
+  #div_ficheDescriptionEtThematiques {
+    display:table-footer-group;
+    width:inherit;
+    border:none;
+    padding:20px 0 0 0;
+  }
+}
+.thematiquesPrincipales { padding:20px 0 0; }
+.thematiquesPrincipales .content {
+  overflow:hidden;
+  font-size:1.1em;
+}
+.thematiquesPrincipales .titre {
+  font-weight:700;
+  margin-bottom:10px;
+}
+.thematiquesPrincipales .ul_rubriques li {
+  display:block;
+  width:50%;
+  float:left;
+  padding-left:30px;
+  margin:0 0 5px;
+  vertical-align:middle;
+}
+.thematiquesPrincipales .ul_rubriques li img { height:23px; }
+.thematiquesPrincipales .ul_rubriques li .span_titreRubrique { display:table; }
+.thematiquesPrincipales .ul_rubriques li .span_titreRubrique > span {
+  display:table-cell;
+  vertical-align:middle;
+}
+.thematiquesPrincipales .ul_rubriques li .span_titreRubrique .rubriqueTitre { padding:0 20px 0 0; }
+.thematiquesPrincipales .div_afficheTousThemes {
+  float:right;
+  width:50%;
+  padding-left:30px;
+  line-height:25px;
+}
+.thematiquesPrincipales .div_afficheTousThemes a {
+  color:#4bab77;
+  text-decoration:none;
+  font-weight:600;
+}
+.thematiquesPrincipales .div_afficheTousThemes a:hover { text-decoration:underline; }
+@media screen and (max-width: 700px) {
+  .thematiquesPrincipales { display:none; }
+  .div_fichedesc2colonnes {
+    display:inherit;
+    width:inherit;
+  }
+  #div_ficheDescriptionEtThematiques {
+    display:table-footer-group;
+    width:inherit;
+    border:none;
+    padding:20px 0 0 0;
+  }
+  .unBloc > .titre, .div_locaguide > .titre { padding-bottom:30px; }
+}
+#div_ficheFicheCaracteristiques {
+  display:table-cell;
+  width:35%;
+}
+#div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent {
+  padding:0 0 0 20px;
+  font-weight:bold;
+  font-size:1.1em;
+}
+#div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent > div { margin:0 0 5px; }
+#div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .span_fiche_lbl_nbchb { display:none; }
+#div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent #span_fiche_titre_capacite, #div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent #span_fiche_titre_nb_chambres, #div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent #span_fiche_titre_superficie, #div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .sp_infoAnimauxLbl, #div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .infoInternet .lbl, #div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent #span_fiche_titre_altitude, #div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .span_titreOrientation, #div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .fiche_ulCritsCombi {
+  font-weight:normal;
+  color:#333;
+}
+#div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .fiche_ulCritsCombi li { margin-bottom:5px; }
+#div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .div_FicheTourismehandicap > span {
+  display:block;
+  margin:0 0 5px;
+  font-weight:normal;
+}
+#div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .div_FicheTourismehandicap img { height:33px; }
+#div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .div_FicheTourismehandicap .div_contentTabTourHan {
+  width:187px;
+  height:45px;
+  background-position:0px -255px;
+  padding-left:38px;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .div_FicheTourismehandicap table td {
+  vertical-align:middle;
+  height:26px;
+  text-align:center;
+  border-top:1px #a7afce solid;
+  border-right:1px #a7afce solid;
+}
+#div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .sp_lblTableHote.val-N, #div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .span_fiche_titre_InfosGeneralesStruct.val-N { display:none; }
+#div_ficheFicheCaracteristiques #div_ficheFicheCaracteristiquesContent .sp_lblTableHote { font-weight:normal; }
+@media screen and (max-width: 700px) {
+  #div_ficheFicheCaracteristiques { display:table-header-group; }
+  #div_ficheFicheCaracteristiques > div:last-child { margin-bottom:20px; }
+}
+#div_fichesEquipements, #unBlocLocalisation { padding:40px 0 0; }
+#div_fichesEquipements .unBlocEquipements, #unBlocLocalisation .unBlocEquipements { padding:10px 20px 10px; }
+#div_fichesEquipements .unBlocEquipements:nth-child(odd), #unBlocLocalisation .unBlocEquipements:nth-child(odd) { padding-top:10px; }
+#div_fichesEquipements .unBlocEquipements > .titre, #unBlocLocalisation .unBlocEquipements > .titre {
+  padding:0;
+  margin:0 0 20px;
+  font-size:1.3em;
+  font-weight:700;
+}
+#div_fichesEquipements .unBlocEquipements > .titre:first-letter, #unBlocLocalisation .unBlocEquipements > .titre:first-letter { text-transform:uppercase; }
+#div_fichesEquipements .unBlocEquipements.closable > .titre, #unBlocLocalisation .unBlocEquipements.closable > .titre {
+  cursor:pointer;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_fichesEquipements .unBlocEquipements.closable.closed > .titre, #unBlocLocalisation .unBlocEquipements.closable.closed > .titre {
+  background-position:right -312px;
+  margin:0;
+}
+#div_fichesEquipements .unBlocEquipements.closable.closed .contentInfoPlus, #unBlocLocalisation .unBlocEquipements.closable.closed .contentInfoPlus { display:none; }
+#div_fichesEquipements .unBlocEquipements.closable.opened > .titre, #unBlocLocalisation .unBlocEquipements.closable.opened > .titre {
+  background-position:right -335px;
+  background-position:right -335px;
+}
+#div_fichesEquipements .unBlocEquipements.closable.opened .contentInfoPlus, #unBlocLocalisation .unBlocEquipements.closable.opened .contentInfoPlus { display:block; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus ul li, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus ul li {
+  display:inline-block;
+  vertical-align:top;
+  width:33.333333%;
+  margin:0 0 10px;
+  padding-left:30px;
+  font-size:1.1em;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus ul li img ~ .p_fiche_dists_elem, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus ul li img ~ .p_fiche_dists_elem {
+  vertical-align:top;
+  margin-top:6px;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus ul li span.valeur:before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus ul li span.valeur:before {
+  content:':';
+  margin:0 3px;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus ul li.fiche_liCritsCombi_BOOLEAN span.valeur, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus ul li.fiche_liCritsCombi_BOOLEAN span.valeur { display:none; }
+#div_fichesEquipements .unBlocEquipements .lblOption, #unBlocLocalisation .unBlocEquipements .lblOption {
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#div_fichesEquipements .unBlocEquipements .detailOptionAdulte, #unBlocLocalisation .unBlocEquipements .detailOptionAdulte {
+  font-style:italic;
+  font-size:0.7em;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsInterieur li:not(.optionSupplements):before, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsInterieur .lblOption:before, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsExterieur li:not(.optionSupplements):before, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsExterieur .lblOption:before, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsServices li:not(.optionSupplements):before, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsServices .lblOption:before, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsAutres li:not(.optionSupplements):before, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsAutres .lblOption:before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsInterieur li:not(.optionSupplements):before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsInterieur .lblOption:before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsExterieur li:not(.optionSupplements):before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsExterieur .lblOption:before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsServices li:not(.optionSupplements):before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsServices .lblOption:before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsAutres li:not(.optionSupplements):before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsAutres .lblOption:before {
+  content:'';
+  margin-right:5px;
+  background:url('/img/css/check.svg') no-repeat;
+  background-position:center center;
+  background-size:12px 12px;
+  padding-left:12px;
+  display:inline-block;
+  float:left;
+  height:20px;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsInterieur li:not(.optionSupplements) .lblOption:before, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsExterieur li:not(.optionSupplements) .lblOption:before, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsServices li:not(.optionSupplements) .lblOption:before, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsAutres li:not(.optionSupplements) .lblOption:before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsInterieur li:not(.optionSupplements) .lblOption:before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsExterieur li:not(.optionSupplements) .lblOption:before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsServices li:not(.optionSupplements) .lblOption:before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsAutres li:not(.optionSupplements) .lblOption:before { display:none; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsDistances span.div_fiche_dists_elem:before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsDistances span.div_fiche_dists_elem:before {
+  content:'\25aa';
+  margin-right:5px;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus ul li > div > *, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus ul li > div > * {
+  display:inline-block;
+  text-align:center;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus ul li > div > *:last-child, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus ul li > div > *:last-child {
+  color:#00653f;
+  font-weight:600;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus ul li > div > *:last-child:before, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus ul li > div > *:last-child:before {
+  content:": ";
+  margin-left:3px;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus .div_fiche_dists_elem_img, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus .div_fiche_dists_elem_img {
+  width:35px;
+  text-align:center;
+  margin:0 10px 0 0;
+  vertical-align:middle;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus .div_fiche_dists_elem_img img, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus .div_fiche_dists_elem_img img {
+  display:block;
+  height:29px;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus .div_fiche_dists_elem_lbl, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus .div_fiche_dists_elem_val, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus .div_fiche_dists_elem_lbl, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsDistances .contentInfoPlus .div_fiche_dists_elem_val { line-height:30px; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsDistances #div_fiche_dists_legende, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsDistances #div_fiche_dists_legende { display:none; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .titre, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .titre { cursor:pointer; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .titre:hover, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .titre:hover { text-decoration:underline; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .titre:after, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .titre:after {
+  color:#00653f;
+  content:"\e910";
+  transform:rotateZ(-180deg);
+  -webkit-transform:rotateZ(-180deg);
+  transition-duration:0.2s;
+  font-size:10px;
+  font-family:'icomoon' !important;
+  speak:none;
+  font-style:normal;
+  font-weight:normal;
+  font-variant:normal;
+  text-transform:none;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:inline-block;
+  margin-left:7px;
+  line-height:21px;
+  vertical-align:top;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus {
+  height:0;
+  overflow:hidden;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li {
+  margin-bottom:15px;
+  padding-left:30px;
+  display:block;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li:after, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li:after, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li:after, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li:after {
+  content:".";
+  display:block;
+  clear:both;
+  visibility:hidden;
+  line-height:0;
+  height:0;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li:last-child, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li:last-child, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li:last-child, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li:last-child { margin:0 0 10px; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_image, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_image, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_image, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_image {
+  float:left;
+  width:100px;
+  margin:0 15px 0 0;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_image img, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_image img, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_image img, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_image img {
+  width:100%;
+  display:block;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_descs, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_descs, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_descs, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_descs {
+  overflow:hidden;
+  text-align:justify;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_descs .span_titreRubrique, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_descs .span_titreRubrique, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_descs .span_titreRubrique, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_descs .span_titreRubrique {
+  display:block;
+  color:#00653f;
+  font-weight:600;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_descs .div_rubriqueContentTxt, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_descs .div_rubriqueContentTxt, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_descs .div_rubriqueContentTxt, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_descs .div_rubriqueContentTxt {
+  padding-left:20px;
+  margin-top:10px;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_descs .div_rubriqueContentTxt .rubriqueDesc, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_descs .div_rubriqueContentTxt .rubriqueDesc, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li .divRubrique_descs .div_rubriqueContentTxt .rubriqueDesc, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li .divRubrique_descs .div_rubriqueContentTxt .rubriqueDesc {
+  padding-bottom:20px;
+  display:block;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques.open .titre:after, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien.open .titre:after, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques.open .titre:after, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien.open .titre:after {
+  transform:rotateZ(0deg);
+  -webkit-transform:rotateZ(0deg);
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques.open .contentInfoPlus, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien.open .contentInfoPlus, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques.open .contentInfoPlus, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien.open .contentInfoPlus { height:auto; }
+#div_fichesEquipements .unBlocEquipements#unBlocEquipementsRubriquesSansLien .contentInfoPlus, #unBlocLocalisation .unBlocEquipements#unBlocEquipementsRubriquesSansLien .contentInfoPlus { height:auto; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsSitesTouristiques, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsSitesTouristiques { overflow:hidden; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsSitesTouristiques #span_fiche_titre_infoTour, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsSitesTouristiques #span_fiche_titre_infoTour { display:none; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li {
+  margin:0 0 15px;
+  width:inherit;
+  padding:0;
+  background:none;
+  display:block;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li:last-child, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li:last-child { margin:0 0 10px; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .h4_nomInfoTour, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .h4_nomInfoTour {
+  font-weight:600;
+  color:#00653f;
+  margin-bottom:5px;
+  font-size:1.2em;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .image_sitetour, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .image_sitetour {
+  float:left;
+  display:block;
+  margin-right:20px;
+  width:20%;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .image_sitetour img, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .image_sitetour img {
+  width:100%;
+  display:block;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .fiche_txt_infoTourContent, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .fiche_txt_infoTourContent { overflow:hidden; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .fiche_txt_infoTourContent .divInfoTouri_activot, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .fiche_txt_infoTourContent .divInfoTouri_activot { margin-bottom:5px; }
+#div_fichesEquipements .unBlocEquipements .div_lagendaContent, #unBlocLocalisation .unBlocEquipements .div_lagendaContent { padding:0; }
+@media screen and (max-width: 700px) {
+  #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li, #div_fichesEquipements .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriques .contentInfoPlus ul li, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsRubriquesSansLien .contentInfoPlus ul li { padding-left:0; }
+}
+#div_locaguideAncre {
+  display:block;
+  text-align:right;
+  margin-top:10px;
+}
+#div_locaguideAncre a {
+  display:inline-block;
+  padding:10px 20px;
+  border:1px solid #00653f;
+  color:#00653f;
+  text-decoration:none;
+  position:relative;
+  transition-duration:0.2s;
+}
+#div_locaguideAncre a:before, #div_locaguideAncre a:after {
+  content:"";
+  position:absolute;
+  display:block;
+  top:0;
+  bottom:0;
+  width:0;
+  background:#00653f;
+  z-index:-1;
+  transition-duration:0.2s;
+}
+#div_locaguideAncre a:before { right:50%; }
+#div_locaguideAncre a:after { left:50%; }
+#div_locaguideAncre a:hover:before, #div_locaguideAncre a:hover:after { width:50%; }
+#div_locaguideAncre a:hover { color:#fff; }
+.a_vousAimerezListeComplete {
+  display:inline-block;
+  float:right;
+  padding:10px 20px;
+  border:1px solid #00653f;
+  color:#00653f;
+  text-decoration:none;
+  position:relative;
+  transition-duration:0.15s;
+  margin-right:10px;
+  border-radius:50px;
+}
+.a_vousAimerezListeComplete:hover {
+  color:#fff;
+  background:#00653f;
+}
+#div_fiche_viaFrancePlaces .div_lagendaContent ul.ul_viaFrance_listeElements li .lagenda_vignette { width:70px; }
+#div_fiche_viaFrancePlaces .div_lagendaContent ul.ul_viaFrance_listeElements li .lagenda_vignette img {
+  border:none;
+  padding:0;
+  width:70px;
+}
+#div_fiche_viaFrancePlaces .div_lagendaContent ul.ul_viaFrance_listeElements li .lagenda_detail .lagenda_theme, #div_fiche_viaFrancePlaces .div_lagendaContent ul.ul_viaFrance_listeElements li .lagenda_detail .lagenda_date { display:none; }
+#div_fiche_viaFrancePlaces .div_lagendaContent ul.ul_viaFrance_listeElements li .lagenda_detail .lagenda_localisation {
+  color:inherit;
+  font-weight:normal;
+  padding:0;
+}
+#div_fiche_viaFrancePlaces .div_lagendaContent ul.ul_viaFrance_listeElements li .lagenda_detail h3 {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#div_fiche_viaFrancePlaces .div_lagendaContent ul.ul_viaFrance_listeElements li .lagenda_detail .lagenda_bouton a {
+  color:#333;
+  padding:0;
+  background:none;
+  text-decoration:underline;
+}
+#div_fiche_viaFrancePlaces .div_lagendaContent ul.ul_viaFrance_listeElements li .lagenda_detail .lagenda_bouton a:hover { text-decoration:none; }
+#div_fiche_viaFrancePlaces .div_lagendaContent ul.ul_viaFrance_listeElements li .lagenda_detail .lagenda_accroche {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#div_fiche_viaFrancePlaces .div_plusDeViafrance { padding-top:10px; }
+#div_fiche_viaFrancePlaces .div_plusDeViafrance a {
+  color:#333;
+  text-decoration:underline;
+}
+#div_fiche_viaFrancePlaces .div_plusDeViafrance a:hover { text-decoration:none; }
+#div_fiche_viaFrancePlaces .viafranceClosed { display:none; }
+#div_fiche_viaFrancePlaces .div_viaFrance_retourListe { margin:0 0 10px; }
+#div_fiche_viaFrancePlaces .div_viaFrance_retourListe .sp_viaFrance_retourListeElements {
+  font-weight:normal;
+  background:none;
+  text-decoration:underline;
+  color:#333;
+  padding:0;
+}
+#div_fiche_viaFrancePlaces .div_viaFrance_retourListe .sp_viaFrance_retourListeElements:before { content:""; }
+#div_fiche_viaFrancePlaces .div_viaFrance_retourListe .sp_viaFrance_retourListeElements:hover { text-decoration:none; }
+@media screen and (max-width: 700px) {
+  #unBlocEquipementsViafrance { display:none; }
+  #div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus ul li {
+    display:block;
+    width:100%;
+  }
+  #div_fichesEquipements .unBlocEquipements .lblOption {
+    display:inline;
+    margin:0 5px 0 0;
+    white-space:inherit;
+  }
+  #div_fichesEquipements .unBlocEquipements .detailOptionAdulte { display:inline; }
+  #div_fichesEquipements .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .image_sitetour, #unBlocLocalisation .unBlocEquipements.unBlocEquipementsSitesTouristiques .contentInfoPlus ul li .image_sitetour { display:none; }
+}
+#unBlocLocalisation p.titre { padding-bottom:10px; }
+#unBlocLocalisation .dib_btCalculerItineraire {
+  margin:0 0 20px;
+  text-align:right;
+  display:none;
+}
+#unBlocLocalisation .dib_btCalculerItineraire a {
+  color:#535353;
+  text-decoration:underline;
+}
+#unBlocLocalisation .dib_btCalculerItineraire a:hover { text-decoration:none; }
+#unBlocLocalisation .div_itea_GMAP, #unBlocLocalisation .div_itea_map_leaf {
+  width:100% !important;
+  border-radius:15px;
+}
+#unBlocLocalisation .div_itea_GMAP iframe, #unBlocLocalisation .div_itea_map_leaf iframe { width:100% !important; }
+#unBlocLocalisation .infoLocalisation.hidden { display:none; }
+#unBlocLocalisation #div_cartoItineraire {
+  text-align:center;
+  padding:10px;
+}
+#unBlocLocalisation #div_cartoItineraire > * {
+  margin:0 0 15px;
+  display:block;
+}
+#unBlocLocalisation #div_cartoItineraire #span_lbl_adresse_departGmap {
+  font-weight:bold;
+  font-size:1.1em;
+}
+#unBlocLocalisation #div_cartoItineraire .div_adressedepartGmap {
+  width:60%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+}
+#unBlocLocalisation #div_cartoItineraire .div_adressedepartGmap .span_adressedepartGmap {
+  width:40%;
+  padding-right:10px;
+  display:inline-block;
+}
+#unBlocLocalisation #div_cartoItineraire .div_adressedepartGmap input { width:60%; }
+#unBlocLocalisation #div_cartoItineraire .div_adressedepartGmap #inpt_codePostaleGmap { width:25%; }
+#unBlocLocalisation #div_cartoItineraire #span_validerGmap {
+  display:inline;
+  margin:0;
+  cursor:pointer;
+  text-decoration:underline;
+  font-weight:bold;
+  font-size:1.1em;
+}
+#unBlocLocalisation #div_cartoItineraire #span_validerGmap:hover { text-decoration:none; }
+@media screen and (max-width: 700px) {
+  .dib_btCalculerItineraire { display:none; }
+}
+.fiche_moyenPaiement, #div_fiche_moyenPaiement { overflow:hidden; }
+.fiche_moyenPaiement li, #div_fiche_moyenPaiement li {
+  float:left;
+  margin:0 5px 0 0;
+}
+.fiche_moyenPaiement img, #div_fiche_moyenPaiement img {
+  display:inline-block;
+  height:16px;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+.fiche_moyenPaiement img#img_fiche_chqvac, #div_fiche_moyenPaiement img#img_fiche_chqvac {
+  background-position:0 -183px;
+  width:22px;
+}
+.fiche_moyenPaiement img#img_fiche_chqkdo, #div_fiche_moyenPaiement img#img_fiche_chqkdo {
+  background-position:-32px -183px;
+  width:40px;
+}
+.fiche_moyenPaiement img#img_fiche_cb, #div_fiche_moyenPaiement img#img_fiche_cb {
+  background-position:-82px -183px;
+  width:84px;
+}
+.fiche_moyenPaiement #sp_lbl_paiement_accepte, #div_fiche_moyenPaiement #sp_lbl_paiement_accepte {
+  margin:0 15px 0 0;
+  float:left;
+  line-height:16px;
+}
+#div_titrePromos {
+  padding:20px 0 0 0;
+  line-height:22px;
+}
+#div_titrePromos #span_fiche_titre_promo {
+  background-position:left -404px;
+  padding:0 0 0 30px;
+  line-height:22px;
+  height:22px;
+  display:inline-block;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_lst_promotions {
+  padding:20px 0 0 0;
+  margin:0 0 20px;
+}
+#div_lst_promotions #span_fiche_titre_promo {
+  margin:0 0 10px;
+  background-position:left -404px;
+  padding:0 0 0 30px;
+  line-height:22px;
+  height:22px;
+  display:block;
+  font-weight:bold;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_lst_promotions #span_fiche_titre_promo[data-nbpromos="1"] {
+  float:left;
+  margin-right:3px;
+  margin-bottom:0;
+}
+#div_lst_promotions #span_fiche_titre_promo:after {
+  content:':';
+  margin-left:3px;
+}
+#list_fiche_promo[data-nbpromos="1"] .titre_promo {
+  line-height:22px;
+  height:22px;
+}
+#list_fiche_promo[data-nbpromos="1"] .desc_promo { clear:both; }
+#list_fiche_promo[data-nbpromos="1"] > li { overflow:visible; }
+#list_fiche_promo > li {
+  margin:0 0 15px;
+  overflow:hidden;
+}
+#list_fiche_promo > li:last-child { margin:0; }
+#list_fiche_promo .titre_promo { display:inline-block; }
+#list_fiche_promo .a_promoEnSavoirPlus {
+  color:#333;
+  text-decoration:underline;
+  margin-left:3px;
+}
+#list_fiche_promo .a_promoEnSavoirPlus:hover { text-decoration:none; }
+#list_fiche_promo .desc_promo {
+  padding:5px 0 0 0;
+  margin:0 0 5px;
+  display:block;
+}
+#list_fiche_promo .div_promo_reducs, #list_fiche_promo .div_promo_details { padding-left:0; }
+#list_fiche_promo .div_promo_reducs ul, #list_fiche_promo .div_promo_details ul {
+  list-style-type:square;
+  padding:0 0 0 15px;
+}
+#list_fiche_promo .div_promo_reducs ul > li, #list_fiche_promo .div_promo_details ul > li { margin:0 0 3px; }
+#list_fiche_promo .sp_lblInfosPromo {
+  display:block;
+  float:right;
+  text-decoration:underline;
+  color:#333;
+}
+#list_fiche_promo .sp_lblInfosPromo:hover { text-decoration:none; }
+#list_fiche_promo .closed .desc_promo, #list_fiche_promo .closed .div_promo_reducs, #list_fiche_promo .closed .div_promo_details, #list_fiche_promo .closed .sp_lblInfosPromo { display:none; }
+#div_ficheDetailPrix { padding:20px 0 0; }
+#div_ficheDetailPrix > a {
+  color:#4bab77;
+  text-decoration:none;
+  position:relative;
+  font-weight:600;
+}
+#div_ficheDetailPrix > a:hover { text-decoration:underline; }
+#div_ficheDetailPrix.closed > a:after { background-position:right -319px; }
+#div_ficheDetailPrix.closed .content { display:none; }
+#div_ficheDetailPrix .div_lpcLpcnpContent {
+  padding:20px 0 0 0;
+  text-align:justify;
+}
+#div_ficheDetailPrix .div_lpcLpcnpContent .titreLpcLpcnp {
+  font-weight:bold;
+  padding:0 0 5px;
+}
+#div_ficheDetailPrix #div_dateValiditeTarifs, #div_ficheDetailPrix .infosCalulTarifChambre, #div_ficheDetailPrix .div_ficheCaution { padding:20px 0 0; }
+#div_ficheDetailPrix #div_tarifsSpe { padding-top:20px; }
+#div_ficheDetailPrix #div_tarifsSpe h2 {
+  font-weight:bold;
+  font-size:1em;
+  margin:0 0 5px;
+}
+#div_ficheDetailPrix #div_tarifsSpe ul li {
+  display:inline-block;
+  width:50%;
+  line-height:18px;
+  vertical-align:bottom;
+}
+#div_ficheDetailPrix #div_tarifsSpe ul li p {
+  display:inline;
+  font-weight:normal;
+}
+#div_ficheDetailPrix #div_tarifsSpe ul li .tdTarifsSpeLibelle {
+  margin:0 5px 0 0;
+  color:#333;
+}
+#div_ficheDetailPrix #div_tarifsSpe ul li p { color:#00653f; }
+.div_infoPropFede {
+  display:table;
+  width:100%;
+}
+.div_infoPropFede .div_fichePhotoProp {
+  display:table-cell;
+  width:110px;
+  padding:0 15px 0 0;
+}
+.div_infoPropFede .div_fichePhotoProp img {
+  display:block;
+  width:100%;
+  margin:0;
+  border-radius:15px;
+}
+.div_infoPropFede .div_ficheContentProprioInfos.avecPhoto {
+  padding:0 0 0 15px;
+  border-left:1px #4bab77 solid;
+  display:table-cell;
+  vertical-align:top;
+}
+.div_infoPropFede #div_infoPropFedeContentNom {
+  font-weight:bold;
+  font-size:1.2em;
+  color:#00653f;
+}
+.div_infoPropFede .div_infoPropFedeContentLinkPortrait { padding:15px 0 0; }
+.div_infoPropFede .div_infoPropFedeContentLinkPortrait a {
+  color:#333;
+  text-decoration:underline;
+}
+.div_infoPropFede .div_infoPropFedeContentLinkPortrait a:hover { text-decoration:none; }
+.div_infoPropFede .div_infoPropDescProp {
+  text-align:justify;
+  padding:15px 0 0;
+  font-size:1.1em;
+}
+.div_infoPropFede .div_infoPropDescProp p {
+  padding:0;
+  margin:0;
+}
+.div_infoPropFede .div_infoPropFedeContentContacter {
+  padding:15px 0 0;
+  font-size:1.1em;
+  color:#4bab77;
+  font-weight:600;
+}
+.div_infoPropFede .div_infoPropFedeContentContacter a, .div_infoPropFede .div_infoPropFedeContentContacter .sp_telPropByClick_lbl {
+  cursor:pointer;
+  color:#4bab77;
+  text-decoration:none;
+  font-weight:600;
+}
+.div_infoPropFede .div_infoPropFedeContentContacter a:hover, .div_infoPropFede .div_infoPropFedeContentContacter .sp_telPropByClick_lbl:hover { text-decoration:underline; }
+.div_infoPropFede .div_infoPropFedeContentContacter .sp_infoPropContactOu, .div_infoPropFede .div_infoPropFedeContentContacter .lblOu {
+  margin:0 5px;
+  color:#333;
+  font-weight:400;
+}
+.div_infoPropFede .div_infoPropFedeContentLangueEtSiteWeb {
+  padding:15px 0 0 0;
+  font-size:1.1em;
+}
+.div_infoPropFede .span_listeLanguesProp {
+  font-weight:700;
+  color:#00653f;
+}
+.div_infoPropFede #div_infoPropFedeContentSiteWeb { padding-top:5px; }
+.div_infoPropFede #div_infoPropFedeContentSiteWeb a {
+  color:#333;
+  text-decoration:none;
+  margin:0 10px 0 0;
+}
+.div_infoPropFede #div_infoPropFedeContentSiteWeb a:hover { text-decoration:underline; }
+#iframe_youtubeVideo {
+  margin-left:125px;
+  margin-top:20px;
+  width:320px;
+  height:200px;
+  border-radius:15px;
+}
+@media screen and (max-width: 700px) {
+  .div_infoPropFede {
+    display:inherit;
+    padding:0 20px 0 35px;
+  }
+  .div_infoPropFede .div_fichePhotoProp {
+    display:block;
+    padding:0;
+    margin:0 0 10px;
+  }
+  .div_infoPropFede .div_fichePhotoProp img { float:none; }
+  .div_infoPropFede .div_ficheContentProprioInfos.avecPhoto {
+    border-left:none;
+    padding:0;
+    display:inherit;
+  }
+  .div_infoPropFede #div_infoPropFedeContentSiteWeb, .div_infoPropFede .div_infoPropFedeContentLinkPortrait { display:none; }
+  .div_infoPropFede .div_infoPropFedeContentContacter {
+    padding:15px 0 0;
+    font-weight:bold;
+    color:#ff5f32;
+  }
+  .div_infoPropFede .div_infoPropFedeContentContacter a, .div_infoPropFede .div_infoPropFedeContentContacter .sp_telPropByClick_lbl {
+    cursor:pointer;
+    color:#ff5f32;
+    text-decoration:underline;
+  }
+  .div_infoPropFede .div_infoPropFedeContentContacter a:hover, .div_infoPropFede .div_infoPropFedeContentContacter .sp_telPropByClick_lbl:hover { text-decoration:none; }
+  .div_infoPropFede .div_infoPropFedeContentContacter .sp_infoPropContactOu {
+    display:block;
+    visibility:hidden;
+  }
+}
+#colonneDroiteInfosResa { padding-bottom:20px; }
+#div_numeroSpecialGroupe { padding-top:10px; }
+#div_numeroSpecialGroupe img {
+  width:100%;
+  height:auto;
+}
+@media screen and (max-width: 700px) {
+  #div_numeroSpecialGroupe { display:none; }
+}
+#div_ficheBlocResaPopin { margin-bottom:30px; }
+#div_ficheBlocResa .calendrier_resa {
+  padding:20px;
+  padding-bottom:30px;
+  background:#4bab77;
+  position:relative;
+  border-radius:15px 15px 0 0;
+  margin-top:10px;
+}
+#div_ficheBlocResa .calendrier_resa:before {
+  content:'Votre séjour';
+  font-size:1.8em;
+  color:#fff;
+  margin-bottom:30px;
+  font-weight:300;
+  display:block;
+}
+#div_ficheBlocResa .calendrier_resa .div_moteurDatesObligatoires { display:block; }
+#div_ficheBlocResa .calendrier_resa .div_moteurDatesObligatoires:after {
+  content:".";
+  display:block;
+  clear:both;
+  visibility:hidden;
+  line-height:0;
+  height:0;
+}
+#div_ficheBlocResa .calendrier_resa .div_moteurDatesObligatoires .div_moteurDatesDebFin {
+  float:left;
+  width:48%;
+}
+#div_ficheBlocResa .calendrier_resa .div_moteurDatesObligatoires .div_moteurDatesDebFin label { display:none; }
+#div_ficheBlocResa .calendrier_resa .div_moteurDatesObligatoires .div_moteurDatesDebFin.div_moteurDatesFin { float:right; }
+#div_ficheBlocResa .calendrier_resa .div_moteurDatesObligatoires input {
+  width:100%;
+  height:38px;
+  line-height:38px;
+  padding:0px 40px 0px 10px;
+  border:1px #fff solid;
+  color:#fff;
+  font-size:1.1em;
+  appearance:none;
+  -webkit-appearance:none;
+  cursor:pointer;
+  border-radius:50px;
+  background:url("/img/css/calendrierPourFiche.svg");
+  background-position:right -1px center;
+  background-size:38px 38px;
+  background-repeat:no-repeat;
+  position:relative;
+}
+#div_ficheBlocResa .calendrier_resa .div_moteurDatesObligatoires input::placeholder { color:#fff; }
+#div_ficheBlocResa .div_ficheBlocResaInfoTariEtBtn {
+  padding:20px 10px;
+  box-shadow:0 0 15px -5px rgba(26,26,26,0.5);
+  border-radius:0 0 15px 15px;
+  padding-bottom:30px;
+  background:#fff;
+}
+#div_ficheBlocResa .div_calendDateDebFin {
+  position:absolute;
+  top:125px;
+  background:#fff;
+  padding:5px 5px 5px;
+  z-index:100;
+  box-shadow:0 0 15px -5px rgba(26,26,26,0.5);
+  -webkit-box-shadow:0 0 15px -5px rgba(26,26,26,0.5);
+  border-radius:15px;
+  left:20px;
+  right:20px;
+}
+#div_ficheBlocResa .div_calendDateDebFin .sp_fermerCal { display:none; }
+#div_ficheBlocResa .div_calendDateDebFin .sp_titreCal {
+  display:block;
+  margin:0 0 5px;
+  color:#b4b4b4;
+  text-align:center;
+  display:none;
+}
+#div_ficheBlocResa .ui-datepicker td { width:14.285714%; }
+#div_ficheBlocResa .ui-state-disabled, #div_ficheBlocResa .ui-widget-content .ui-state-disabled, #div_ficheBlocResa .ui-widget-header .ui-state-disabled { opacity:1; }
+#div_ficheBlocResa .ui-datepicker .ui-widget-header, #div_ficheBlocResa .ui-widget-content {
+  background:none;
+  color:#333;
+  border:none;
+  padding:0;
+}
+#div_ficheBlocResa .ui-widget-content { width:100%; }
+#div_ficheBlocResa .ui-datepicker .ui-widget-header { margin:0 0 5px; }
+#div_ficheBlocResa .ui-datepicker .ui-widget-header .ui-icon {
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_ficheBlocResa .ui-datepicker .ui-widget-header .ui-datepicker-prev, #div_ficheBlocResa .ui-datepicker .ui-widget-header .ui-datepicker-next { top:4px; }
+#div_ficheBlocResa .ui-datepicker .ui-widget-header .ui-datepicker-prev { left:10px; }
+#div_ficheBlocResa .ui-datepicker .ui-widget-header .ui-datepicker-prev .ui-icon { background-position:left -438px; }
+#div_ficheBlocResa .ui-datepicker .ui-widget-header .ui-datepicker-next { right:10px; }
+#div_ficheBlocResa .ui-datepicker .ui-widget-header .ui-datepicker-next .ui-icon { background-position:right -438px; }
+#div_ficheBlocResa .ui-datepicker .ui-datepicker-title {
+  margin:0px 3.3em;
+  font-size:1.1em;
+  font-weight:normal;
+}
+#div_ficheBlocResa .ui-datepicker .ui-datepicker-calendar th {
+  color:#666;
+  padding:10px 0 19px;
+  font-size:0.8em;
+  font-weight:normal;
+}
+#div_ficheBlocResa .ui-datepicker td span, #div_ficheBlocResa .ui-datepicker td a { padding:9px 0; }
+#div_ficheBlocResa .ui-datepicker .ui-datepicker-calendar .ui-state-default {
+  border-radius:0;
+  border:none;
+}
+#div_ficheBlocResa .div_roueDatepicker {
+  text-align:center;
+  padding:10px;
+}
+#div_ficheBlocResa .div_roueDatepicker img { height:20px; }
+#div_ficheBlocResa .span_date_maj_planning {
+  display:block;
+  padding:10px 0 15px;
+  font-size:0.8em;
+  color:#333;
+  font-style:italic;
+}
+#div_ficheBlocResa .ul_lst_dispoLegende li {
+  display:block;
+  vertical-align:top;
+  width:100%;
+  height:25px;
+}
+#div_ficheBlocResa .ul_lst_dispoLegende li .sp_lst_dispoLegendeIllustre {
+  margin-right:8px;
+  width:30px;
+  height:25px;
+  color:#fff;
+  border:1px solid #fff;
+  text-align:center;
+  line-height:25px;
+}
+#div_ficheBlocResa .ul_lst_dispoLegende li span {
+  float:left;
+  color:#333;
+}
+#div_ficheBlocResa .ul_lst_dispoLegende li span:last-child { line-height:25px; }
+#div_ficheBlocResa #div_msgErreurRetourVerifDates, #div_ficheBlocResa #div_msgInfoDemandeParMail {
+  margin:0 0 20px;
+  padding:0 5px;
+  text-align:center;
+  font-size:1em;
+}
+#div_ficheBlocResa .tarifFicheApartirDe {
+  font-size:1.1em;
+  text-align:center;
+  padding-left:10px;
+  padding-right:10px;
+  padding-bottom:20px;
+  margin-bottom:0;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_choixTypeSejourPourPrix { display:none; }
+#div_ficheBlocResa .tarifFicheApartirDe .sp_tarifMinTypeSejour, #div_ficheBlocResa .tarifFicheApartirDe .prixFourchette, #div_ficheBlocResa .tarifFicheApartirDe .prixListeNormal {
+  font-size:1.6em;
+  font-weight:bold;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocation {
+  display:table;
+  width:100%;
+  font-weight:normal;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocation > span {
+  display:table-cell;
+  border-bottom:1px #4bab77 solid;
+  padding:5px 0;
+  vertical-align:bottom;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocation > span:first-child {
+  width:70%;
+  text-align:left;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocation > span:last-child {
+  width:30%;
+  text-align:right;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocation:last-child > span { border:none; }
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationAvecPromo .sp_prixAvantSejour { width:60% !important; }
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationAvecPromo .sp_prixLocationAvantPromo, #div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationAvecPromo .sp_prixLocation {
+  width:20% !important;
+  text-align:right;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationAvecPromo .sp_prixLocationAvantPromo { text-decoration:line-through; }
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationTotal {
+  font-weight:bold;
+  color:#00653f;
+  font-size:1.4em;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationTotal > span {
+  vertical-align:bottom;
+  border-bottom:none;
+  padding-bottom:2px;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationTotal > span:first-child, #div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationTotal > span:last-child { width:50%; }
+#div_ficheBlocResa .tarifFicheApartirDe .div_msgHorsFraisDossier {
+  font-size:0.6em;
+  color:#333;
+  border:none;
+  display:block;
+  text-align:left;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_msgHorsFraisDossier > span {
+  display:inline;
+  text-align:left;
+}
+#div_ficheBlocResa .div_btnResa { text-align:center; }
+#div_ficheBlocResa .div_btnResa a {
+  display:inline-block;
+  padding:10px 30px;
+  color:#fff;
+  text-decoration:none;
+  font-size:1.3em;
+  text-align:center;
+  font-weight:400;
+  background:#ff5f32;
+  border:1px solid #ff5f32;
+  border-radius:50px;
+  transition-duration:0.15s;
+}
+#div_ficheBlocResa .div_btnResa a .span_boutonResa, #div_ficheBlocResa .div_btnResa a .span_boutonResa_dispogite { display:inline-block; }
+#div_ficheBlocResa .div_btnResa a .span_boutonResa span, #div_ficheBlocResa .div_btnResa a .span_boutonResa_dispogite span { display:inline-block; }
+#div_ficheBlocResa .div_btnResa a .span_boutonResa span:first-child, #div_ficheBlocResa .div_btnResa a .span_boutonResa_dispogite span:first-child { margin-right:4px; }
+#div_ficheBlocResa .div_btnResa a .span_boutonResa span:last-child, #div_ficheBlocResa .div_btnResa a .span_boutonResa_dispogite span:last-child { text-transform:lowercase; }
+#div_ficheBlocResa .div_btnResa a.demandeDeResa { padding-top:7px; }
+#div_ficheBlocResa .div_btnResa a.demandeDeResa .span_boutonResa, #div_ficheBlocResa .div_btnResa a.demandeDeResa .span_boutonResa_dispogite { padding-bottom:0; }
+#div_ficheBlocResa .div_btnResa a.demandeDeResa .span_boutonResa > span:last-child, #div_ficheBlocResa .div_btnResa a.demandeDeResa .span_boutonResa_dispogite > span:last-child { text-transform:lowercase; }
+#div_ficheBlocResa .div_btnResa a.a_btn_cont_prop, #div_ficheBlocResa .div_btnResa a.a_btn_cont_centrale { padding:10px; }
+#div_ficheBlocResa .div_btnResa a.a_btn_cont_prop > span:last-child, #div_ficheBlocResa .div_btnResa a.a_btn_cont_centrale > span:last-child { text-transform:lowercase; }
+#div_ficheBlocResa .div_btnResa a span { display:block; }
+#div_ficheBlocResa .div_btnResa a:hover {
+  background:#fff;
+  color:#ff5f32;
+}
+#div_ficheBlocResa .div_btAfficheTelephoneProp {
+  padding-top:10px;
+  text-align:center;
+}
+#div_ficheBlocResa .div_btAfficheTelephoneProp .sp_telPropByClick {
+  display:inline-block;
+  padding:0 0 0 25px;
+  background-position:left -357px;
+  height:27px;
+  line-height:27px;
+  font-size:1.1em;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_ficheBlocResa .div_btAfficheTelephoneProp .sp_telPropByClick .lblOu {
+  font-style:italic;
+  font-weight:bold;
+  font-size:0.8em;
+  display:block;
+  line-height:1em;
+}
+#div_ficheBlocResa .div_btAfficheTelephoneProp .sp_telPropByClick .sp_telPropByClick_lbl {
+  text-decoration:underline;
+  cursor:pointer;
+}
+#div_ficheBlocResa .div_btAfficheTelephoneProp .sp_telPropByClick .sp_telPropByClick_lbl:hover { text-decoration:none; }
+#div_ficheBlocResa #div_fiche_moyenPaiementResa {
+  padding:10px 20px;
+  overflow:visible;
+}
+#div_ficheBlocResa #div_fiche_moyenPaiementResa #sp_lbl_paiement_accepte {
+  display:block;
+  float:none;
+  margin-right:0;
+  margin-bottom:5px;
+  font-size:0.9em;
+}
+#div_ficheBlocResa #div_fiche_moyenPaiementResa ul {
+  vertical-align:top;
+  display:inline-block;
+}
+#div_ficheBlocResa #div_fiche_moyenPaiementResa ul li {
+  float:none;
+  display:inline-block;
+  vertical-align:top;
+}
+#div_ficheBlocResa #div_fiche_moyenPaiementResa .infobulle {
+  display:inline-block;
+  vertical-align:top;
+  position:relative;
+}
+#div_ficheBlocResa #div_fiche_moyenPaiementResa .infobulle:before {
+  content:"?";
+  border:1px solid #00653f;
+  color:#00653f;
+  display:inline-block;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  text-align:center;
+  margin-left:5px;
+}
+#div_ficheBlocResa #div_fiche_moyenPaiementResa .infobulle > div {
+  position:absolute;
+  display:none;
+  box-shadow:0px 0px 5px 0px #999;
+  background-color:#fff;
+  padding:10px;
+  width:250px;
+  left:50%;
+  transform:translate(-50%,0);
+  bottom:150%;
+  z-index:50;
+}
+#div_ficheBlocResa #div_fiche_moyenPaiementResa .infobulle:hover > div { display:block; }
+@media screen and (min-width: 701px) {
+  #div_ficheBlocResa .div_btnResa .popin { display:block; }
+  #div_ficheBlocResa .div_btnResa .nouvellePage { display:none; }
+  .a_fermeBlocResaResponsive, .bt_accesResaResponsive { display:none !important; }
+}
+@media screen and (max-width: 700px) {
+  #colonneDroiteInfosResa {
+    padding:0;
+    background:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    overflow:auto;
+    z-index:100000;
+    display:none;
+  }
+  #div_ficheBlocResa {
+    padding-top:0;
+    margin-bottom:10px;
+  }
+  #div_ficheBlocResa .div_ficheBlocResaContent {
+    border-top:0;
+    border-left:0;
+    border-right:0;
+  }
+  #div_ficheBlocResa .calendrier_resa, #div_ficheBlocResa .div_ficheBlocResaInfoTariEtBtn {
+    width:90%;
+    max-width:376px;
+    margin:0 auto;
+  }
+  #div_ficheBlocResa .calendrier_resa { margin-top:20px; }
+  #div_ficheBlocResa .div_btnResa .popin { display:none; }
+  #div_ficheBlocResa .div_btnResa .nouvellePage { display:block; }
+  .a_fermeBlocResaResponsive {
+    display:block;
+    padding:5px 12px;
+    font-size:1.6em;
+    text-decoration:none;
+    color:#535353;
+    background:url("../../img/css/fiche/ferme-resa.png") no-repeat right center;
+  }
+  .bt_accesResaResponsive {
+    display:block;
+    position:fixed;
+    z-index:107;
+    bottom:10px;
+    right:10px;
+    left:10px;
+  }
+  .bt_accesResaResponsive a {
+    display:block;
+    padding:5px;
+    color:#fff;
+    text-decoration:none;
+    font-size:1.3em;
+    text-align:center;
+    text-decoration:none;
+    border-radius:50px;
+  }
+}
+.div_contactsCentrale {
+  padding:20px;
+  text-align:center;
+  border-radius:15px;
+  box-shadow:0 0 15px -5px rgba(26,26,26,0.5);
+  margin-bottom:30px;
+  background:#fff;
+}
+.div_contactsCentrale #divContact_libelleTitre { display:none; }
+.div_contactsCentrale .titre {
+  font-size:1em;
+  padding:0 0 5px;
+}
+.div_contactsCentrale #divContact_information {
+  color:#333;
+  font-weight:bold;
+  font-size:1.4em;
+}
+.div_contactsCentrale #divContact_information a {
+  color:#333;
+  text-decoration:none;
+}
+.div_contactsCentrale #divContact_information > span { display:block; }
+.div_contactsCentrale #divContact_information .lbl_infoCentrale { display:none; }
+.div_contactsCentrale #divContact_information .sp_libApreNumTel {
+  display:block;
+  color:#333;
+  font-size:0.65em;
+  font-weight:normal;
+}
+.div_contactsCentrale #divContact_information #spanContactTelEtranger {
+  font-size:0.7em;
+  padding-top:5px;
+}
+.div_contactsCentrale #divContact_information #spanContactTelEtranger .lbl_infoCentrale { display:inline; }
+.div_contactsCentrale .div_contentBoutonContact { padding:10px 0 0; }
+.div_contactsCentrale .div_contentBoutonContact .popin {
+  display:inline;
+  text-decoration:none;
+  color:#4bab77;
+  font-weight:600;
+}
+.div_contactsCentrale .div_contentBoutonContact .popin:hover { text-decoration:underline; }
+.div_contactsCentrale .div_contentBoutonContact .nouvellePage { display:none; }
+@media screen and (max-width: 700px) {
+  .div_contactsCentrale {
+    border:none;
+    width:90%;
+    max-width:376px;
+    margin:0 auto;
+    padding-bottom:20px;
+    margin-bottom:20px;
+  }
+  .div_contactsCentrale .div_contentBoutonContact .popin { display:none; }
+  .div_contactsCentrale .div_contentBoutonContact .nouvellePage { display:inline; }
+  .div_contactsCentrale a:hover { text-decoration:underline; }
+}
+.div_contactsProp a {
+  padding:10px;
+  border:1px #00653f solid;
+  text-align:center;
+  display:block;
+  margin:0 0 20px;
+  border-radius:50px;
+  color:#00653f;
+  background:#fff;
+  text-decoration:none;
+  transition-duration:0.15s;
+}
+.div_contactsProp a:hover {
+  background:#00653f;
+  color:#fff;
+}
+.div_btAfficheTelephonePropResponsive, .div_btAfficheInfosProprio { display:none; }
+@media screen and (max-width: 700px) {
+  .div_contactsProp { display:none; }
+  .div_btAfficheTelephonePropResponsive, .div_btAfficheInfosProprio {
+    display:block;
+    margin:0 0 20px;
+    text-align:center;
+  }
+  .div_btAfficheTelephonePropResponsive .sp_telPropByClick_lbl, .div_btAfficheInfosProprio .sp_telPropByClick_lbl { text-decoration:underline; }
+  .div_btAfficheTelephonePropResponsive a, .div_btAfficheInfosProprio a {
+    text-decoration:underline;
+    color:#333;
+  }
+}
+.div_avisClientContent { padding-left:20px; }
+.div_avisClientContent .ul_avisRecapNotes {
+  float:right;
+  margin:0 0 30px;
+  text-align:right;
+}
+.div_avisClientContent .ul_avisRecapNotes span {
+  margin:0 5px 0 0;
+  position:relative;
+  bottom:3px;
+}
+.div_avisClientContent .ul_avisRecapNotes li.filtrable { cursor:pointer; }
+.div_avisClientContent .ul_avisRecapNotes li.filtrable span { text-decoration:underline; }
+.div_avisClientContent .ul_avisRecapNotes li.filtrable:hover span { text-decoration:none; }
+.div_avisClientContent .ul_avisRecapNotes img { height:18px; }
+.div_avisClientContent .div_recapAvisLibelle {
+  float:left;
+  padding:30px 0;
+}
+.div_avisClientContent .div_recapAvisLibelle .sp_recapAvisLblNote {
+  font-size:1.4em;
+  float:left;
+  display:block;
+  height:25px;
+  padding:0 10px 0 0;
+  position:relative;
+  bottom:2px;
+}
+.div_avisClientContent .div_recapAvisLibelle .sp_recapAvisLblNote:after, .div_avisClientContent .div_recapAvisLibelle .sp_recapAvisLblNote:before { content:'"'; }
+.div_avisClientContent .div_recapAvisLibelle .sp_recapAvisLblBaseSur {
+  display:block;
+  overflow:hidden;
+  width:95px;
+  text-align:center;
+  padding:3px 0 0;
+  text-decoration:underline;
+  font-size:0.8em;
+  cursor:pointer;
+}
+.div_avisClientContent .div_recapAvisLibelle .sp_recapAvisLblBaseSur:hover { text-decoration:none; }
+.div_avisClientContent .div_recapAvisLibelle .sp_recapAvisNoteMoyenne, .div_avisClientContent .div_recapAvisLibelle .avis_noteMaxi {
+  font-size:1.3em;
+  margin-left:5px;
+}
+.div_avisClientContent .div_recapAvisLibelle img { height:18px; }
+.div_avisClientContent.sansNoteGlobale .div_recapAvisLibelle { padding-top:0; }
+.div_avisClientContent.sansNoteGlobale .div_recapAvisLibelle .sp_recapAvisLblBaseSur {
+  padding-left:25px;
+  padding-top:0;
+  font-size:1.2em;
+  background-position:left -683px;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+.div_avisClientContent .div_avisPhraseRecapNb {
+  margin:0 0 30px;
+  clear:both;
+}
+.div_avisClientContent .div_avisPhraseRecapNb a { color:#333; }
+.div_avisClientContent .div_avisPhraseRecapNb a:hover { text-decoration:none; }
+.div_avisClientContent .div_avisPhraseRecapNb .p_phraseRecapNote:after {
+  content:">";
+  margin:0 2px 0 4px;
+}
+.div_avisClientContent .div_avisClientDetail {
+  margin:0 0 60px;
+  clear:both;
+}
+.div_avisClientContent .infosClientEtDetailAvis {
+  display:table;
+  width:100%;
+}
+.div_avisClientContent .infosClientEtDetailAvis > div {
+  display:table-cell;
+  vertical-align:top;
+}
+.div_avisClientContent .infosClientEtDetailAvis .infosClient {
+  width:25%;
+  min-width:180px;
+  padding:0 15px 0 0;
+  border-right:1px #4bab77 solid;
+  text-align:center;
+}
+.div_avisClientContent .infosClientEtDetailAvis .infosClient .avatar { margin:0 0 5px; }
+.div_avisClientContent .infosClientEtDetailAvis .infosClient .avatar img { width:60px; }
+.div_avisClientContent .infosClientEtDetailAvis .infosClient .pseudo { font-weight:bold; }
+.div_avisClientContent .infosClientEtDetailAvis .infosClient .typeSejour { padding:0; }
+.div_avisClientContent .infosClientEtDetailAvis .infosClient .noteGlabel .sp_noteGlobale {
+  display:block;
+  margin:0 0 3px;
+}
+.div_avisClientContent .infosClientEtDetailAvis .infosClient .noteGlabel img { height:15px; }
+.div_avisClientContent .infosClientEtDetailAvis .infosClient .datesSejourAu { display:block; }
+.div_avisClientContent .infosClientEtDetailAvis .detailAvis {
+  width:65%;
+  padding:0 0 0 15px;
+}
+.div_avisClientContent .infosClientEtDetailAvis .detailAvis .dateDepos {
+  float:right;
+  font-weight:bold;
+  padding:0;
+  font-size:0.9em;
+  margin:0 0 0 10px;
+  line-height:18px;
+}
+.div_avisClientContent .infosClientEtDetailAvis .detailAvis .titre {
+  font-weight:bold;
+  font-size:1.1em;
+  padding:0;
+}
+.div_avisClientContent .infosClientEtDetailAvis .detailAvis .titre:first-letter { text-transform:uppercase; }
+.div_avisClientContent .infosClientEtDetailAvis .detailAvis .description {
+  padding:2px 0 0;
+  margin:0 0 10px;
+  font-size:1.1em;
+  text-align:justify;
+  clear:both;
+}
+.div_avisClientContent .infosClientEtDetailAvis .detailAvis .sp_descriptionAvis_afficheSuite { display:block; }
+.div_avisClientContent .infosClientEtDetailAvis .detailAvis .descriptionAvis_afficheSuite {
+  color:#333;
+  text-decoration:underline;
+}
+.div_avisClientContent .infosClientEtDetailAvis .detailAvis .descriptionAvis_afficheSuite:hover { text-decoration:none; }
+.div_avisClientContent .infosClientEtDetailAvis .detailAvis .p_recommandation {
+  padding:0;
+  margin:0 0 10px;
+  font-weight:normal;
+  font-style:italic;
+  clear:both;
+}
+.div_avisClientContent .detailDesNotes {
+  overflow:hidden;
+  padding:10px 10px 5px;
+  clear:both;
+}
+.div_avisClientContent .detailDesNotes .div_note {
+  display:table;
+  float:left;
+  width:50%;
+  margin:0 0 5px;
+}
+.div_avisClientContent .detailDesNotes .div_note > span {
+  display:table-cell;
+  vertical-align:middle;
+}
+.div_avisClientContent .detailDesNotes .div_note .sp_libelleQuest { width:60%; }
+.div_avisClientContent .div_afficheAvisSuppl { text-align:right; }
+.div_avisClientContent .div_afficheAvisSuppl button {
+  background:none;
+  border:none;
+  text-decoration:none;
+  color:#00653f;
+  cursor:pointer;
+  font-size:1em;
+  font-weight:600;
+  border:1px solid #00653f;
+  border-radius:50px;
+  padding:10px 20px;
+  transition-duration:0.15s;
+}
+.div_avisClientContent .div_afficheAvisSuppl button:hover {
+  color:#fff;
+  background:#00653f;
+}
+.div_avisClientContent .droitsDeReponses { padding:15px 0 0 31%; }
+.div_avisClientContent .droitsDeReponses .unDroitReponse {
+  background:#fff;
+  border:1px #959595 solid;
+  padding:10px;
+  position:relative;
+  text-align:justify;
+  margin-top:5px;
+  border-radius:15px;
+}
+.div_avisClientContent .droitsDeReponses .unDroitReponse:before {
+  content:"";
+  border-color:#959595 transparent;
+  border-style:solid;
+  display:block;
+  border-width:0px 14px 14px;
+  left:15px;
+  top:-14px;
+  position:absolute;
+  width:0px;
+}
+.div_avisClientContent .droitsDeReponses .unDroitReponse:after {
+  content:"";
+  border-color:#fff transparent;
+  border-style:solid;
+  display:block;
+  border-width:0px 13px 13px;
+  left:16px;
+  top:-12px;
+  position:absolute;
+  width:0px;
+}
+.div_avisClientContent .droitsDeReponses .unDroitReponse p { padding:0 0 5px; }
+.div_avisClientContent .droitsDeReponses .unDroitReponse p:last-child { padding:0; }
+.div_avisClientContent .droitsDeReponses .unDroitReponse .p_lblReponse {
+  font-weight:normal;
+  text-align:right;
+}
+.div_avisClientContent .droitsDeReponses .unDroitReponse .reponseProprio { font-style:italic; }
+@media screen and (max-width: 700px) {
+  .div_avisClientContent { padding:0 15px 0 15px; }
+  .div_avisClientContent .div_recapAvisLibelle {
+    padding:0;
+    text-align:center;
+    margin:0 0 30px;
+  }
+  .div_avisClientContent .div_recapAvisLibelle .sp_recapAvisLblNote {
+    display:block;
+    margin:0 0 3px;
+    padding:0;
+  }
+  .div_avisClientContent .div_recapAvisLibelle .sp_recapAvisLblBaseSur { pading-left:0 !important; }
+  .div_avisClientContent .div_recapAvisLibelle .sp_recapAvisNoteMoyenne, .div_avisClientContent .div_recapAvisLibelle .avis_noteMaxi {
+    font-size:1.3em;
+    margin-left:5px;
+  }
+  .div_avisClientContent .div_recapAvisLibelle img { height:17px; }
+  .div_avisClientContent .div_avisClientDetail { margin-bottom:30px; }
+  .div_avisClientContent .infosClientEtDetailAvis {
+    display:inherit;
+    position:relative;
+    padding:50px 0 0;
+  }
+  .div_avisClientContent .infosClientEtDetailAvis > div { display:block; }
+  .div_avisClientContent .infosClientEtDetailAvis .infosClient {
+    width:inherit;
+    min-width:inherit;
+    padding:0 10px;
+    border-right:none;
+    text-align:left;
+  }
+  .div_avisClientContent .infosClientEtDetailAvis .infosClient .avatar {
+    float:left;
+    margin:0 10px 15px 0;
+  }
+  .div_avisClientContent .infosClientEtDetailAvis .infosClient .avatar img { width:45px; }
+  .div_avisClientContent .infosClientEtDetailAvis .infosClient .pseudo { padding:5px 0 0 0; }
+  .div_avisClientContent .infosClientEtDetailAvis .infosClient .typeSejour { margin:0 3px 0 0; }
+  .div_avisClientContent .infosClientEtDetailAvis .infosClient .typeSejour, .div_avisClientContent .infosClientEtDetailAvis .infosClient .datesSejour {
+    display:inline;
+    font-size:0.7em;
+  }
+  .div_avisClientContent .infosClientEtDetailAvis .infosClient .datesSejourAu {
+    display:inline;
+    font-size:1em;
+  }
+  .div_avisClientContent .infosClientEtDetailAvis .infosClient .noteGlabel {
+    position:absolute;
+    left:10px;
+    top:20px;
+    padding:0;
+  }
+  .div_avisClientContent .infosClientEtDetailAvis .infosClient .noteGlabel .sp_noteGlobale { display:none; }
+  .div_avisClientContent .infosClientEtDetailAvis .detailAvis {
+    width:inherit;
+    padding:0;
+  }
+  .div_avisClientContent .infosClientEtDetailAvis .detailAvis .dateDepos {
+    float:none;
+    font-weight:normal;
+    margin:0;
+    line-height:inherit;
+    position:absolute;
+    left:100px;
+    top:22px;
+    color:#a0a0a0;
+  }
+  .div_avisClientContent .infosClientEtDetailAvis .detailAvis .titre {
+    position:absolute;
+    top:0;
+    left:10px;
+    right:10px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .div_avisClientContent .infosClientEtDetailAvis .detailAvis .description {
+    padding:0 10px;
+    clear:both;
+  }
+  .div_avisClientContent .infosClientEtDetailAvis .detailAvis .p_recommandation {
+    padding:0 10px;
+    clear:both;
+  }
+  .div_avisClientContent .detailDesNotes .div_note:nth-child(odd) { clear:both; }
+  .div_avisClientContent .detailDesNotes .div_note .sp_libelleQuest {
+    width:50%;
+    font-size:0.8em;
+  }
+  .div_avisClientContent .droitsDeReponses { padding-left:0; }
+}
+.tarifsAvecDispo_infoPasDeDispos {
+  margin:0 0 30px;
+  background-position:-169px -9px;
+  padding-left:41px;
+  height:31px;
+  line-height:16px;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+.tarifsAvecDispo_infoPasDeDispos p { padding:0; }
+.div_ficheTarifsAvecDispo { margin:0 0 25px; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree {
+  margin:0 0 45px;
+  display:table;
+  width:100%;
+  font-size:1.1em;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree > li {
+  display:table-cell;
+  text-align:center;
+  padding:0 10px;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree > li span {
+  display:inline-block;
+  padding:5px 15px;
+  cursor:pointer;
+  border:2px #fff solid;
+  border-radius:50px;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree > li span:hover { border:2px #4bab77 solid; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree > li.active span {
+  border:2px #4bab77 solid;
+  position:relative;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree > li.active span:hover { background:none; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree > li.active span:after {
+  content:'';
+  position:absolute;
+  display:block;
+  bottom:-10px;
+  left:50%;
+  transform:translate(-50%,0);
+  border-width:10px 7px 0 7px;
+  border-style:solid;
+  border-color:#4bab77 transparent transparent transparent;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree > li.indisponible { opacity:0.3; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree > li.indisponible span { cursor:inherit; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree > li.indisponible span:hover {
+  border-color:#fff;
+  background:none;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois {
+  display:table;
+  width:100%;
+  margin:0 0 15px;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_choixMoisPrev, .div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_choixMoisNext {
+  width:15%;
+  display:table-cell;
+  vertical-align:middle;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_choixMoisPrev a, .div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_choixMoisNext a {
+  display:block;
+  text-decoration:none;
+  overflow:hidden;
+  height:20px;
+  font-size:0px;
+  text-indent:-1000px;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_choixMoisPrev { text-align:right; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_choixMoisPrev a { background:url("/img/css/prev.svg") right center no-repeat; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_choixMoisNext { text-align:left; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_choixMoisNext a { background:url("/img/css/next.svg") left center no-repeat; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_listeMois {
+  display:table-cell;
+  width:70%;
+  font-size:1.2em;
+  vertical-align:middle;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_listeMois ul {
+  display:table;
+  width:100%;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_listeMois ul li {
+  display:table-cell;
+  width:33.333333%;
+  text-align:center;
+  padding:0 5px;
+  opacity:0.5;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_listeMois ul li:not(.active) { cursor:pointer; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_listeMois ul li.active { opacity:1; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree {
+  width:100%;
+  text-align:center;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td {
+  padding:5px;
+  border-left:1px #4bab77 solid;
+  border-top:1px #fff solid;
+  border-bottom:1px solid #fff;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td:first-child { border-left:1px #fff solid; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td:last-child { border-right:1px #fff solid; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td .dates {
+  font-weight:500;
+  padding-bottom:5px;
+  font-size:1.1em;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td .dates span {
+  display:block;
+  text-align:center;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td .tarif { padding:0; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.libre, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu { cursor:pointer; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.libre .tarif, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu .tarif { font-weight:bold; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.libre .tarif .avantPromo, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu .tarif .avantPromo {
+  text-decoration:line-through;
+  display:block;
+  font-size:1.2em;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.libre .tarif .prixPromo, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.libre .tarif .sansPromo, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu .tarif .prixPromo, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu .tarif .sansPromo {
+  font-size:1.8em;
+  color:#00653f;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.libre .tarif .sansPromo, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu .tarif .sansPromo {
+  padding-top:20px;
+  display:block;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.libre:hover .tarif, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu:hover .tarif { text-decoration:underline; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu { cursor:inherit; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu .prixPromo, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu .sansPromo { color:#333 !important; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.indisponible .dates { opacity:0.5; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.indisponible .tarif {
+  font-weight:normal;
+  font-size:1.2em;
+  opacity:0.5;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.indisponible .tarif span {
+  width:80px;
+  display:inline-block;
+  padding-top:5px;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.partiellementDispo { cursor:pointer; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.partiellementDispo .dates { opacity:1; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.partiellementDispo .tarif {
+  opacity:1;
+  font-size:1em;
+  color:#00653f;
+  font-weight:bold;
+  padding-top:3px;
+}
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.partiellementDispo .tarif span { text-decoration:underline; }
+.div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.partiellementDispo:hover .tarif span { text-decoration:none; }
+@media screen and (min-width: 701px) {
+  .div_btAffichePrixResponsive { display:none; }
+}
+@media screen and (max-width: 700px) {
+  .div_btAffichePrixResponsive {
+    display:none;
+    margin:0 0 30px;
+  }
+  .div_btAffichePrixResponsive a {
+    color:#ff5f32;
+    text-decoration:underline;
+    font-weight:bold;
+  }
+  .div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree {
+    font-size:0.8em;
+    margin-bottom:30px;
+  }
+  .div_ficheTarifsAvecDispo .tarifsAvecDispo_choixDuree > li.indisponible { display:none; }
+  .div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_choixMoisPrev, .div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_choixMoisNext { width:10%; }
+  .div_ficheTarifsAvecDispo .tarifsAvecDispo_choixMois .tarifsAvecDispo_listeMois { font-size:0.9em; }
+  .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td {
+    display:table;
+    width:100%;
+    border:none;
+    font-size:0.85em;
+  }
+  .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td > p {
+    display:table-cell;
+    border-bottom:1px #c6c6c6 solid;
+    vertical-align:middle;
+    padding:5px;
+    width:50%;
+  }
+  .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.select, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.libre:hover, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu:hover {
+    border-top:0;
+    border-left:0;
+    border-right:0;
+  }
+  .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.libre .tarif .sansPromo, .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.planningInconnu .tarif .sansPromo { padding-top:0; }
+  .div_ficheTarifsAvecDispo .tarifsAvecDispo_detailUnMois_tarifUneDuree td.indisponible .tarif span {
+    padding-top:0;
+    width:auto;
+  }
+}
+#div_ficheAnciensTarifs, #div_ficheChambreSansDetailsChambres { margin:0 0 20px; }
+#div_ficheAnciensTarifs #div_dateValiditeTarifs, #div_ficheChambreSansDetailsChambres #div_dateValiditeTarifs { display:none; }
+#div_ficheAnciensTarifs #div_en_tete_tarif_fiche, #div_ficheChambreSansDetailsChambres #div_en_tete_tarif_fiche {
+  margin-bottom:20px;
+  text-align:right;
+}
+#div_ficheAnciensTarifs #div_en_tete_tarif_fiche #span_fiche_titre_tarifs, #div_ficheChambreSansDetailsChambres #div_en_tete_tarif_fiche #span_fiche_titre_tarifs { display:none; }
+#div_ficheAnciensTarifs #div_en_tete_tarif_fiche span, #div_ficheChambreSansDetailsChambres #div_en_tete_tarif_fiche span {
+  margin:0 20px 0;
+  display:inline-block;
+  padding:5px 20px;
+  cursor:pointer;
+  border:2px #fff solid;
+}
+#div_ficheAnciensTarifs #div_en_tete_tarif_fiche span:hover, #div_ficheChambreSansDetailsChambres #div_en_tete_tarif_fiche span:hover { border:2px #c6c6c6 solid; }
+#div_ficheAnciensTarifs #div_en_tete_tarif_fiche span:last-child, #div_ficheChambreSansDetailsChambres #div_en_tete_tarif_fiche span:last-child { margin-right:0; }
+#div_ficheAnciensTarifs #div_en_tete_tarif_fiche a, #div_ficheChambreSansDetailsChambres #div_en_tete_tarif_fiche a {
+  text-decoration:none;
+  color:#333;
+}
+#div_ficheAnciensTarifs #div_en_tete_tarif_fiche #sp_exe_actif, #div_ficheChambreSansDetailsChambres #div_en_tete_tarif_fiche #sp_exe_actif {
+  border:2px #ff5f32 solid;
+  position:relative;
+}
+#div_ficheAnciensTarifs #div_en_tete_tarif_fiche #sp_exe_actif:hover, #div_ficheChambreSansDetailsChambres #div_en_tete_tarif_fiche #sp_exe_actif:hover { background:none; }
+#div_ficheAnciensTarifs #div_en_tete_tarif_fiche #sp_exe_actif:after, #div_ficheChambreSansDetailsChambres #div_en_tete_tarif_fiche #sp_exe_actif:after {
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  height:13px;
+  display:block;
+  bottom:-13px;
+  background:url("../../img/css/fiche/choix-date-active.png") no-repeat center top;
+}
+#div_ficheAnciensTarifs .span_titreTarifGegs, #div_ficheChambreSansDetailsChambres .span_titreTarifGegs {
+  display:block;
+  padding:5px;
+  font-size:1.1em;
+  background:#b8b8b8;
+}
+#div_ficheAnciensTarifs .tarifGEGS_structureEtChambre .tarifGEGS_structure, #div_ficheChambreSansDetailsChambres .tarifGEGS_structureEtChambre .tarifGEGS_structure { margin-bottom:15px; }
+#div_ficheAnciensTarifs #div_legende_tarif_chambre, #div_ficheChambreSansDetailsChambres #div_legende_tarif_chambre {
+  text-align:right;
+  font-style:italic;
+  font-size:0.8em;
+  padding-top:3px;
+}
+#div_ficheAnciensTarifs table, #div_ficheChambreSansDetailsChambres table {
+  width:100%;
+  font-size:1em;
+}
+#div_ficheAnciensTarifs table th, #div_ficheChambreSansDetailsChambres table th { font-weight:normal; }
+#div_ficheAnciensTarifs table td, #div_ficheAnciensTarifs table th, #div_ficheChambreSansDetailsChambres table td, #div_ficheChambreSansDetailsChambres table th {
+  padding:5px;
+  border:1px #e0e0e0 solid;
+}
+#div_ficheAnciensTarifs table tbody td, #div_ficheChambreSansDetailsChambres table tbody td {
+  text-align:center;
+  vertical-align:middle;
+}
+#div_ficheAnciensTarifs table tbody th, #div_ficheChambreSansDetailsChambres table tbody th { text-align:left; }
+#div_ficheAnciensTarifs table tbody th .lblSaison, #div_ficheChambreSansDetailsChambres table tbody th .lblSaison {
+  display:block;
+  font-weight:bold;
+}
+#div_ficheAnciensTarifs table thead th, #div_ficheChambreSansDetailsChambres table thead th {
+  background:#e0e0e0;
+  border-color:#b8b8b8;
+}
+#div_ficheAnciensTarifs .div_btVoirDispoSansDetailChambres, #div_ficheChambreSansDetailsChambres .div_btVoirDispoSansDetailChambres { padding-top:20px; }
+#div_ficheAnciensTarifs .div_btVoirDispoSansDetailChambres a, #div_ficheChambreSansDetailsChambres .div_btVoirDispoSansDetailChambres a {
+  color:#333;
+  font-weight:bold;
+}
+#div_ficheAnciensTarifs .div_btVoirDispoSansDetailChambres a:hover, #div_ficheChambreSansDetailsChambres .div_btVoirDispoSansDetailChambres a:hover { text-decoration:none; }
+@media screen and (max-width: 700px) {
+  #div_ficheAnciensTarifs { display:none; }
+}
+#div_detailsDesChambres {
+  margin:0 0 20px;
+  padding-top:50px;
+}
+#div_detailsDesChambres #table_fiche_blocTarif_chb { display:none; }
+#div_detailsDesChambres .tarifsAvecDispo_infoPasDeDispos { margin-bottom:55px; }
+#div_detailsDesChambres .div_fiche_bloc_tarif_chmb_lien_dispos {
+  padding:0 0 55px 0;
+  font-size:1.3em;
+  line-height:18px;
+}
+#div_detailsDesChambres .div_fiche_bloc_tarif_chmb_lien_dispos > span { margin:0 5px 0 0; }
+#div_detailsDesChambres .div_fiche_bloc_tarif_chmb_lien_dispos a {
+  color:#ff5f32;
+  padding-left:30px;
+  background:url('/img/css/fiche/calendrier-chambre.svg') no-repeat left center;
+  background-size:22px 20px;
+}
+#div_detailsDesChambres .div_fiche_bloc_tarif_chmb_lien_dispos a:hover { text-decoration:none; }
+#div_detailsDesChambres .div_tarifUneChambre {
+  padding:20px 0;
+  border-bottom:1px #dcdcdc dashed;
+}
+#div_detailsDesChambres .div_tarifUneChambre.indisponible .div_tarifUneChambre_description, #div_detailsDesChambres .div_tarifUneChambre.indisponible .div_tarifUneChambre_equipements { opacity:0.4; }
+#div_detailsDesChambres .div_tarifUneChambre:last-child {
+  padding-bottom:0;
+  border:none;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos {
+  display:table;
+  width:100%;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos > div {
+  display:table-cell;
+  vertical-align:top;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_description.sansPhotoSansDesc { vertical-align:middle; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_description, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_equipements {
+  border-right:1px #eaeaea solid;
+  padding-right:15px;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_description { width:50%; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_equipements, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_infosTarifs {
+  width:25%;
+  padding-left:15px;
+}
+#div_detailsDesChambres .div_tarifUneChambre .p_titreChambre {
+  margin:0 0 5px;
+  padding:0;
+  font-size:1.1em;
+}
+#div_detailsDesChambres .div_tarifUneChambre .p_titreChambre .nomChambre { font-weight:bold; }
+#div_detailsDesChambres .div_tarifUneChambre .div_imgChambre {
+  float:left;
+  border:1px #333 solid;
+  margin:0 10px 0 0;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_imgChambre img { display:block; }
+#div_detailsDesChambres .div_tarifUneChambre .div_info_desc_chmb {
+  overflow:hidden;
+  padding:0;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_equipements { padding-top:20px; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_equipements ul li { margin:0 0 3px; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_equipements ul li:before {
+  content:"\2022";
+  margin:0 4px 0 0;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs {
+  vertical-align:middle !important;
+  text-align:center;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .infoIndisponible { font-size:1.1em; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs span { display:block; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblAvantPrix { font-weight:bold; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblAvantPrix:first-letter { text-transform:uppercase; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_prixSejour {
+  font-size:1.6em;
+  font-weight:bold;
+  padding:2px 0;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblApresPrix, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblApresPrixPetitDejeuner { font-size:0.8em; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_btVoirDispoChambre, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_btVoirPrixChambre { padding-top:5px; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs a {
+  color:#333;
+  font-size:0.9em;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs a:hover { text-decoration:none; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs.avecDate .sp_prixSejour { color:#00653f; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs { padding:15px 15px 0; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs li {
+  display:inline-block;
+  vertical-align:top;
+  width:50%;
+  margin:0 0 5px;
+  color:#535353;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs li .span_libelle_tarif_chambre { margin:0 10px 0 0; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs li .span_prix_tarif_chambre { color:#00653f; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs .div_fiche_grilledetailprix_chmb a { color:#535353; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs .div_fiche_grilledetailprix_chmb a:hover { text-decoration:none; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs .div_fiche_grille_tarif_detail { padding-top:5px; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs .div_fiche_grille_tarif_detail table { width:100%; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs .div_fiche_grille_tarif_detail table td, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs .div_fiche_grille_tarif_detail table th {
+  padding:5px;
+  border:1px #eaeaea solid;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs .div_fiche_grille_tarif_detail table .tr_grille_tarif_saison th:first-child { border:none; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs .div_fiche_grille_tarif_detail table .th_grille_tarif_saison {
+  background:#eaeaea;
+  border-color:#cecece;
+  padding:0;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs .div_fiche_grille_tarif_detail table .th_grille_tarif_saison span {
+  display:block;
+  padding:5px;
+  cursor:pointer;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs .div_fiche_grille_tarif_detail table .th_grille_tarif_saison, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs .div_fiche_grille_tarif_detail table .td_tarifChambre { text-align:center; }
+#div_fichesActions { padding:0 10px; }
+#div_fichesActions .div_ficheActionPartagePrint { float:right; }
+#div_fichesActions .div_ficheActionPrint { margin:0 0 5px; }
+#div_fichesActions .div_ficheActionPrint a {
+  color:#333;
+  text-decoration:none;
+  line-height:24px;
+  padding-left:30px;
+  background-position:left -759px;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_fichesActions .div_ficheActionPrint a:hover { text-decoration:underline; }
+#div_fichesActions .div_ficheActionPartage {
+  float:right;
+  position:relative;
+}
+#div_fichesActions .div_ficheActionPartage > a {
+  color:#333;
+  text-decoration:none;
+  line-height:24px;
+  padding-left:25px;
+  background-position:left -540px;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_fichesActions .div_ficheActionPartage > a:hover { text-decoration:underline; }
+#div_fichesActions .div_ficheActionPartage .div_ficheActionPartageContent {
+  position:absolute;
+  right:0;
+  top:30px;
+  min-width:200px;
+}
+#div_fichesActions .div_ficheActionPartage .div_ficheActionPartageContent a {
+  display:block;
+  float:right;
+  margin:0 0 0 7px;
+  width:20px;
+  height:20px;
+  overflow:hidden;
+  text-decoration:none;
+  text-indent:-1000px;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_fichesActions .div_ficheActionPartage .div_ficheActionPartageContent #a_fiche_envoi_ami { background-position:-100px -592px; }
+#div_fichesActions .div_ficheActionPartage .div_ficheActionPartageContent #a_fiche_envoi_ami:hover { background-position:-100px -568px; }
+#div_fichesActions .div_ficheActionPartage .div_ficheActionPartageContent .a_btPartageGooglePlus { background-position:-50px -592px; }
+#div_fichesActions .div_ficheActionPartage .div_ficheActionPartageContent .a_btPartageGooglePlus:hover { background-position:-50px -568px; }
+#div_fichesActions .div_ficheActionPartage .div_ficheActionPartageContent .a_btPartageFacebook { background-position:0 -592px; }
+#div_fichesActions .div_ficheActionPartage .div_ficheActionPartageContent .a_btPartageFacebook:hover { background-position:0 -568px; }
+#div_fichesActions .div_ficheActionPartage .div_ficheActionPartageContent .a_btPartageTwitter { background-position:-24px -592px; }
+#div_fichesActions .div_ficheActionPartage .div_ficheActionPartageContent .a_btPartageTwitter:hover { background-position:-24px -568px; }
+#div_fichesActions .div_fichesActionsItea_panier a {
+  color:#333;
+  text-decoration:none;
+  line-height:24px;
+  display:inline-block;
+  height:24px;
+  padding-left:30px;
+  background-image:url("/img/css/fiche/sprite2.png");
+  background-repeat:no-repeat;
+}
+#div_fichesActions .div_fichesActionsItea_panier a:hover { text-decoration:underline; }
+#div_fichesActions .div_fichesActionsItea_panier .panier a { background-position:left -468px; }
+#div_fichesActions .div_fichesActionsItea_panier .supprime { display:none; }
+#div_fichesActions .div_fichesActionsItea_panier .supprime a { background-position:left -500px; }
+#div_fichesActions .div_fichesActionsItea_panier.selected .panier { display:none; }
+#div_fichesActions .div_fichesActionsItea_panier.selected .supprime { display:block; }
+@media screen and (max-width: 700px) {
+  #div_fichesActions { display:none; }
+}
+#btnAncreMemeProprietaire { margin-top:10px; }
+#btnAncreMemeProprietaire a {
+  border:1px #00653f solid;
+  padding:10px;
+  text-align:center;
+  display:block;
+  text-decoration:none;
+}
+#btnAncreMemeProprietaire a:hover { text-decoration:underline; }
+@media screen and (max-width: 1024px) {
+  #btnAncreMemeProprietaire { display:none; }
+}
+a.fancybox-nav { position:fixed; }
+a.fancybox-next { width:50%; }
+a.fancybox-next span {
+  background:transparent url("../../img/css/nextFF.svg") no-repeat;
+  background-size:60px;
+  background-position:center center;
+  right:10px;
+}
+a.fancybox-prev { width:50%; }
+a.fancybox-prev span {
+  background:transparent url("../../img/css/prevFF.svg") no-repeat;
+  background-size:60px;
+  background-position:center center;
+  left:10px;
+}
+a.fancybox-nav span {
+  height:45px;
+  visibility:visible;
+}
+.fancybox-title-float-wrap .child {
+  border-radius:0;
+  background:none;
+}
+div.fancybox-skin {
+  box-shadow:none !important;
+  background:none !important;
+  padding-top:20px !important;
+  padding-bottom:5px !important;
+}
+div.fancybox-close {
+  background:url("../../img/css/fiche/ferme-popin.png") no-repeat center;
+  width:28px;
+  height:28px;
+  top:-15px;
+  right:15px;
+}
+.divChargementAjxContent {
+  text-align:center;
+  padding:15px;
+}
+#div_ajoutSelectionPanier {
+  padding:0;
+  position:inherit;
+}
+#div_ajoutSelectionPanier #h5_ajoutSelectionPanier {
+  font-size:1.2em;
+  text-align:center;
+  font-family:inherit;
+  padding:30px 25px 0;
+}
+#div_ajoutSelectionPanier #div_visuStructForAjoutPanier { height:36px; }
+#div_ajoutSelectionPanier #div_visuStructForAjoutPanier > * { display:none; }
+#div_ajoutSelectionPanier #div_panierRetourListe {
+  position:absolute;
+  top:-35px;
+  right:0;
+  bottom:inherit;
+  left:inherit;
+}
+#div_ajoutSelectionPanier #div_panierRetourListe a {
+  display:block;
+  padding:0;
+  width:28px;
+  height:28px;
+  background:url("../../img/css/fiche/ferme-popin.png") no-repeat center;
+  overflow:hidden;
+  text-indent:-1000px;
+}
+#div_ajoutSelectionPanier #div_panierVoirPanier {
+  position:inherit;
+  bottom:0;
+  right:0;
+  text-align:center;
+}
+#div_ajoutSelectionPanier #div_panierVoirPanier a {
+  background:none;
+  text-decoration:underline;
+  padding:0;
+  color:#333;
+  font-weight:500;
+}
+#div_ajoutSelectionPanier #div_panierVoirPanier a:hover { text-decoration:none; }
+.divChoixModeVenteGEGS { margin:0 0 20px; }
+.divChoixModeVenteGEGS > span { display:block; }
+.divChoixModeVenteGEGS > span:first-child { margin:0 0 5px; }
+.divChoixModeVenteGEGS input {
+  margin:0 5px 0 0;
+  position:relative;
+  top:1px;
+}
+#div_ficheBlocResa .divChoixModeVenteGEGS label { color:#fff; }
+.imgGmap img { width:100%; }
+#div_numroTelFede { display:none; }
+#div_ficheHead .colonneGauche {
+  padding-right:0px;
+  position:relative;
+}
+.pictoPortesOuvertes {
+  position:absolute;
+  right:0;
+  bottom:0;
+  cursor:pointer;
+}
+.pictoPortesOuvertes ul { display:none; }
+.pictoPortesOuvertes:before {
+  content:"";
+  display:block;
+  width:78px;
+  height:37px;
+  background:url("/img/css/portesouvertes/logo-jpo.png") no-repeat center;
+  background-size:78px 37px;
+}
+@media screen and (max-width: 700px) {
+  .pictoPortesOuvertes { display:none; }
+  #div_ficheHead .colonneGauche { padding-right:0; }
+}
+.pictoPortesOuvertesProprio {
+  padding-top:125px;
+  padding-right:25px;
+  background:url("/img/css/portesouvertes/logo-jpo.png") no-repeat left 58px;
+  background-size:100px auto;
+  font-size:1.1em;
+}
+.pictoPortesOuvertesProprio a.titrePO {
+  color:#ff5f32;
+  text-decoration:underline;
+}
+.pictoPortesOuvertesProprio a.titrePO:hover { text-decoration:none; }
+.pictoPortesOuvertesProprio .linkSitePO { text-align:right; }
+.pictoPortesOuvertesProprio .linkSitePO a {
+  color:#333;
+  text-decoration:underline;
+}
+.pictoPortesOuvertesProprio .linkSitePO a:hover { text-decoration:none; }
+.pictoPortesOuvertesProprio .divRubrique_descs { padding:10px 0 35px; }
+.pictoPortesOuvertesProprio .divRubrique_descs .span_titreRubrique { display:none; }
+@media screen and (max-width: 700px) {
+  .pictoPortesOuvertesProprio { margin-left:35px; }
+}
+.sp_enteteFormTel { font-weight:bold; }
+.sp_enteteFormPrixAppel { font-style:italic; }
+.fancybox-close {
+  top:20px;
+  right:-30px;
+}
+@media screen and (max-width: 750px) {
+  .fancybox-close {
+    top:-15px;
+    right:15px;
+  }
+}
+#unBlocAvis { position:relative; }
+.blocLogoAfnor {
+  display:block !important;
+  left:175px;
+  background:#fff;
+  padding:2px 20px 2px 10px;
+  position:absolute;
+  top:50px;
+}
+.blocLogoAfnor a {
+  display:block;
+  color:#333;
+  background-image:url('/imgs_defaut/avis/afnor-nf-detail-gris.svg');
+  width:40px;
+  height:40px;
+  background-size:100%;
+  background-repeat:no-repeat;
+  text-indent:-999px;
+}
+.blocLogoAfnor a:after {
+  content:"";
+  background-image:url('/imgs_defaut/avis/afnor-nf-detail.svg');
+}
+.blocLogoAfnor a:hover { background-image:url('/imgs_defaut/avis/afnor-nf-detail.svg'); }
+.blocLogoAfnor a:hover { text-decoration:none; }
+@media screen and (max-width: 1024px) {
+  .blocLogoAfnor { left:195px; }
+}
+@media screen and (max-width: 700px) {
+  .blocLogoAfnor { left:170px; }
+}
+@media screen and (max-width: 750px) {
+  .fancyboxAfnor {
+    position:fixed !important;
+    top:30px !important;
+    bottom:30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #div_ficheDetail, #contentCentre { overflow:visible; }
+  #ficheBlocResa { border-radius:0 0 3px 3px; }
+  #div_ficheBlocResa .tarifFicheApartirDe .div_prixLocation > span { padding:10px 0; }
+  #div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationLoc > span { padding-top:0; }
+  #div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationTotal > span {
+    padding:6px 0 0;
+    width:auto;
+  }
+  #div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationTotal > span:first-child {
+    font-size:24px;
+    width:55%;
+  }
+  #div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationTotal > span:first-child .etoile {
+    margin-left:3px;
+    font-weight:normal;
+  }
+  #div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationTotal > span:last-child { font-size:36px; }
+  #div_msgErreurRetourVerifDates { padding:0 10px; }
+  #div_ficheBlocResa .div_btnResa { padding:0; }
+  #div_ficheBlocResa .div_btAfficheTelephoneProp { padding-bottom:10px; }
+  #div_ficheBlocResa .div_ficheBlocResaInfoTariEtBtn.sansAlerte .tarifFicheApartirDe .div_prixLocationTotal > span {
+    padding-top:18px;
+    padding-bottom:17px;
+  }
+}
+.div_alerteDernieresVisites {
+  text-align:center;
+  color:#ff5f32;
+  margin-bottom:10px;
+  display:block;
+  font-size:13.5px;
+}
+.div_alerteDernieresVisites > span {
+  display:inline-block;
+  padding:0 33px;
+  background:url('/img/css/flamme.svg') no-repeat;
+  background-position:10px center;
+  background-size:auto 19px;
+}
+@media screen and (max-width: 700px) {
+  .div_alerteDernieresVisites { display:none; }
+}
+.div_dernierHebergementsVisites > .titre {
+  text-align:center;
+  padding-bottom:15px;
+  padding-top:100px;
+  font-size:1.8em;
+}
+.div_dernierHebergementsVisites > .titre:after { display:none; }
+.div_dernierHebergementsVisites .owl-carouselContent {
+  position:relative;
+  padding:0 30px;
+}
+.div_dernierHebergementsVisites .owl-carouselContent .owl-dots { display:none !important; }
+.div_dernierHebergementsVisites .owl-carouselContent .owl-prev, .div_dernierHebergementsVisites .owl-carouselContent .owl-next {
+  position:absolute;
+  top:0;
+  height:99px;
+  width:30px;
+  text-align:center;
+}
+.div_dernierHebergementsVisites .owl-carouselContent .owl-prev > div, .div_dernierHebergementsVisites .owl-carouselContent .owl-next > div {
+  display:table;
+  height:100%;
+  width:100%;
+}
+.div_dernierHebergementsVisites .owl-carouselContent .owl-prev > div > div, .div_dernierHebergementsVisites .owl-carouselContent .owl-next > div > div {
+  display:table-cell;
+  vertical-align:middle;
+}
+.div_dernierHebergementsVisites .owl-carouselContent .owl-prev {
+  left:-30px;
+  text-align:left;
+}
+.div_dernierHebergementsVisites .owl-carouselContent .owl-next {
+  right:-30px;
+  text-align:right;
+}
+.div_dernierHebergementsVisites .owl-carouselContent .item { text-align:center; }
+.div_dernierHebergementsVisites .owl-carouselContent .item img {
+  display:block;
+  width:100%;
+  margin-bottom:8px;
+}
+.div_dernierHebergementsVisites .owl-carouselContent .item a {
+  text-decoration:none;
+  color:#333;
+}
+.div_dernierHebergementsVisites .owl-carouselContent .item .lblAvantNomGite { display:none; }
+.div_dernierHebergementsVisites .owl-carouselContent .item .nomGite { font-size:1.14em; }
+.div_dernierHebergementsVisites .owl-carouselContent .item .lieu { font-size:0.9em; }
+.div_dernierHebergementsVisites .owl-carouselContent .item .lieu span { display:block; }
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationChambre {
+  font-size:0.8em;
+  text-align:left;
+  border-bottom:1px #cfcfcf solid;
+  padding-bottom:5px;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationChambre .sp_prixLocationChambre {
+  display:block;
+  margin-bottom:5px;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationChambre .div_prixChambre {
+  display:table;
+  width:100%;
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationChambre .div_prixChambre > span { display:table-cell; }
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationChambre .div_prixChambre > span:first-child { width:70%; }
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationChambre .div_prixChambre > span:last-child { text-align:right; }
+#div_detailsDesChambres .div_tarifUneChambre .div_imgChambre {
+  margin-right:20px;
+  position:relative;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_imgChambre .div_imgChambreNbPhoto {
+  position:absolute;
+  bottom:6px;
+  left:6px;
+  color:#fff;
+  font-size:14px;
+  display:block !important;
+  cursor:pointer;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_imgChambre .div_imgChambreNbPhoto:before {
+  content:'';
+  background:url('/img/css/camera.svg') no-repeat center;
+  display:inline-block;
+  width:21px;
+  height:18px;
+  background-size:21px auto;
+  margin-right:4px;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_description { width:auto; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_infosTarifs {
+  width:153px;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_equipements {
+  overflow:hidden;
+  width:auto;
+  padding:0;
+  margin-bottom:15px;
+  border:none;
+  font-size:14px;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_equipements ul li {
+  display:inline-block;
+  width:50%;
+  vertical-align:top;
+  padding-right:5px;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_info_desc_chmb {
+  text-align:justify;
+  font-size:14px;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .infoIndisponible {
+  font-family:'Mulish', sans-serif;
+  font-variant-ligatures:none;
+  -webkit-font-variant-ligatures:none;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .infoIndisponible span:first-child { font-size:23px; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .infoIndisponible span:last-child { font-size:17px; }
+#div_detailsDesChambres .div_tarifUneChambre.indisponible .div_tarifUneChambre_equipements { opacity:1; }
+#div_detailsDesChambres .div_tarifUneChambre.indisponible .div_tarifUneChambre_description, #div_detailsDesChambres .div_tarifUneChambre.indisponible .p_titreChambre { opacity:0.6; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblAvantPrix { margin-bottom:20px; }
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_prixSejour .sp_prixSejour_prix {
+  display:inline-block;
+  margin-right:5px;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_prixSejour .sp_prixSejour_duree {
+  display:inline-block !important;
+  vertical-align:middle;
+  background:#ff5f32;
+  color:#fff;
+  font-size:0.5em;
+  margin-left:5px;
+  padding:0 5px;
+  border-radius:3px;
+  position:relative;
+  bottom:2px;
+  font-size:15px;
+  font-family:'Mulish', sans-serif;
+  font-variant-ligatures:none;
+  -webkit-font-variant-ligatures:none;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_prixSejour .sp_prixSejour_duree:before {
+  content:'';
+  width:0;
+  height:0;
+  border-style:solid;
+  border-width:4px 5px 4px 0;
+  border-color:transparent #ff5f32 transparent transparent;
+  position:absolute;
+  right:100%;
+  top:5px;
+}
+#div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblApresPrix { padding-top:10px; }
+.div_tarifUneChambre_lancerResa_avecBtn {
+  padding-top:18px;
+  width:100%;
+  display:table;
+}
+.div_tarifUneChambre_lancerResa_avecBtn > div {
+  display:table-cell;
+  vertical-align:bottom;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa { padding-right:15px; }
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa.sansDates { cursor:pointer; }
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa.sansDates + .div_tarifUneChambre_lancerResa_btn { visibility:hidden; }
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa.sansDates .div_tarifUneChambre_saisirDates { display:block; }
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_saisirAdultes {
+  color:#ff5f32;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers {
+  display:table;
+  width:100%;
+  border:1px #c0c0c0 solid;
+  padding:7px 20px 5px;
+  height:43px;
+  font-size:16px;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > span { display:none; }
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers.disabled { opacity:0.6; }
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > * {
+  display:table-cell;
+  vertical-align:top;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div { width:33.333333%; }
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div > div {
+  display:table;
+  width:100%;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div > div > div {
+  display:table-cell;
+  width:50%;
+  vertical-align:top;
+  padding:0 5px;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div > div > div:first-child { text-align:right; }
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div > div > div:last-child { text-align:left; }
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div .sp_selectPersLbl:after {
+  content:':';
+  margin-left:5px;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div .sp_selectPersinfoComp {
+  display:block;
+  font-size:12px;
+  line-height:12px;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div.div_selectNbEnfants .sp_selectPersinfoComp {
+  position:relative;
+  right:14px;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div.div_selectNbBebes .sp_selectPersinfoComp {
+  position:relative;
+  right:12px;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > span {
+  vertical-align:middle;
+  font-weight:bold;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_saisirDates {
+  font-weight:bold;
+  margin-bottom:10px;
+  font-size:16px;
+  display:none;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_saisirDates a {
+  color:#ff5f32;
+  text-decoration:underline;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_saisirDates a:hover { text-decoration:none; }
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa_btn {
+  width:153px;
+  transition:all ease 1s;
+  -webkit-transition:all ease 1s;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa_btn a {
+  display:block;
+  height:43px;
+  line-height:43px;
+  text-align:center;
+  background:#ff5f32;
+  color:#fff;
+  text-decoration:none;
+  font-size:21px;
+  border-radius:50px;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .ui-selectmenu-button {
+  height:21px;
+  border-color:#fff;
+  border-radius:0;
+  background:#fff;
+  z-index:9;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .ui-selectmenu-button span.ui-selectmenu-text {
+  height:19px;
+  line-height:19px;
+  font-size:13px;
+  padding-top:0;
+  padding-bottom:0;
+  border:1px #c0c0c0 solid;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+.div_tarifUneChambre_lancerResa_avecBtn .ui-selectmenu-button span.ui-icon {
+  background:#ff5f32 url('/img/css/select-nbPers.svg') no-repeat center;
+  background-size:12px auto;
+  right:-1px;
+  top:-1px;
+  height:auto;
+  bottom:-1px;
+  margin-top:0;
+  width:21px;
+  z-index:10;
+}
+.div_btnResa {
+  transition:all ease 1s;
+  -webkit-transition:all ease 1s;
+}
+.div_tarifUneChambre.indisponible .div_tarifUneChambre_lancerResa_btn { visibility:hidden; }
+@media screen and (max-width: 700px) {
+  #div_detailsDesChambres {
+    padding-top:0;
+    color:#636363;
+    margin-left:0;
+    margin-right:0;
+  }
+  #div_detailsDesChambres .div_fiche_bloc_tarif_chmb_lien_dispos {
+    padding-bottom:29px;
+    font-size:13px;
+    text-align:center;
+  }
+  #div_detailsDesChambres .div_fiche_bloc_tarif_chmb_lien_dispos a {
+    background-size:auto 15px;
+    padding-left:0;
+  }
+  #div_detailsDesChambres .div_fiche_bloc_tarif_chmb_lien_dispos > span {
+    display:block;
+    margin-bottom:0;
+  }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_description .div_imgChambre, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_infosTarifs { display:none; }
+  #div_detailsDesChambres .div_tarifUneChambre { border:none; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_imgChambreEtTarif {
+    display:table;
+    width:100%;
+  }
+  #div_detailsDesChambres .div_tarifUneChambre .div_imgChambreEtTarif > div { display:table-cell; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_imgChambreEtTarif > div:first-child { width:56%; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_imgChambreEtTarif.sansPhoto > div:first-child { display:none; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_imgChambreEtTarif .div_tarifUneChambre_infosTarifs {
+    padding:0 5px;
+    vertical-align:middle;
+  }
+  #div_detailsDesChambres .div_tarifUneChambre .div_imgChambre {
+    margin-right:0;
+    float:none;
+    border:none;
+  }
+  #div_detailsDesChambres .div_tarifUneChambre .div_imgChambre img { width:100%; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblAvantPrix { margin-bottom:0; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblApresPrix, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblApresPrixReduit, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblApresPrixPetitDejeuner { font-size:0.9em; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_btVoirDispoChambre, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_btVoirPrixChambre { padding-top:5px; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblApresPrix {
+    padding-top:0;
+    display:none;
+  }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs .sp_lblApresPrixReduit { display:block !important; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_infosTarifs a {
+    font-size:0.8em;
+    text-decoration:underline !important;
+  }
+  .div_tarifUneChambre_lancerResa_avecBtn > div { display:block; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_description { padding-top:20px; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_equipements {
+    margin-bottom:10px;
+    font-size:13px;
+  }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_saisirDates, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_description, #div_detailsDesChambres .div_tarifUneChambre .div_info_desc_chmb {
+    font-weight:normal;
+    color:#636363;
+    font-size:13px;
+  }
+  #div_detailsDesChambres .div_tarifUneChambre .div_info_desc_chmb { line-height:16px; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_info_desc_chmb.texteTropLong { height:48px; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_info_desc_chmb.texteTropLong + a {
+    display:inline-block !important;
+    color:#cabca2;
+  }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_saisirDates a { color:#ff5f32; }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers {
+    font-size:14px;
+    padding-bottom:10px;
+    padding-left:0;
+    padding-right:0;
+    padding-top:5px;
+  }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > * { text-align:center; }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > * > span:first-child { display:block; }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div > div, .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div > div > div {
+    display:block;
+    width:auto;
+  }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div > div > div {
+    text-align:center !important;
+    padding-right:0;
+    padding-left:0;
+  }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div > div > div:first-child { padding-bottom:2px; }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div .sp_selectPersinfoComp {
+    display:inline-block;
+    position:static !important;
+    font-size:10px;
+  }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div .sp_selectPersinfoComp:after {
+    content:':';
+    margin-left:5px;
+    font-size:14px;
+  }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div.div_selectNbEnfants .sp_selectPersLbl::after, .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_selectNbPers > div.div_selectNbBebes .sp_selectPersLbl::after { display:none; }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa_btn a {
+    height:33px;
+    line-height:33px;
+  }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_equipements ul li {
+    font-weight:bold;
+    width:inherit;
+  }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_description, #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambreContentInfos .div_tarifUneChambre_equipements { border-right:none; }
+  .div_tarifUneChambre_lancerResa_avecBtn { padding-top:15px; }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa .div_tarifUneChambre_saisirDates { margin-bottom:17px; }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa_btn {
+    padding-top:20px;
+    padding-right:15px;
+    width:auto;
+    text-align:center;
+  }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa_btn a {
+    display:inline-block;
+    padding-left:30px;
+    padding-right:30px;
+  }
+  .div_tarifUneChambre_lancerResa_avecBtn .div_tarifUneChambre_lancerResa.sansDates + .div_tarifUneChambre_lancerResa_btn, .div_tarifUneChambre.indisponible .div_tarifUneChambre_lancerResa_btn {
+    display:none;
+    visibility:inherit;
+  }
+  .ui-selectmenu-menu .ui-widget-content {
+    border:none;
+    text-align:center;
+    color:#535353;
+    margin-top:5px;
+    box-shadow:0px 0px 5px 0px rgba(0,0,0,0.16);
+    border-radius:3px;
+  }
+  .ui-selectmenu-menu li.ui-state-focus {
+    background:none;
+    color:#535353;
+  }
+  .ui-menu .ui-menu-item {
+    padding:5px 0;
+    font-size:15px;
+    border:none !important;
+  }
+  .div_tarifUneChambreContentInfos + .div_tarifUneChambre_tarifs { display:none !important; }
+  #div_detailsDesChambres .div_tarifUneChambre .div_tarifUneChambre_tarifs li {
+    width:auto;
+    margin:0 0 5px;
+    display:block;
+  }
+  .div_fiche_grilledetailprix_chmb { display:none; }
+}
+@media screen and (min-width: 701px) {
+  #div_detailsDesChambres .div_tarifUneChambre .div_imgChambreEtTarif { display:none; }
+  .div_imgChambreEtTarif + .div_tarifUneChambre_tarifs { display:none !important; }
+}
+.bt_accesResaResponsive a {
+  background:#ff5f32;
+  font-size:1.5em;
+  font-family:'Mulish', sans-serif;
+  font-variant-ligatures:none;
+  -webkit-font-variant-ligatures:none;
+}
+#div_ficheBlocResa .div_btnResa a {
+  background:#ff5f32;
+  font-family:'Mulish', sans-serif;
+  font-variant-ligatures:none;
+  -webkit-font-variant-ligatures:none;
+}
+#div_ficheDescriptions .div_descriptionComplete {
+  overflow:hidden;
+  position:relative;
+  margin-bottom:10px;
+  -webkit-transition:max-height 0.5s ease-in-out;
+  -moz-transition:max-height 0.5s ease-in-out;
+  -ms-transition:max-height 0.5s ease-in-out;
+  -o-transition:max-height 0.5s ease-in-out;
+  transition:max-height 0.5s ease-in-out;
+  max-height:inherit !important;
+  line-height:20px;
+  text-align:justify;
+}
+#div_ficheDescriptions .div_descriptionComplete:after {
+  background:-moz-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 15%,#fff 70%,#fff 100%);
+  background:-webkit-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 15%,#fff 70%,#fff 100%);
+  background:linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 15%,#fff 70%,#fff 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff',endColorstr='#ffffff',GradientType=1);
+  content:" ";
+  position:absolute;
+  bottom:0;
+  width:0;
+  right:0;
+  height:1.3em;
+}
+#div_ficheDescriptions .div_descriptionComplete.reduced { max-height:163px !important; }
+#div_ficheDescriptions .div_descriptionComplete.reduced:after {
+  width:100%;
+  -webkit-transition:width 1s ease-in-out;
+  -moz-transition:width 1s ease-in-out;
+  -ms-transition:width 1s ease-in-out;
+  -o-transition:width 1s ease-in-out;
+  transition:width 1s ease-in-out;
+}
+#div_ficheDescriptions .div_descriptionComplete p {
+  padding:0 0 20px;
+  margin:0;
+}
+#div_ficheDescriptions .div_descriptionComplete p:last-child { padding:0; }
+#div_ficheDescriptions .div_descriptionComplete_btnPlus {
+  text-align:right;
+  display:none;
+}
+#div_ficheDescriptions .div_descriptionComplete_btnPlus a {
+  color:#333;
+  font-weight:600;
+  text-decoration:none;
+  color:#4bab77;
+}
+#div_ficheDescriptions .div_descriptionComplete_btnPlus a:hover { text-decoration:underline; }
+@media screen and (max-width: 1024px) {
+  #div_ficheDescriptions .div_descriptionComplete_btnPlus a { text-decoration:underline !important; }
+}
+.div_ongletsNav li:last-child, .sp_simuleDate { display:none; }
+@media screen and (max-width: 1024px) and (min-width: 701px) {
+  #contentCentre {
+    max-width:768px;
+    margin:0 auto;
+  }
+  .div_ongletsNav.afficheBtnReserver li {
+    font-size:0.8em;
+    font-weight:500;
+  }
+  .div_ongletsNav.afficheBtnReserver li a {
+    padding-top:13px;
+    padding-bottom:11px;
+  }
+  .div_ongletsNav.afficheBtnReserver #onglet_reserver {
+    display:table-cell;
+    font-size:1em;
+  }
+  .div_ongletsNav.afficheBtnReserver #onglet_reserver a {
+    background:#ff5f32 !important;
+    color:#fff;
+    padding:10px 45px;
+    border-radius:50px;
+  }
+  #content, #menu, #header, #footer { min-width:inherit; }
+  #header #headerContent {
+    padding-left:60px;
+    padding-right:60px;
+  }
+  #div_ficheDetail .colonneGauche {
+    float:none;
+    width:100%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+  }
+  #unBlocPhotos { padding-top:0; }
+  #unBlocPhotos #div_mediasAlbum { margin-top:19px; }
+  #unBlocPhotos .div_sliderMobile .divInfosSlideNextPrev { display:none; }
+  #unBlocPhotos .div_sliderMobile img {
+    max-height:480px;
+    max-width:100%;
+  }
+  #unBlocPhotos #div_mediasAlbum #div_fiche_albumJquery { width:678px; }
+  #unBlocPhotos #div_mediasAlbum #controls a { width:45px; }
+  .unBloc {
+    padding-left:38px;
+    padding-right:38px;
+  }
+  #unBlocDescription .titre { padding-top:0; }
+  #unBlocDescription .titre:after { top:27px; }
+  #div_numeroSpecialGroupe {
+    text-align:center;
+    padding-top:0;
+  }
+  #div_numeroSpecialGroupe img { width:auto; }
+  .colonneGauche #colonneDroiteInfosResa {
+    float:none;
+    left:inherit !important;
+    position:static !important;
+    padding:28px 0 0px;
+    display:table;
+    width:376px !important;
+    margin:0 auto;
+    margin-bottom:32px;
+  }
+  .colonneGauche #colonneDroiteInfosResa.affichePopin #div_ficheBlocResaPopinPlaceHolder {
+    display:block !important;
+    margin-bottom:30px;
+    padding-top:10px;
+  }
+  .colonneGauche #colonneDroiteInfosResa.affichePopin #div_ficheBlocResaPopin {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.6);
+    margin-bottom:0;
+  }
+  .colonneGauche #colonneDroiteInfosResa.affichePopin #div_ficheBlocResaPopinContentTable {
+    display:table;
+    width:100%;
+    height:100%;
+  }
+  .colonneGauche #colonneDroiteInfosResa.affichePopin #div_ficheBlocResaPopinContentTableCell {
+    display:table-cell;
+    position:relative;
+    padding-top:30px;
+  }
+  .colonneGauche #colonneDroiteInfosResa.affichePopin #div_ficheBlocResa {
+    padding-top:0;
+    position:relative;
+    width:100%;
+    max-width:376px;
+    margin:0 auto;
+  }
+  .colonneGauche #colonneDroiteInfosResa.affichePopin #div_ficheBlocResaPopinClose {
+    position:absolute;
+    right:-49px;
+    top:-17px;
+    background:url("/img/css/fiche/ferme-popin.png") no-repeat center;
+    background-size:15px 15px;
+    width:49px;
+    height:49px;
+  }
+  #div_ficheBlocResa .calendrier_resa { padding:10px 11px; }
+  #footerSecondaireContent, #footer { width:100% !important; }
+  #footerSuivreGitesDeFrance { padding-left:25px; }
+  #header #headerContent { max-width:648px; }
+}
+#div_ficheHead .span_classement_GFRAN > span:before {
+  font-family:'icomoon' !important;
+  speak:none;
+  font-style:normal;
+  font-weight:normal;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+#div_ficheHead .span_classement_GFRAN .sp_unEpi {
+  margin-right:4px;
+  font-size:1.6em;
+  display:inline-block;
+  width:21px;
+}
+@media screen and (max-width: 700px) {
+  #div_ficheHead .span_classement_GFRAN { margin-right:10px; }
+}
+.span_classement_GFRAN .sp_unEpi:before {
+  content:"\e900";
+  color:#4bab77;
+}
+#div_ficheHead.H .span_classement_GFRAN .sp_unEpi:before { color:#108dbb; }
+#div_ficheHead.C .span_classement_GFRAN .sp_unEpi:before { color:#e7ac26; }
+.span_classement_GFRAN .sp_classmentEnCourt:before {
+  content:"\e901";
+  color:#333 !important;
+  font-size:2.1em;
+}
+.span_classement_GFRAN .sp_reclassmentEnCourt:before {
+  content:"\e902";
+  color:#333 !important;
+  font-size:2.1em;
+}
+.sp_classementCityBreak:before {
+  color:#814a97;
+  font-size:1.8em;
+}
+.span_classement_GFRAN .sp_classementCityBreak_3:before { content:"\e911"; }
+.span_classement_GFRAN .sp_classementCityBreak_4:before { content:"\e913"; }
+.span_classement_GFRAN .sp_classementCityBreak_5:before { content:"\e912"; }
+@media screen and (max-width: 700px) {
+  #div_ficheHead .div_titreFiche h1 { font-size:1.7em; }
+}
+@media screen and (max-width: 700px) {
+  .div_titreFiche .enpromo {
+    display:block;
+    margin-left:0;
+    margin-top:5px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .fancybox-close {
+    top:-15px;
+    right:15px;
+    background-size:14px 14px;
+  }
+}
+#div_ficheBlocResa .tarifFicheApartirDe .div_prixLocationTotal .sp_lblAvantPrixTotal {
+  color:#333;
+  font-weight:500;
+}
+#div_fiche_albumJqueryOwlCarousel {
+  position:relative;
+  overflow:hidden;
+}
+#div_fiche_albumJqueryOwlCarousel .div_diapoFicheOwlCarousel {
+  width:96%;
+  height:79px;
+  margin:0 auto;
+}
+#div_fiche_albumJqueryOwlCarousel .owl-nav > div {
+  bottom:0;
+  position:absolute;
+  overflow:hidden;
+  text-indent:-1000px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background-color:#00653f;
+  background-repeat:no-repeat;
+  background-size:30px;
+  background-position:center center;
+  top:20px;
+}
+#div_fiche_albumJqueryOwlCarousel .owl-nav > div.disabled { display:none; }
+#div_fiche_albumJqueryOwlCarousel .owl-nav > div.owl-prev {
+  background-image:url("../../img/css/prevFF.svg");
+  left:-15px;
+}
+#div_fiche_albumJqueryOwlCarousel .owl-nav > div.owl-next {
+  background-image:url("../../img/css/nextFF.svg");
+  right:-15px;
+}
+#div_fiche_albumJqueryOwlCarousel .owl-dots { display:none; }
+#div_fiche_albumJqueryOwlCarousel .owl-item img {
+  height:auto;
+  border-radius:15px;
+}
+@media screen and (max-width: 1024px) {
+  #div_fiche_albumJqueryOwlCarousel .div_diapoFicheOwlCarousel {
+    width:679px;
+    max-height:70px;
+  }
+  #div_fiche_albumJqueryOwlCarousel .owl-nav > div { width:45px; }
+  #div_fiche_albumJqueryOwlCarousel .owl-nav > div.owl-prev { left:-45px; }
+  #div_fiche_albumJqueryOwlCarousel .owl-nav > div.owl-next { right:-45px; }
+}
+.owl-carousel .owl-item {
+  -webkit-backface-visibility:visible !important;
+  backface-visibility:hidden !important;
+}
+@media screen and (min-width: 1025px) {
+  .colonneDroite .aTropheeClient {
+    padding-right:45%;
+    background-image:url("/imgs_defaut/tropheesClient/tc_normal.svg");
+    background-repeat:no-repeat;
+    background-position:right 8px top;
+    background-size:auto 74px;
+    padding-top:5px;
+    padding-bottom:3px;
+  }
+}
+@media screen and (min-width: 701px) {
+  .div_avisClientContent .aTropheeClient > span, .div_avisClientContent .aTropheeClient > img { margin-top:16px; }
+  .div_avisClientContent .aTropheeClient > span.sp_recapAvisLblBaseSur, .div_avisClientContent .aTropheeClient > img.sp_recapAvisLblBaseSur { margin-top:0; }
+  .div_avisClientContent .aTropheeClient:before {
+    content:"";
+    width:179px;
+    height:71px;
+    float:left;
+    margin-right:30px;
+    background-image:url("/imgs_defaut/tropheesClient/tc_normal.svg");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:auto 71px;
+  }
+}
+@media screen and (min-width: 701px) and (max-width: 1024px) {
+  .colonneDroite .aTropheeClient { position:relative; }
+  .colonneDroite .aTropheeClient:before {
+    content:'';
+    background-image:url("/imgs_defaut/tropheesClient/tc_simple.svg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:auto 36px;
+    height:36px;
+    width:100%;
+    position:absolute;
+    bottom:48px;
+    left:0;
+    display:block;
+  }
+}
+@media screen and (max-width: 700px) {
+  .colonneDroite .aTropheeClient {
+    padding-left:57px;
+    height:39px;
+    background-image:url("/imgs_defaut/tropheesClient/tc_simple.svg");
+    background-repeat:no-repeat;
+    background-position:left center;
+    background-size:auto 31px;
+    margin-bottom:-10px;
+    padding-bottom:10px;
+  }
+  .div_avisClientContent .aTropheeClient {
+    margin-left:90px;
+    position:relative;
+  }
+  .div_avisClientContent .aTropheeClient:before {
+    content:"";
+    width:67px;
+    height:65px;
+    position:absolute;
+    left:-84px;
+    top:-16px;
+    background-image:url("../../imgs_defaut/tropheesClient/tc_normal.svg");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:auto 65px;
+  }
+  #div_ficheHead .div_recapAvisLibelle .sp_recapAvisLblBaseSur {
+    position:relative;
+    bottom:2px;
+  }
+  footer { margin-bottom:55px; }
+  #iframe_youtubeVideo { margin-left:35px; }
+  .groupeMeaTitre { margin-left:0; }
+}
+#div_ficheBlocResa .ui-datepicker .ui-datepicker-calendar .avantDatesPossibles span { color:#aaa; }
+#div_ficheBlocResa .ui-datepicker .ui-datepicker-calendar .ui-state-default {
+  text-align:center;
+  color:#fff;
+}
+#div_ficheBlocResa .debutResa span, #div_ficheBlocResa .debutResa a {
+  background:-moz-linear-gradient(-41deg,#00653f 0%,#00653f 50%,#bbb 51%,#bbb 100%) !important;
+  background:-webkit-linear-gradient(-41deg,#00653f 0%,#00653f 50%,#bbb 51%,#bbb 100%) !important;
+  background:linear-gradient(137deg,#00653f 0%,#00653f 50%,#bbb 51%,#bbb 100%) !important;
+  color:#fff !important;
+}
+#div_ficheBlocResa .cliquable.finResa span, #div_ficheBlocResa .cliquable.finResa a {
+  background:-moz-linear-gradient(-41deg,#bbb 0%,#bbb 50%,#00653f 51%,#00653f 100%) !important;
+  background:-webkit-linear-gradient(-41deg,#bbb 0%,#bbb 50%,#00653f 51%,#00653f 100%) !important;
+  background:linear-gradient(137deg,#bbb 0%,#bbb 50%,#00653f 51%,#00653f 100%) !important;
+  color:#fff !important;
+}
+#div_ficheBlocResa .dateArrivee span, #div_ficheBlocResa .dateArrivee a, #div_ficheBlocResa .dateFin span, #div_ficheBlocResa .dateFin a { background:#3a485f !important; }
+.ui-datepicker table { font-size:1em; }
+.calendrier_resa .spanCalendJour_occupe, .calendrier_resa .spanCalendJour_option, .calendrier_resa .sp_lst_dispoLegendeIllustreOccupe, .calendrier_resa .sp_lst_dispoLegendeIllustreOccupe:hover, .calendrier_resa .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.occupe span, .calendrier_resa .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.resa span, .calendrier_resa .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.option span, .calendrier_resa .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.option a, .calendrier_resa .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.occupe span:hover, .calendrier_resa .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.resa span:hover, .calendrier_resa .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.option span:hover, .calendrier_resa .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.option a:hover {
+  color:#fff !important;
+  background:url("/img/css/traitOblique.svg") no-repeat #bbb !important;
+  background-size:100% 100% !important;
+  background-position:center center !important;
+  text-decoration:none;
+}
+.spanCalendJour_libre, .sp_lst_dispoLegendeIllustreLibre, .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.libre a, .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.libre span { background-color:#4bab77 !important; }
+.spanCalendCliquable, .sp_lst_dispoLegendeIllustreArrivee, .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.cliquable a, .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.cliquable a.ui-state-active { background-color:#00653f !important; }
+.sp_lst_dispoLegendeIllustreContact, .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.intention span, .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.inconnu span, .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.inconnu a { background-color:#f6a10e !important; }
+.sp_lst_dispoLegendeIllustreSejour, .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.sejour span, .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.sejour span, .div_calendDateDebFin .ui-datepicker .ui-datepicker-calendar td.sejour a { background-color:#3a485f !important; }
+.ui-state-focus, .ui-state-hover, .ui-widget-content .ui-state-focus, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-focus, .ui-widget-header .ui-state-hover {
+  border:inherit;
+  background:inherit;
+}
+.infoNbEquipements {
+  padding-left:30px;
+  overflow:hidden;
+  font-weight:500;
+}
+.infoNbEquipements > div {
+  display:inline-block;
+  margin:5px;
+}
+.infoNbEquipements > div:before {
+  content:'\2022';
+  margin-right:10px;
+  color:#4bab77;
+}
+.infoNbEquipements > div:first-child:before { display:none; }
+#div_ficheFicheCaracteristiques .infoNbEquipements { font-weight:500; }
+#div_ficheFicheCaracteristiques .infoNbEquipements > div { display:block; }
+#div_ficheFicheCaracteristiques .infoNbEquipements > div:first-child:before { display:inline; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus .repartitionsDesChambres {
+  padding-top:15px;
+  padding-left:30px;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus .repartitionsDesChambres .repartitionUneChambre {
+  display:inline-block;
+  margin-bottom:10px;
+  vertical-align:top;
+  width:30%;
+  margin-right:3%;
+  font-weight:normal;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus .repartitionsDesChambres .repartitionUneChambre .titre {
+  font-size:1.2em;
+  background:url("/imgs_defaut/v5/svg/lit.svg");
+  background-repeat:no-repeat;
+  background-position:left center;
+  background-size:25px 25px;
+  padding-left:30px;
+  padding-bottom:0;
+  margin-bottom:5px;
+  font-weight:500;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus .repartitionsDesChambres .repartitionUneChambre .nom { margin-bottom:10px; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus .repartitionsDesChambres .repartitionUneChambre ul {
+  padding-left:10px;
+  font-size:1em;
+  line-height:1.2em;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus .repartitionsDesChambres .repartitionUneChambre ul li {
+  width:100%;
+  font-size:1em;
+  margin-bottom:5px;
+  padding-left:0 !important;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus .repartitionsDesChambres .repartitionUneChambre ul li:before {
+  content:'-';
+  margin-right:3px;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus .repartitionsDesChambres .repartitionUneChambre .sp_tailleLit { font-size:0.85em; }
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus .repartitionsDesChambres .repartitionUneChambre .description {
+  padding-left:10px;
+  font-size:0.8em;
+  font-style:italic;
+}
+#div_ficheFicheCaracteristiques .repartitionUneChambre {
+  display:block;
+  width:auto;
+  font-weight:normal;
+}
+@media screen and (max-width: 650px) {
+  .repartitionUneChambre {
+    display:block;
+    width:100%;
+  }
+}
+#divGraph_fenetre {
+  margin-left:auto !important;
+  margin-top:auto !important;
+  transform:translate(-50%,0);
+  height:auto !important;
+  padding:1% 4%;
+  top:75px !important;
+  bottom:75px;
+  overflow-y:scroll;
+  overflow-x:hidden;
+}
+#divGraph_fenetre .div_headPopin {
+  padding:0;
+  overflow:inherit;
+}
+#divGraph_fenetre .div_headPopin .sp_titrePopin {
+  font-size:2em;
+  text-align:center;
+  line-height:inherit;
+  display:block;
+  margin-bottom:20px;
+  margin-top:15px;
+  font-weight:500;
+}
+#divGraph_fenetre .div_headPopin .a_fermePopin {
+  background:url(/img/css/close_popinFF.svg) no-repeat;
+  background-size:100%;
+  width:30px;
+  height:30px;
+  display:block;
+  position:absolute;
+  top:0;
+  right:-40px;
+}
+#divGraph_fenetre .div_headPopin .a_fermePopin img { display:none; }
+#divGraph_fenetre #div_sendMailToProp {
+  padding:20px;
+  padding-top:0;
+  font-size:1.1em;
+  font-weight:500;
+  overflow:auto;
+}
+#divGraph_fenetre #div_sendMailToProp .div_messageIntroForm {
+  margin-bottom:20px;
+  font-size:0.9em;
+}
+#divGraph_fenetre #div_sendMailToProp #div_infosObligatoires {
+  font-style:italic;
+  font-size:0.8em;
+  margin-bottom:10px;
+  font-weight:700;
+}
+#divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) { margin-bottom:9px; }
+#divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) .etoile { font-weight:700; }
+#divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) label {
+  display:inline-block;
+  width:49%;
+  max-width:150px;
+  vertical-align:top;
+  line-height:23px;
+}
+#divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) input, #divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) select, #divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) textarea {
+  border:1px solid #bbb;
+  width:50%;
+  max-width:300px;
+  display:inline-block;
+  vertical-align:top;
+  padding:3px 7px;
+  box-sizing:border-box;
+  color:#333;
+  height:24px;
+  background:#fff;
+  font-family:'Mulish', sans-serif;
+  font-variant-ligatures:none;
+  -webkit-font-variant-ligatures:none;
+}
+#divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) textarea {
+  max-width:inherit;
+  height:inherit;
+}
+#divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) .LV_validation_message {
+  margin-left:5px;
+  line-height:24px;
+  font-style:italic;
+  font-size:0.8em;
+  font-weight:700;
+}
+#divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) .LV_validation_message.LV_invalid { color:#ff5f32; }
+#divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) .LV_validation_message.LV_valid { color:#00653f; }
+#divGraph_fenetre #div_sendMailToProp #div_sentItToMe input { margin-right:10px; }
+#divGraph_fenetre #div_sendMailToProp #div_sentItToMe label { font-size:0.9em; }
+#divGraph_fenetre #div_sendMailToProp #div_validation {
+  margin:15px 0 0 0;
+  text-align:center;
+}
+#divGraph_fenetre #div_sendMailToProp #div_validation #aValidationForm {
+  display:inline-block;
+  padding:7px 30px;
+  text-decoration:none;
+  font-size:1.2em;
+  border:1px solid #ff5f32;
+  position:relative;
+  transition-duration:0.15s;
+  background:inherit;
+  border-radius:50px;
+  color:#fff;
+  background:#ff5f32;
+}
+#divGraph_fenetre #div_sendMailToProp #div_validation #aValidationForm:hover {
+  color:#ff5f32;
+  background:#fff;
+}
+#divGraph_fenetre #div_sendMailToProp .div_messageConfirmation {
+  margin-bottom:20px;
+  font-size:1.1em;
+  font-weight:700;
+  color:#00653f;
+  text-align:center;
+}
+@media screen and (max-width: 1024px) {
+  #divGraph_fenetre #div_sendMailToProp { height:auto; }
+}
+@media screen and (max-width: 650px) {
+  #div_locaguide { display:none; }
+}
+#unBlocEquipementsGoodSpot.unBlocEquipements .contentInfoPlus { padding-left:30px; }
+#unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_uneActivite, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_uneActivite { display:inline-block; }
+#unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_uneActivite .goodSpot_detail h3, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_uneActivite .goodSpot_detail h3 { font-weight:500; }
+#unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_uneActivite .goodSpot_detail h3 a, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_uneActivite .goodSpot_detail h3 a { color:#333; }
+#unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_uneActivite .goodSpot_detail p, #unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_uneActivite .goodSpot_detail .goodSpot_accroche, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_uneActivite .goodSpot_detail p, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_uneActivite .goodSpot_detail .goodSpot_accroche { font-size:0.9em; }
+#unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_uneActivite .goodSpot_detail .goodSpot_bouton a, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_uneActivite .goodSpot_detail .goodSpot_bouton a { color:#00653f; }
+#unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_retourListe, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_retourListe { color:#00653f; }
+#unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_titre h3, #unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_bouton a, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_titre h3, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_bouton a { color:#333; }
+#unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsOnglets ul li, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsOnglets ul li { border-color:#00653f !important; }
+#unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsOnglets ul li.active, #unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsOnglets ul li:hover, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsOnglets ul li.active, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsOnglets ul li:hover {
+  background-color:#00653f !important;
+  color:#fff;
+}
+#unBlocEquipementsGoodSpot.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsOnglets .goodSpot_onglets, #unBlocEquipementsGoodSpotParLoca.unBlocEquipements .goodSpot_unBlocDetails .goodSpot_detailsOnglets .goodSpot_onglets { border-color:#00653f !important; }
+#divGraph_fenetre { border-radius:0; }
+#divGraph_fermeFenetre {
+  top:0 !important;
+  left:0;
+  bottom:0;
+  right:0 !important;
+  text-align:right;
+}
+#divGraph_fermeFenetre .divGraph_fermeFenetreContent {
+  width:100%;
+  height:100%;
+}
+#divGraph_fermeFenetre a {
+  display:inline-block;
+  display:none;
+  margin:15px 15px 0 0;
+  width:28px;
+  height:28px;
+  background:url("../../img/css/fiche/ferme-popin.png") no-repeat center;
+}
+#div_sendMailToFriend { height:90%; }
+@media screen and (max-width: 650px) {
+  #divGraph_fenetre {
+    height:95% !important;
+    width:95% !important;
+    margin-left:0 !important;
+    margin-top:0 !important;
+    top:10px !important;
+    bottom:10px !important;
+    right:10px !important;
+    left:10px !important;
+    transform:inherit !important;
+    overflow:scroll;
+  }
+  #divGraph_fenetre #div_btnCloseFrmResa .sp_titrePopin { padding-right:50px; }
+  #divGraph_fenetre #div_btnCloseFrmResa .a_fermePopin {
+    right:25px;
+    top:20px;
+    filter:brightness(0.4);
+  }
+  #divGraph_fenetre #div_sendMailToProp { height:auto; }
+  #divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) label, #divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) input, #divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) select, #divGraph_fenetre #div_sendMailToProp .div_formContactProp:not(#div_sentItToMe) textarea {
+    width:100%;
+    display:block;
+    max-width:inherit;
+  }
+}
+.panoramiqueIframe {
+  padding-top:20px;
+  display:none;
+  clear:both;
+}
+.panoramiqueIframe iframe {
+  width:100%;
+  height:450px;
+}
+@media screen and (max-width: 650px) {
+  .panoramiqueIframe iframe { height:300px; }
+  #div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus .repartitionsDesChambres .repartitionUneChambre { width:100%; }
+}
+#unBlocPhotos > a {
+  float:left;
+  text-decoration:none;
+  display:inline-block;
+  border:1px solid #00653f;
+  background:#00653f;
+  border-radius:50px;
+  padding:10px 20px;
+  transition-duration:0.15s;
+  color:#fff;
+}
+#unBlocPhotos > a:hover {
+  background:#fff;
+  color:#00653f;
+}
+#div_fichesEquipements .unBlocEquipements.unBlocEquipementsAvecLi .contentInfoPlus .repartitionsDesChambres .repartitionUneChambre .titre { background-image:url('/img/css/lit.svg'); }
+.identifiantCommunal {
+  font-weight:normal;
+  font-size:0.8em;
+  font-style:italic;
+}
+.identifiantCommunal .lbl { display:block; }
+#div_fiche_flagTraduction { display:none; }
+#unBlocProprietaire .owl-carouselContent { margin-top:30px; }
+.div_itea_map_leaf { z-index:1; }
+.unBlocCanevas .span_titreLstCanevas {
+  display:block;
+  margin-bottom:20px;
+  font-size:1.1em;
+}
+.unBlocCanevas .ul_canevas li { margin-bottom:15px; }
+.unBlocCanevas .ul_canevas li:last-child { margin-bottom:0; }
+.unBlocCanevas .ul_canevas li > div {
+  display:inline-block;
+  vertical-align:top;
+}
+.unBlocCanevas .ul_canevas li .div_canevasVignette { width:20%; }
+.unBlocCanevas .ul_canevas li .div_canevasVignette .img {
+  display:inline-block;
+  width:100%;
+}
+.unBlocCanevas .ul_canevas li .div_canevasDesc {
+  width:80%;
+  padding-left:20px;
+}
+.unBlocCanevas .ul_canevas li .div_canevasDesc h3 { margin-bottom:10px; }
+.unBlocCanevas .ul_canevas li .div_canevasDesc > p { margin-bottom:10px; }
+.unBlocCanevas .ul_canevas li .div_canevasDesc .a_canevasSavoirPlus {
+  background:#ff5f32;
+  display:inline-block;
+  padding:5px 15px;
+  color:#fff;
+  text-decoration:none;
+  font-size:0.9em;
+}
+#derniersHebergements { display:none !important; }
+#elem_lst_fiche_ancv-cvco img { max-width:50px; }
+.fichePrint { float:right; }
+.fichePrint a.a_lst_fiche_pdf {
+  margin:0 20px 0 0;
+  color:#00653f;
+  padding-top:15px;
+  float:left;
+  text-decoration:underline;
+  display:inline-block;
+}
+.fichePrint a.a_lst_fiche_pdf:before {
+  content:'';
+  width:28px;
+  height:43px;
+  background:url(/img/css/icon-pdf.svg) no-repeat center;
+  background-size:36px 44px;
+  margin-right:10px;
+  top:7px;
+  display:inline-block;
+  position:relative;
+}
+#div_ficheHead .rubriquesPrincipales {
+  position:absolute;
+  bottom:-10px;
+  right:0;
+  z-index:1;
+}
+#div_ficheHead .rubriquesPrincipales ul li.rubrique_type_LISTE {
+  text-align:right;
+  position:relative;
+  float:right;
+  margin-left:10px;
+}
+#div_ficheHead .rubriquesPrincipales ul li.rubrique_type_LISTE .divRubrique_image {
+  background:#fff;
+  overflow:hidden;
+  height:33px;
+}
+#div_ficheHead .rubriquesPrincipales ul li.rubrique_type_LISTE .divRubrique_image img {
+  height:33px;
+  width:auto;
+}
+#div_ficheHead .rubriquesPrincipales ul li.rubrique_type_LISTE .divRubrique_descs {
+  display:none;
+  position:absolute;
+  top:37px;
+  left:50%;
+  transform:translate(-50%,0);
+  background:#fff;
+  white-space:nowrap;
+  font-size:0.75em;
+  padding:2px 5px;
+  color:#555;
+  border:1px solid #555;
+  box-shadow:2px 2px 4px -1px #555;
+  transition-duration:0.2s;
+}
+#div_ficheHead .rubriquesPrincipales ul li.rubrique_type_LISTE .divRubrique_descs .div_rubriqueContentTxt { display:none; }
+#div_ficheHead .rubriquesPrincipales ul li.rubrique_type_LISTE:hover .divRubrique_descs { display:block; }
+#div_cartoGmap .div_itea_map_leaf .leaflet-marker-pane img {
+  margin-left:-16px;
+  margin-top:-32px;
+}
+#div_detail_piece h3 {
+  font-size:1.5em;
+  margin-bottom:30px;
+}
+#div_detail_piece div.div_titre_detail_piece {
+  border:none;
+  font-size:1.3em;
+  margin:0 0 20px;
+  padding:0;
+}
+#div_detail_piece .class_detail_piece, #div_detail_piece .div_couchage_piece, #div_detail_piece .divers_piece, #div_detail_piece .desc_piece {
+  font-size:1em;
+  padding-left:30px;
+  margin-bottom:10px;
+}
+#div_detail_piece li.detail_piece { margin-bottom:20px; }
+.div_btPlanningLDPasAJour {
+  display:none;
+  text-align:center;
+  margin-bottom:15px;
+  color:#ff5f32;
+}
+.div_btPlanningLDPasAJour > span.sp_btSignalPlanningLDPasAJour {
+  cursor:pointer;
+  text-decoration:underline;
+}
+.div_btPlanningLDPasAJour > span.sp_btSignalPlanningLDPasAJour:hover { text-decoration:none; }
+#div_formSignalPlanningLDPasAJour {
+  height:90%;
+  border-top:3px  solid;
+  padding:30px 10px;
+  font-size:0.8em;
+  overflow:auto;
+}
+#div_formSignalPlanningLDPasAJour .div_infos {
+  font-weight:normal;
+  padding:10px;
+  background-color:#eee;
+  margin:0 0 5px;
+  border-radius:5px;
+  text-align:center;
+  font-size:1.2em;
+}
+#div_formSignalPlanningLDPasAJour .div_messageRetour.OK {
+  background-color:#dff0d8;
+  border:1px solid #d6e9c6;
+  color:green;
+  font-weight:bold;
+}
+#div_formSignalPlanningLDPasAJour .div_messageRetour.KO {
+  background-color:#f2dede;
+  border:1px solid #ebccd1;
+  color:red;
+  font-weight:bold;
+}
+#div_formSignalPlanningLDPasAJour #form_signalPlanningLDPasAJour .div_infosObligatoires {
+  font-size:1em;
+  font-style:italic;
+  margin:0 0 30px;
+}
+#div_formSignalPlanningLDPasAJour #form_signalPlanningLDPasAJour .div_formSignalPlanningLDPasAJour {
+  margin:0 0 15px;
+  overflow:hidden;
+}
+#div_formSignalPlanningLDPasAJour #form_signalPlanningLDPasAJour .div_formSignalPlanningLDPasAJour label {
+  width:auto;
+  line-height:22px;
+  float:left;
+  display:block;
+  font-size:1.2em;
+}
+#div_formSignalPlanningLDPasAJour #form_signalPlanningLDPasAJour .div_formSignalPlanningLDPasAJour input[type="text"], #div_formSignalPlanningLDPasAJour #form_signalPlanningLDPasAJour .div_formSignalPlanningLDPasAJour input[type="email"], #div_formSignalPlanningLDPasAJour #form_signalPlanningLDPasAJour .div_formSignalPlanningLDPasAJour textarea {
+  width:100%;
+  border:1px solid #ccc;
+  font-size:13px;
+  color:#a0a0a0;
+  padding:7px 5px;
+  margin:0;
+  display:block;
+  float:left;
+  border-radius:3px 3px 3px 3px;
+}
+#div_formSignalPlanningLDPasAJour #form_signalPlanningLDPasAJour .div_formSignalPlanningLDPasAJour textarea { min-height:75px; }
+#div_formSignalPlanningLDPasAJour #form_signalPlanningLDPasAJour .div_formSignalPlanningLDPasAJour .sp_btnReload {
+  float:left;
+  margin:12px 0 0 0;
+  cursor:pointer;
+  -webkit-border-radius:3px 3px 3px 3px;
+  border-radius:3px 3px 3px 3px;
+}
+#div_formSignalPlanningLDPasAJour #form_signalPlanningLDPasAJour .div_formSignalPlanningLDPasAJour .LV_validation_message {
+  display:block;
+  float:left;
+}
+#div_formSignalPlanningLDPasAJour #form_signalPlanningLDPasAJour #div_formSignalPlanningLDPasAJour_validation { padding:30px 0 0; }
+#div_formSignalPlanningLDPasAJour #form_signalPlanningLDPasAJour #div_formSignalPlanningLDPasAJour_validation a {
+  font-size:20px;
+  padding:5px;
+  width:100px;
+  color:#fff;
+  display:block;
+  text-align:center;
+  font-family:'PT Sans', sans-serif;
+  font-weight:400;
+  background:#ff5f32;
+  border-radius:3px 3px 3px 3px;
+  text-decoration:none;
+  margin:0 auto;
+}
+#divGraph_fenetre #div_btnCloseFrmResa a {
+  background-size:25px 25px;
+  height:25px;
+  width:25px;
+}
+#span_lbl_adresse_departGmap {
+  margin-top:10px;
+  display:block;
+}
+#div_adresseGmap { margin:10px 0; }
+#div_adresseGmap #span_adresseGmap { margin-right:10px; }
+#div_adresseGmap input {
+  max-width:530px;
+  width:100%;
+  border:1px solid #aaa;
+  padding:5px 10px;
+  border-radius:50px;
+}

@@ -1,0 +1,1467 @@
+/******************************************************************/
+/******************************************************************/
+/****** ajout favoris compte gites de france **********************/
+/******************************************************************/
+/******************************************************************/
+
+#fancybox-overlay{opacity:0.6!important;}
+#itea_cnxCptGDF_favori .itea_cnxCptGDF_titre{background-color:#fff;  border-radius:3px 3px 0 0;  color:#626262;  padding-top:25px;  padding-bottom:0;}
+#itea_cnxCptGDF_favori .itea_cnxCptGDF_titre span{display:block;    background:url("/imgs_defaut/compte-gdf/favoris/login-favoris.png") center top no-repeat;    padding-top:50px;  }
+#popIn_ajoutFavoriHeber{padding:30px 20px;  color:#3a485f;  background:#fff;}
+#popIn_ajoutFavoriHeber *{-webkit-box-sizing:border-box;
+/* Safari/Chrome,other WebKit */
+-moz-box-sizing:border-box;
+/* Firefox,other Gecko */
+box-sizing:border-box;  }
+#popIn_ajoutFavoriHeber .popIn_ajoutFavoriHeberImg{text-align:center;    margin:0 0 30px;  }
+#popIn_ajoutFavoriHeber .popIn_ajoutFavoriHeberImg img{display:inline-block;  }
+#popIn_ajoutFavoriHeber .popIn_ajoutFavoriHeberTitre,#popIn_ajoutFavoriHeber .ajoutFavoriHeberOkTitre{font-size:1.4em;    padding:0;    margin:0 0 35px;    text-align:center;  }
+#popIn_ajoutFavoriHeber #div_cptGDF_newFavori{position:relative;  }
+#popIn_ajoutFavoriHeber #ul_cptGDF_lstFavori input,#popIn_ajoutFavoriHeber #div_cptGDF_newFavori input[type="text"]{background:#fff; border-radius:60em;   -webkit-box-shadow:0 0 8px 0 #cccccc;    box-shadow:0 0 8px 0 #cccccc;    padding:15px;    font-size:1.3em;    color:#7d7d7d;    border:none;    display:block;    width:100%;    text-align:left;    margin:0 0 25px;    -webkit-appearance:none;  }
+#popIn_ajoutFavoriHeber #div_cptGDF_newFavori input[type="text"]{color:#a7a7a7;    }
+#popIn_ajoutFavoriHeber #ul_cptGDF_lstFavori input{cursor:pointer;    }
+#popIn_ajoutFavoriHeber #ul_cptGDF_lstFavori input:hover{color:#f45d5c;    }
+#popIn_ajoutFavoriHeber #ul_cptGDF_lstFavori .cptGDF_modifFavori_msgInfo{font-style:italic;      color:#ff7011;      padding:0 0 0 15px;      margin:0 0 10px;    }
+#popIn_ajoutFavoriHeber #div_cptGDF_newFavori input[type="submit"]{-webkit-appearance:none;    position:absolute;    right:10px;    bottom:10px;    background:#f45d5c;    border:none;    color:#fff;    border-radius:60em;    font-size:1em;    padding:5px 15px;    cursor:pointer;  }
+#popIn_ajoutFavoriHeber #compteGDF_pasDeFavoris{margin-bottom:20px;}
+#popIn_ajoutFavoriHeber .compteGDF_favoris_ajout{text-align:center;  }
+#popIn_ajoutFavoriHeber .compteGDF_favoris_ajout a{display:inline-block;      margin-top:20px;      background:url("/imgs_defaut/compte-gdf/ajout-favoris-new-liste.png") no-repeat left center;      padding:0 0 0 45px;      color:#3a485f;      text-decoration:none;      height:20px;      line-height:20px;      font-size:1.2em;    }
+#popIn_ajoutFavoriHeber .compteGDF_favoris_ajout a:hover{text-decoration:underline;    }
+#popIn_ajoutFavoriHeber .div_ajoutFavoriHeberOk_actions{text-align:center;  }
+#popIn_ajoutFavoriHeber .div_ajoutFavoriHeberOk_actions p{padding:0;      margin:0 0 5px;    }
+#popIn_ajoutFavoriHeber .div_ajoutFavoriHeberOk_actions a{color:#626262;      font-size:1.2em;        text-decoration:underline;    }
+#popIn_ajoutFavoriHeber .div_ajoutFavoriHeberOk_actions a:hover{text-decoration:none;    }
+@media screen and (max-width:768px){.popin_ajoutFavorisHeber{width:80%!important;  }
+}
+
+/******************************************************************/
+/******************************************************************/
+/*  Fin ajout favoris compte gites de france **********************/
+/******************************************************************/
+/******************************************************************/
+
+/******************************************************************/
+/******************************************************************/
+/*********  connexion compte gites de france **********************/
+/******************************************************************/
+/******************************************************************/
+
+input[type="submit"], input[type="button"], input[type="text"], input[type="email"], input[type="password"]{-webkit-appearance:none;}
+#fancybox-overlay{opacity:0.6!important;}
+.popin_compteGDF.fancybox-opened{filter:none!important;}
+.popin_compteGDF.fancybox-opened .fancybox-skin{box-shadow:none;background:none;color:#3a485f;}
+.popin_compteGDF.fancybox-opened .fancybox-close{background:url("/imgs_defaut/compte-gdf/close-ipad.png") no-repeat center;width:22px;height:22px;top:0;right:-37px;}
+.popin_compteGDF.fancybox-opened .fancybox-inner{background:#fff;border-radius:3px;}
+.popin_compteGDF.popin_coonnectCompteGDF.fancybox-opened .fancybox-inner, .popin_compteGDF.popin_creaCompteGDF.fancybox-opened .fancybox-inner{background:none;border-radius:0 0 3px 3px;}
+.popin_compteGDF{color:#535353;}
+.popin_compteGDF *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.popin_coonnectCompteGDF .LV_validation_message, .popin_creaCompteGDF .LV_validation_message, .itea_mdpOublieCptGDF_content .LV_validation_message, .popin_creaCompteGDF span.erreurMessage{background:none;padding:0;font-weight:bold;}
+.popin_coonnectCompteGDF .LV_invalid, .popin_creaCompteGDF .LV_invalid, .itea_mdpOublieCptGDF_content .LV_invalid, .popin_creaCompteGDF span.erreurMessage{color:#e4003a;}
+.popin_coonnectCompteGDF .LV_valid, .popin_creaCompteGDF .LV_valid, .itea_mdpOublieCptGDF_content .LV_valid{color:#80a51b;position:absolute;right:-5px;top:28px;}
+.popin_coonnectCompteGDF .LV_valid:before, .popin_creaCompteGDF .LV_valid:before, .itea_mdpOublieCptGDF_content .LV_valid:before{content:"";width:18px;height:15px;background:url("/imgs_defaut/compte-gdf/verif-ok.png") no-repeat center;display:block;}
+.itea_cnxCptGDF_titre, .itea_creationCptGDF_titre, .itea_mdpOublieCptGDF_titre{padding:10px 20px;background:#3a485f;color:#fff;font-size:1.7em;text-align:center;margin:0;}
+.itea_mdpOublieCptGDF_content{padding:20px;background:#fff;font-size:1.2em;text-align:center;}
+.itea_mdpOublieCptGDF_content > p, #itea_mdpOublieCptGDF_mail_ok > p{padding:0;margin:0 0 20px;}
+.div_formGetEmailCptGdfEmail{margin-bottom:20px;}
+.itea_mdpOublieCptGDF_content label{position:relative;}
+.itea_mdpOublieCptGDF_content label .LV_invalid{display:block;}
+.itea_mdpOublieCptGDF_content label .LV_valid{right:-25px;}
+.itea_mdpOublieCptGDF_content label span{margin:0 5px 0 0;}
+.itea_mdpOublieCptGDF_content input[type="text"]{border:1px #ddd solid;margin-right:5px;padding:5px 10px;font-size:1.2em;}
+.itea_mdpOublieCptGDF_content input[type="submit"], #itea_mdpOublieCptGDF_mail_ok input[type="button"]{background:#f45d5c;color:#fff;border:none;cursor:pointer;padding:5px 20px;font-size:1.1em;border-radius:3px;-webkit-appearance:none;}
+.itea_creationCptGDF_creationClassique{min-width:600px;}
+#itea_mdpOublieCptGDF_content_form > p{margin-bottom: 10px;}
+.itea_cnxCptGDF_connexionClassique, .itea_cnxCptGDF_reseauxSociaux, .itea_creationCptGDF_creationClassiqueContent, .itea_creationCptGDF_msgConfirmEnvoiEtMail{background:#fff;padding:20px 50px;}
+.itea_cnxCptGDF_connexionClassique, .itea_cnxCptGDF_reseauxSociaux, .itea_creationCptGDF_creationClassiqueContent{background:#ffffff;background:-moz-linear-gradient(top, #ffffff 0%, #f1f1f1 100%);background:-webkit-linear-gradient(top, #ffffff 0%,#f1f1f1 100%);background:linear-gradient(to bottom, #ffffff 0%,#f1f1f1 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f1f1f1',GradientType=0);}
+.itea_cnxCptGDF_connexionClassique, .itea_creationCptGDF_creationClassiqueContent{border-radius:0 0 3px 3px;}
+.itea_cnxCptGDF_reseauxSociaux{border-radius:3px;padding:25px 65px;}
+.itea_cnxCptGDF_msgInfo, #itea_creationCptGDF_msgInfo{font-weight:bold;color:#e4003a;margin:0 -20px 10px;text-align:center;}
+.itea_creaCptGDF_saisie_nom_prenom, .itea_cnxCptGDF_saisie_login, .itea_creaCptGDF_saisie_logMdp{margin:0 0 10px;position:relative;}
+.itea_cnxCptGDF_saisie_mdp{margin:0 0 5px;}
+.itea_cnxCptGDF_saisie_logMdp label, .itea_creaCptGDF_saisie_logMdp label{font-size:1.3em;display:block;margin:0 0 2px;white-space:nowrap;}
+.itea_cnxCptGDF_saisie_logMdp input, .itea_creaCptGDF_saisie_logMdp input{display:block;width:100%;border:1px #9e9e9e solid;padding:5px;font-size:1.1em;border-radius:0;}
+.itea_creaCptGDF_saisie_login .LV_valid{right:-20px;}
+.itea_creaCptGDF_saisie_mdp, .itea_creaCptGDF_saisie_nom_prenom{margin-left:-20px;margin-right:-20px;overflow:hidden;margin-bottom:10px;}
+.itea_creaCptGDF_saisie_mdp > div, .itea_creaCptGDF_saisie_nom_prenom > div{float:left;padding:0 20px;width:50%;position:relative;}
+.itea_creaCptGDF_saisie_cgu{padding:0 40px;margin-bottom:15px;color:#3a485f;overflow:hidden;}
+.itea_creaCptGDF_saisie_cgu a{color:#3a485f;text-decoration:underline;}
+.itea_creaCptGDF_saisie_cgu a:hover{text-decoration:none;}
+.itea_creaCptGDF_saisie_cgu span{display:inline-block;}
+.itea_cnxCptGDF_saisie_mdpOublie{margin:0 0 5px;}
+.itea_cnxCptGDF_saisie_mdpOublie a{color:#3a485f;text-decoration:underline;}
+.itea_cnxCptGDF_saisie_mdpOublie a:hover{text-decoration:none;}
+.itea_cnxCptGDF_saisie_seSouvenir{margin:0 0 20px;}
+.itea_cnxCptGDF_saisie_seSouvenir [type="checkbox"]:not(:checked), .itea_cnxCptGDF_saisie_seSouvenir [type="checkbox"]:checked,
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:not(:checked), .itea_creaCptGDF_saisie_cgu [type="checkbox"]:checked{position:absolute;left:-9999px;}
+.itea_cnxCptGDF_saisie_seSouvenir [type="checkbox"]:not(:checked) + label, .itea_cnxCptGDF_saisie_seSouvenir [type="checkbox"]:checked + label,
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:not(:checked) + span, .itea_creaCptGDF_saisie_cgu [type="checkbox"]:checked + span{position:relative;padding-left:20px;cursor:pointer;}
+.itea_cnxCptGDF_saisie_seSouvenir [type="checkbox"]:not(:checked) + label:before,
+.itea_cnxCptGDF_saisie_seSouvenir [type="checkbox"]:checked + label:before,
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:not(:checked) + span:before,
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:checked + span:before{content:'';position:absolute;left:0;top:-1px;display:block;width:12px;height:12px;border:1px solid #3a485f;background:#ffffff;z-index:1;}
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:not(:checked) + span:before,
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:checked + span:before{top:0;}
+.itea_cnxCptGDF_saisie_seSouvenir [type="checkbox"]:not(:checked) + label:after,
+.itea_cnxCptGDF_saisie_seSouvenir [type="checkbox"]:checked + label:after,
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:not(:checked) + span:after,
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:checked + span:after{content:'';position:absolute;top:2px;left:3px;width:8px;height:8px;display:block;background:#3a485f;transition:all .2s;z-index:10;}
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:not(:checked) + span:after,
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:checked + span:after{top:3px;}
+.itea_cnxCptGDF_saisie_seSouvenir [type="checkbox"]:not(:checked) + label:after,
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:not(:checked) + span:after{opacity:0;transform:scale(0);}
+.itea_cnxCptGDF_saisie_seSouvenir [type="checkbox"]:checked + label:after,
+.itea_creaCptGDF_saisie_cgu [type="checkbox"]:checked + span:after{opacity:1;transform:scale(1);}
+.itea_cnxCptGDF_saisie_connexion, .itea_creaCptGDF_valid{margin:0 0 20px;}
+.itea_creaCptGDF_valid{padding:0 40px;}
+.itea_cnxCptGDF_saisie_connexion input, .itea_creaCptGDF_valid input{display:block;padding:8px 10px;width:100%;background:#f45d5c;color:#fff;cursor:pointer;border:none;font-size:1.8em;border-radius:3px;-webkit-appearance:none;box-sizing: border-box;}
+.itea_cnxCptGDF_saisie_connexion input:hover, .itea_creaCptGDF_valid input:hover{background:#f12e2c;}
+.itea_cnxCptGDF_saisie_questpasDeCompte, .itea_creaCptGDF_saisie_questJaiUnCompte{font-size:1.2em;text-align:center;margin:0 0 5px;padding:0 15px;}
+.itea_cnxCptGDF_saisie_creerCompte, .itea_creaCptGDF_saisie_connexionCompte{text-align:center;font-size:1.2em;}
+.itea_cnxCptGDF_saisie_creerCompte a, .itea_creaCptGDF_saisie_connexionCompte a{color:#3a485f;text-decoration:underline;}
+.itea_cnxCptGDF_saisie_creerCompte a:hover, .itea_creaCptGDF_saisie_connexionCompte a:hover{text-decoration:none;}
+.itea_cnxCptGDF_separeConnexionClassique, .itea_cnxCptGDF_separeCreationClassique{padding:10px;color:#fff;font-weight:bold;text-align:center;text-transform:lowercase;}
+.itea_cnxCptGDF_separeConnexionClassique p, .itea_cnxCptGDF_separeCreationClassique p{padding:0;margin:0;}
+.itea_cnxCptGDF_reseauxSociaux .div_cnxReseau{border-radius:3px;padding:5px;cursor:pointer;color:#fff;font-weight:bold;}
+.itea_cnxCptGDF_reseauxSociaux .itea_cptGDF_btnFB{background:#647fa8;}
+.itea_cnxCptGDF_reseauxSociaux .itea_cptGDF_btnGoogle{background:#dc4a38;}
+.itea_cnxCptGDF_reseauxSociaux .div_cnxReseau > span{display:inline-block;vertical-align:middle;}
+.itea_cnxCptGDF_reseauxSociaux .div_cnxReseau .icon{width:35px;height:24px;border-right:1px #fff solid;margin:0 10px 0 0;}
+.itea_cnxCptGDF_reseauxSociaux .itea_cptGDF_btnFB .icon{background:url("/imgs_defaut/compte-gdf/btn-facebook.png") no-repeat center;}
+.itea_cnxCptGDF_reseauxSociaux .itea_cptGDF_btnGoogle .icon{background:url("/imgs_defaut/compte-gdf/btn-googleplus.png") no-repeat center;}
+@media only screen and (-webkit-min-device-pixel-ratio:1.5){.itea_cnxCptGDF_reseauxSociaux .itea_cptGDF_btnFB .icon{background-image:url("/imgs_defaut/compte-gdf/btn-facebook_2x.png");background-size:11px 20px;}
+.itea_cnxCptGDF_reseauxSociaux .itea_cptGDF_btnGoogle .icon{background-image:url("/imgs_defaut/compte-gdf/btn-googleplus_2x.png");background-size:20px 21px;}
+}
+.itea_cnxCptGDF_reseauxSociaux_separe{text-align:center;text-transform:lowercase;padding:10px 0;font-size:0.8em;}
+.popin_creaCompteGDF .itea_cnxCptGDF_reseauxSociaux > *{display:inline-block;width:47%;white-space:nowrap;}
+.popin_creaCompteGDF .itea_cnxCptGDF_reseauxSociaux .itea_cnxCptGDF_reseauxSociaux_separe{width:6%;visibility:hidden;}
+.itea_creationCptGDF_msgConfirmEnvoiEtMail{font-size:1.2em;}
+.itea_creationCptGDF_msgConfirmEnvoiEtMail > p{padding:0;margin:0 0 10px;}
+.itea_creationCptGDF_retourAccueil{padding:10px 0 0;text-align:center;}
+.itea_creationCptGDF_retourAccueil a{text-decoration:underline;color:#535353;}
+.itea_creationCptGDF_retourAccueil a:hover{text-decoration:none;}
+#cptGDF_popInConnecteSiteExt{padding:30px;font-size:1.2em;text-align:center;background:#fff;}
+#cptGDF_popInConnecteSiteExt .titre{padding:0;margin:0 0 20px;}
+.divBtnConnecteSiteExt a{color:#535353;text-decoration:underline;margin:0 20px;}
+.divBtnConnecteSiteExt #cptGDF_btConnecteSiteExt{color:#f45d5c;}
+.divBtnConnecteSiteExt a:hover{text-decoration:none;}
+#div_cptGDF_landingPage{background:#fff;padding:35px 0;}
+#div_cptGDF_landingPage #div_cptGDF_landingPage_principal{text-align:center;padding:0 20px;}
+#div_cptGDF_landingPage .cptGDF_landingPage_merci{padding:0;margin:0 0 10px;font-size:1.8em;}
+#div_cptGDF_landingPage .cptGDF_landingPage_accesCompte{padding:0;margin:0 0 35px;font-size:1.2em;}
+#div_cptGDF_landingPage .cptGDF_landingPage_accesCompte a{text-decoration:underline;}
+#div_cptGDF_landingPage .cptGDF_landingPage_accesCompte a:hover{text-decoration:none;}
+#div_cptGDF_landingPage .cptGDF_logoMonCompteGdf{margin:0 0 35px;text-align:center;}
+#div_cptGDF_landingPage .cptGDF_logoMonCompteGdf img{height:80px;}
+#div_cptGDF_landingPage #div_cptGDF_landingPage_avantagesEtConditions{padding:20px 50px;background:#efefef;background:-moz-linear-gradient(top, #efefef 0%, #ffffff 100%);background:-webkit-linear-gradient(top, #efefef 0%,#ffffff 100%);background:linear-gradient(to bottom, #efefef 0%,#ffffff 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#ffffff',GradientType=0);}
+#div_cptGDF_landingPage #div_cptGDF_landingPage_avantagesEtConditions font, .cptGDF_landingPage_accesCompte a{color:#535353!important;}
+#div_cptGDF_landingPage #div_cptGDF_landingPage_avantagesEtConditions table td{vertical-align:middle;font-size:1.2em;}
+#div_cptGDF_landingPage #div_cptGDF_landingPage_avantagesEtConditions table tr:first-child td{padding-bottom:10px;}
+#div_cptGDF_landingPage #div_cptGDF_landingPage_avantagesEtConditions table tr:first-child td font{text-align:center;font-size:1.4em!important;}
+#div_cptGDF_landingPage .div_cptGDF_conditionsGene{padding:30px 0 0;text-align:center;}
+#div_cptGDF_landingPage .div_cptGDF_conditionsGene a{font-size:0.9em;color:#535353;text-decoration:underline;}
+#div_cptGDF_landingPage .div_cptGDF_conditionsGene a:hover{text-decoration:none;}
+@media screen and (max-width:768px) and (min-width:768px){.popin_compteGDF.popin_coonnectCompteGDF{width:58%!important;}
+.popin_compteGDF.popin_coonnectCompteGDF.fancybox-opened .fancybox-inner, .popin_compteGDF.popin_creaCompteGDF.fancybox-opened .fancybox-inner{width:100%!important;}
+.itea_cnxCptGDF_titre, .itea_creationCptGDF_titre, .itea_mdpOublieCptGDF_titre{padding-top:15px;padding-bottom:15px;font-size:2.2em;}
+.itea_cnxCptGDF_saisie_logMdp label, .itea_creaCptGDF_saisie_logMdp label{font-size:1.55em;}
+.itea_cnxCptGDF_saisie_questpasDeCompte, .itea_creaCptGDF_saisie_questJaiUnCompte, .itea_cnxCptGDF_saisie_creerCompte, .itea_creaCptGDF_saisie_connexionCompte{font-size:1.4em;}
+.itea_cnxCptGDF_saisie_mdpOublie, .itea_cnxCptGDF_saisie_seSouvenir{font-size:1.2em;}
+.itea_cnxCptGDF_saisie_logMdp input, .itea_creaCptGDF_saisie_logMdp input{padding:10px;}
+.itea_creaCptGDF_saisie_nom_prenom, .itea_cnxCptGDF_saisie_login, .itea_creaCptGDF_saisie_logMdp, .itea_cnxCptGDF_saisie_mdp{margin-bottom:15px;}
+.itea_cnxCptGDF_saisie_mdpOublie{margin-bottom:10px;}
+.itea_cnxCptGDF_reseauxSociaux{padding-left:75px;padding-right:75px;}
+.itea_cnxCptGDF_saisie_connexion input, .itea_creaCptGDF_valid input{padding:10px;font-size:2.4em;}
+.itea_cnxCptGDF_reseauxSociaux .div_cnxReseau{font-size:1.25em;}
+.itea_cnxCptGDF_saisie_seSouvenir{margin-bottom:25px;}
+.itea_cnxCptGDF_saisie_connexion, .itea_creaCptGDF_valid{margin-bottom:30px;}
+.itea_cnxCptGDF_connexionClassique, .itea_creationCptGDF_creationClassiqueContent{padding-bottom:30px;padding-top:30px;}
+.itea_cnxCptGDF_saisie_questpasDeCompte{margin-bottom:15px;}
+.itea_cnxCptGDF_saisie_seSouvenir{margin-bottom:20px;}
+.itea_cnxCptGDF_msgInfo, #itea_creationCptGDF_msgInfo{font-size:1.2em;}
+}
+@media screen and (max-width:767px){.popin_creaCompteGDF{top:50px!important;padding-top:0!important;}
+.popin_creaCompteGDF.fancybox-opened .fancybox-close{height:22px!important;}
+.itea_creationCptGDF_creationClassique{min-width:inherit;}
+.itea_creationCptGDF_creationClassiqueContent, .itea_creationCptGDF_msgConfirmEnvoiEtMail{padding:10px;}
+.itea_creaCptGDF_saisie_mdp, .itea_creaCptGDF_saisie_nom_prenom{margin:0;}
+.popin_creaCompteGDF .LV_valid{top:inherit;bottom:5px;right:5px;}
+.itea_creaCptGDF_saisie_mdp > div, .itea_creaCptGDF_saisie_nom_prenom > div{float:none;padding:0;width:auto;}
+.itea_creaCptGDF_saisie_nom_prenom, .itea_creaCptGDF_saisie_logMdp{margin-bottom:0!important;}
+.itea_creaCptGDF_saisie_logMdp > div, .itea_creaCptGDF_saisie_login{margin-bottom:8px!important;}
+.itea_creaCptGDF_saisie_mdp{margin-bottom:7px!important;}
+.itea_creaCptGDF_saisie_cgu{padding:0;}
+.itea_creaCptGDF_valid{padding:0;}
+.popin_creaCompteGDF .itea_cnxCptGDF_reseauxSociaux{padding:10px;}
+.popin_creaCompteGDF .itea_cnxCptGDF_reseauxSociaux_separe{display:none!important;}
+.popin_creaCompteGDF .itea_cnxCptGDF_reseauxSociaux > *{display:block;width:auto;}
+}
+
+
+/******************************************************************/
+/******************************************************************/
+/*********  connexion compte gites de france **********************/
+/******************************************************************/
+/******************************************************************/
+
+
+*{font-smooth:always;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.pointer{cursor:pointer;}
+.noPointer{cursor:default !important;}
+.block{display:block;}
+.bold{font-weight:bold;}
+.hidden{overflow:hidden;}
+.itea_ul{list-style-type:none;}
+div.div_headPopin{overflow:hidden;padding:5px 10px;}
+a.a_fermePopin{float:right;background:url(../../imgs_defaut/v5/fermer-popin.png) no-repeat center;display:block;width:20px;height:20px;}
+a.a_fermePopin img{width:100%;height:100%;display:block;}
+span.sp_titrePopin{font-size:14px;font-weight:bold;line-height:20px;}
+div.div_headPopin p{padding:0;margin:0;}
+#div_avertissementIE6, #div_avertissementIE{background-color:#FF0000;position:relative;text-align:center;width:100%;z-index:105;color:#FFFFFF;}
+#avertissementTitre{display:inline;font-weight:bold;}
+#avertissementLabel{display:inline;font-weight:bold;}
+#avertissementText{margin-bottom:10px;margin-top:10px;font-size:16px;}
+#div_croix_avertissement{position:absolute;right:0;top:0;}
+.chpInptErreurDetecte{color:red!important;font-weight:bold;font-family:Arial;font-size:8pt;}
+.chpInptAucuneErreur{background:#ffffff url(../../imgs_defaut/checkForm/checkFormOk.gif) no-repeat right center;}
+.chpInptErreurDetecte{background:#ffffff url(../../imgs_defaut/checkForm/checkFormPasOk.gif) no-repeat right center;}
+#divChargementParDessus{text-align:center;padding-top:10px;}
+.moteur_autocomplete{background-color:#fff;border:1px #5a5b5d solid;color:#5a5b5d;z-index:100;min-width:200px;max-height:200px;overflow:auto;}
+.moteur_autocomplete li{color:#5a5b5d;text-decoration:none;display:block;cursor:pointer}
+.moteur_autocomplete a{color:#5a5b5d;text-decoration:none;display:block;padding:2px 5px;}
+.moteur_autocomplete a:hover{background-color:#5a5b5d;color:#fff;}
+.moteur_autocomplete a:hover{color:#fff;}
+.moteur_imgCalend, .moteur_imgInfoBulle{cursor:pointer;}
+.moteur_sliderContent{height:15px;background-color:#dddddd;position:relative;}
+.moteur_handle{position:absolute;height:20px;width:10px;background-color:#151515;bottom:0;cursor:move;}
+div.moteur_calendJs{width:216px;padding:5px;background:#ffffff;position:absolute;left:2px;top:21px;border:3px solid #5a5b5d;z-index:100;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-webkit-box-shadow:0px 0px 5px 0px #5a5b5d;-moz-box-shadow:0px 0px 5px 0px #5a5b5d;box-shadow:0px 0px 5px 0px #5a5b5d;color:#5a5b5d}
+div.moteur_calendJsContent{position:relative;z-index:10;background:url(../../imgs_defaut/v5/calend_mois.png) repeat-x left 28px;}
+div.moteur_calendJs p.close{padding:0;}
+div.moteur_calendJs div.calendItea_navig{position:absolute;font-size:0px;top:6px;}
+div.moteur_calendJs div.calendItea_navig a{text-decoration:none;display:block;width:15px;height:15px;cursor:pointer;}
+div.moteur_calendJs div.calendItea_navigGauche{background:url(../../imgs_defaut/v5/calend_prev.png) no-repeat;left:8px;}
+div.moteur_calendJs div.calendItea_navigDroite{background:url(../../imgs_defaut/v5/calend_next.png) no-repeat;right:8px;}
+div.moteur_calendJs div.calendItea_navigGauche:hover{background:url(../../imgs_defaut/v5/calend_prev_hover.png) no-repeat;}
+div.moteur_calendJs div.calendItea_navigDroite:hover{background:url(../../imgs_defaut/v5/calend_next_hover.png) no-repeat;right:8px;}
+div.moteur_calendJs table{margin-bottom:0;border-collapse:collapse;width:100%;}
+div.moteur_calendJs table caption{height:28px;line-height:27px;text-align:center;font-weight:bold;text-transform:uppercase;}
+div.moteur_calendJs table thead th{color:#fff;line-height:17px;height:19px;}
+div.moteur_calendJs table td{padding:1px 0;border:none;text-align:center;}
+div.moteur_calendJs table td span{font-weight:bold;}
+div.moteur_calendJs table td span.spanCalendCliquable{cursor:pointer;background-color:#a9ce06;color:#ffffff;display:block;}
+div.moteur_calendJs table td span.spanCalendCliquable.spanDateSejourMiseEnAvant{cursor:pointer;background-color:#738d00;color:#ffffff;display:block;}
+div.moteur_calendJs table td span.spanCalendCliquable:hover{background-color:#ff7011!important;}
+div.moteur_calendJs table td span.spanDateSejourSelect{color:#ffffff;display:block;cursor:pointer;background-color:#09a8dc!important;}
+div.moteur_calendJs table td span.spanDateArriveeSelect, div.calendJsMoteurDate table td span.spanDateFinSelect{color:#ffffff;display:block;cursor:pointer;background-color:#078cb7;}
+#div_fiche_prop_desc, #div_fiche_photo_hotes{overflow:hidden;margin:0 0 5px;}
+#div_fiche_prop_desc #p_fiche_titreDesc{font-weight:bold;margin:0 0 10px!important;padding:0!important;}
+div.div_fichePhotoProp img{float:left;max-width:150px;max-height:120px;margin:0 10px 5px 0;cursor:pointer;}
+#div_fiche_album_popup{width:930px;margin:0 auto;overflow:auto;}
+#div_fiche_album_popup li{float:left;padding:5px;}
+#div_fiche_album_popup li img{max-width:300px;max-height:300px;}
+#div_descProdForCanevas{overflow:hidden;padding:20px;background-color:#cecece;margin:0;color:#000000;font-size: 1em;line-height: 20px;}
+#div_descProdForCanevas_descCompl{background: #fff;padding:20px;}
+#div_descProdForCanevas_vignette{float:left;margin:0 10px 5px 0;}
+#div_descProdForCanevas_vignette img{max-width:150px;max-height:150px;}
+#h1_descProdForCanevas_nom{margin:0 0 10px;font-size:16px;color:#000000;}
+#div_descProdForCanevas_descProd{font-size:12px;}
+h2.titre_descCompl, .div_descEtTitreCompl{margin:0 0 10px;color:#000000;}
+h2.titre_descCompl{font-size:1.2em;padding:0 0 2px;border-bottom:1px #000000 dotted;}
+.sp_desc_compl{display:block;margin:0 0 5px;font-size: 1em;}
+.ul_villages_gites{list-style-type:none;margin:0;padding:0;color:#333;}
+li.li_village_content{margin:0 0 10px;padding:0 0 10px;border-bottom:1px #cccccc solid;text-align:justify;overflow:auto;position:relative;}
+li.li_village_content .villages_photo{float:left;padding:0 10px 5px 0;}
+li.li_village_content .villages_photo img{width:150px;}
+li.li_village_content h2{margin:0 0 10px 0;padding:0;font-size:14px;}
+li.li_village_content h2 a{text-decoration:none;color:#333333;}
+li.li_village_content h2 a:hover{text-decoration:underline;}
+.p_descriptionVillage{margin:0;padding:0 0 30px;}
+div.div_lien_village{position:absolute;bottom:10px;right:0;display:block;}
+div.div_lien_village a{display:block;padding:5px 10px;background-color:#EEEEEE;background-image:-moz-linear-gradient(0% 100% 90deg, #CCCCCC, #EEEEEE);border:1px solid #AAAAAA;border-radius:5px 5px 5px 5px;box-shadow:0 1px 0 rgba(255, 255, 255, 0.4) inset;color:#333333;text-decoration:none;font-weight:bold;}
+div.div_lien_village a:hover{background-color:#CCCCCC;background-image:-moz-linear-gradient(0% 100% 90deg, #EEEEEE, #CCCCCC);}
+.div_messagePasVillages{margin:30px 100px;background-color:#EEEEEE;border-radius:10px;text-align:center;font-size:14px;font-weight:bold;padding:15px;}
+div.divTriCroissant_choix_haut a img,div.divTriDecroissant_choix_haut a img{display:block;vertical-align:top;}
+#div_detail_piece{color:#000000;}
+#div_detail_piece h3{font-size:16px;margin:0 0 10px;}
+#div_detail_piece li.detail_piece{overflow:hidden;margin:0 0 10px;}
+#div_detail_piece div.div_titre_detail_piece{font-weight:bold;font-size:12px;padding:0 0 2px;border-bottom:1px #000000 dotted;margin:0 0 5px;}
+#div_detail_piece .class_detail_piece, #div_detail_piece .div_couchage_piece, #div_detail_piece .divers_piece{overflow:hidden;margin:0 0 5px;font-size:11px;}
+#div_detail_piece .class_detail_piece span{display:block;float:left;width:33%;}
+#div_detail_piece .desc_piece{display:block;font-size:11px;}
+.moteur_imitecheckbox.disabled{display:none;}
+.div_messagePasPromos{margin-top:40px;clear:both;margin-bottom:40px;padding:15px;text-align:center;background:#efefef;border:1px #ddd solid;font-size:1.2em;}
+.div_messagePasPromos p{margin:0;padding:0;opacity:0.7;}
+li.li_promos_en_cours{overflow:hidden;padding:10px;margin:0 0 15px;}
+.li_promos_en_cours_impair{background-color:#efefef;}
+li.li_promos_en_cours h2{margin:0 0 10px;font-size:14px;}
+li.li_promos_en_cours h2 a{text-decoration:none;}
+li.li_promos_en_cours h2 a:hover{text-decoration:underline;}
+.div_promos_en_cours_image{float:left;margin:0 10px 5px 0;}
+.div_promos_en_cours_image img{max-width:200px;display:block;}
+.div_date_promos_en_cours{display:none;}
+.div_lien_promos_en_cours{overflow:hidden;}
+.div_lien_promos_en_cours a{display:block;float:right;padding:5px 15px;font-size:13px;font-weight:bold;text-decoration:none;color:#ffffff;background-color:#666666;}
+.div_lien_promos_en_cours a:hover{text-decoration:underline;}
+.pasDeReponseInitRech{display:none;}
+.itea_widgetCommuneContent{overflow:hidden;}
+.itea_widgetCommuneContent ul{float:left;width:33%;margin-bottom: 20px;}
+.itea_widgetCommuneContent ul li{text-overflow:ellipsis;white-space:nowrap;padding:0 5px 0 0;overflow:hidden;}
+.itea_widgetCommuneContent ul li a{color:#333333;text-decoration:none;}
+.itea_widgetCommuneContent ul a:hover{text-decoration:underline;}
+.itea_widgetCommunePagination{padding:20px 0 0 0;text-align:center;}
+.itea_widgetCommunePagination li{display:inline-block;margin:0 3px 3px;}
+.itea_widgetCommunePagination li .sp_numPageCourant{font-weight:bold;color:#333333;}
+.itea_widgetCommunePagination li a{text-decoration:underline;color:#333333;}
+.itea_widgetCommunePagination li a:hover{text-decoration:none;}
+.div_contentLienVersFngf span, .div_contentLienVersFngf a{display:block;float:left;line-height:50px;}
+.div_contentLienVersFngf span{margin:0 5px 0 0;}
+.div_contentLienVersFngf a{width:198px;height:50px;overflow:hidden;text-indent:-1000px;background:url("/config_v3/imgs_defaut/v5/modele-fede/sprite-logo-footer.png") no-repeat;text-decoration:none;}
+.div_contentLienVersFngf.FRANCAIS a{background-position:left -250px;}
+.div_contentLienVersFngf.ANGLAIS a{background-position:left -200px;}
+.div_contentLienVersFngf.ESPAGNOL a{background-position:left -150px;}
+.div_contentLienVersFngf.ALLEMAND a{background-position:left -100px;}
+.div_contentLienVersFngf.ITALIEN a{background-position:left -50px;}
+.div_contentLienVersFngf.NEERLANDAIS a{background-position:left 0;}
+.itea_porteur{padding:15px 0;}
+.itea_porteur h1, .itea_porteur h2{margin:0 0 10px;padding:0;}
+.itea_porteur_etape{margin:0 0 10px;font-size:12px;}
+.itea_porteur_group{padding:0 0 0 15px;}
+.itea_porteur_group, .itea_porteur_group > div{overflow:hidden;margin:0 0 10px;}
+.itea_porteur_group:last-child{margin:0;}
+.itea_porteur_group > div:last-child{margin:0;}
+.itea_porteur_group label{display:block;float:left;width:160px;margin:0 10px 0 0;line-height:20px;}
+.porteur_contentGroupRadio label{display:inline;float:none;width:inherit;margin:0;}
+.porteur_labelForGroupRadio{float:left;width:160px;margin:0 10px 0 0;padding:0;}
+.porteur_contentGroupRadio{overflow:hidden;}
+.porteur_contentGroupRadio p{float:left;margin:0 10px 5px 0;padding:0;}
+.porteur_contentGroupRadio input[type="radio"]{margin:0 5px 0 0;}
+.itea_porteur_group input[type="text"],.itea_porteur_group input[type="email"],.itea_porteur_group input[type="password"],.itea_porteur_group input[type="tel"]{border:1px #acacac solid;font-size:12px;float:left;padding:2px 5px;margin:0 10px 0 0;}
+.itea_porteur_50 input[type="text"]{width:150px;}
+.itea_porteur_30 input[type="text"]{width:90px;}
+.itea_porteur_70 input[type="text"], .itea_porteur_100 input[type="text"]{width:250px;}
+.itea_porteur_group select{float:left;padding:2px 5px;font-size:12px;}
+.itea_porteur .LV_validation_message,.itea_porteur label.error{font-weight:bold;line-height:20px;}
+.itea_porteur .LV_valid{color:#669900;}
+.itea_porteur .LV_invalid,.itea_porteur label.error{color:#cc3300;}
+.itea_porteur label.error {float: inherit;}
+.itea_porteur input.LV_invalid_field{border:1px #cc3300 solid;}
+.porteur_infoComp{font-size:13px;}
+#itea_porteur_group_description label{float:none;}
+#itea_porteur_group_description textarea{width:410px;padding:5px;border:1px #acacac solid;font-size:12px;margin:0 10px 0 0;float:left;}
+.etapeValidation{width:420px;padding:10px 0 0;}
+.etapeValidation a{display:block;width:150px;font-weight:bold;text-align:center;text-decoration:none;font-size:13px;color:#333333;padding:5px 10px;background:#e0e0e0;border:1px #b5b5b5 solid;border-radius:3px;margin:0 auto;}
+.etapeValidation a:hover{background:#b5b5b5;}
+.porteur_infoObligatoire{font-style:italic;font-size:11px;}
+.porteur_message{margin:0 0 10px;padding:10px;font-size:13px;border-radius:3px;}
+.porteur_message.erreur{color:#cc3300;border:1px #cc3300 solid;background:#f9b7a1;}
+.porteur_message.valide{color:#669900;border:1px #669900 solid;background:#d0dfb2;}
+#itea_porteur_group_photo > span{display:block;margin:0 0 10px;}
+.itea_porteur_une_photo{margin-bottom:10px;}
+.itea_porteur_une_photo.avecPhoto{float:left;margin-right:10px;position:relative;}
+.itea_porteur_une_photo img{height:60px;border:1px #dddddd solid;display:block;}
+.itea_porteur_une_photo.avecPhoto input{display:none;}
+.itea_porteur_une_photo .itea_supprimeImagePorteur{position:absolute;bottom:5px;right:5px;width:15px;height:15px;text-indent:-1000px;display:block;text-decoration:none;background:url("/imgs_defaut/porteur/poubelle.png") no-repeat;}
+.div_contentAvisClient{padding:0 0 15px;}
+.img_avisEtoile{height:10px;margin:0 1px 0 0;}
+.avis_avatar img{width:50px; }
+.div_detailAvisClient{margin:0 0 15px;overflow:hidden;}
+.div_detailAvisClient:last-child{margin:0;}
+.div_detailAvisClient p{margin:0;padding:0 0 10px;}
+.div_reponseClient_general{float:left;margin:0 15px 0 0;padding:10px;background:#efefef;width:25%;text-align: center;}
+.div_reponseClient_detail{overflow:hidden;}
+.div_reponseClient .p_titreAvis{font-size:16px;font-weight:bold;border-bottom:1px #333333 solid;padding:0 0 3px;margin:0 0 10px;}
+.div_reponseClient .p_titreAvis:first-letter{text-transform:uppercase;}
+.div_groupeNotes{margin:0 0 5px;overflow:hidden;}
+.div_groupeNotes:last-child{margin:0 0 10px;}
+.div_groupeNotes > div{float:left;width:50%;}
+.div_groupeNotes .sp_libelleQuest{margin:0 10px 0 0;font-weight:bold;font-style:normal;}
+.sp_etoile{margin:0 1px 0 0;font-size:16px;}
+.sp_etoile.active{color:#E7711B;}
+.sp_etoile.inactive{color:black;}
+.div_groupeNotes .div_note, .p_noteGlobale{font-style:italic;}
+.sp_noteGlobale{font-style:normal;}
+.p_recommandation{padding-top:5px;font-weight:bold;}
+.p_descriptionAvis:first-letter{text-transform:uppercase;}
+.div_detailAvisClient .p_pseudoClient{font-size:14px;font-weight:bold;padding:0 0 5px;}
+.p_typeSejourAvis{font-size:11px;font-style:italic;padding-bottom:0 !important;}
+.p_datesSejourAvis{font-size:11px;font-style:italic;}
+.sp_titreNoteGlobale{font-weight:bold;margin:0 5px 0 0;}
+.div_avisDroitsDeReponse{clear:both;padding:10px 0 0 0;}
+.div_reponse{margin:0 0 10px;padding:10px;background:#dddddd;text-align:right;font-style:italic;font-size:11px;}
+.div_reponse:last-child{margin:0;}
+.div_reponse p{padding:0 0 5px;}
+.div_reponse p:last-child{padding:0;}
+.p_lblReponse{font-weight:bold;}
+.div_afficheTousAvis{text-align:right;clear:both;}
+.div_afficheTousAvis a{color:#333333;font-weight:bold;text-decoration:underline;}
+.div_afficheTousAvis a:hover{text-decoration:none;}
+.aAvisLienVersFiche{text-decoration:none;}
+.infobulleCarto{padding:0 0 12px;background:url(../img/css/bulle_region.png) no-repeat center bottom;position:absolute;display:none;}
+.infobulleCarto span{padding:5px 10px;font-size:14px;border:1px #eee9e0 solid;display:block;font-weight:bold;background-color:#fff;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px;font-family:"Myriad Pro", sans-serif;}
+#ul_calendItea_moteur_divCalendrierDebutContent li table.calend thead th{background-color:#505050;}
+.fancybox-opened, .fancybox-wrap{z-index:10000;}
+#cookieChoiceInfo{z-index:1000000!important;top:auto!important;bottom:0!important;padding:4px!important;background:#efefef!important;}
+#cookieChoiceInfo>span:first-child{display:block;}
+#div_tarifs #table_tarifs_fiche .changeExePrec{margin-right:5px;}
+#div_tarifs #table_tarifs_fiche .changeExeSuiv{margin-left:5px;}
+.div_planningDateMaj{font-style:italic;padding:5px 0;text-align:right;font-size:11px;}
+#divChargementParDessus_carte{left:0!important;top:0!important;}
+#pLienVersCompteClientDetailResa{display:none;}
+img.itea_fancybox{cursor:pointer;}
+.ui-datepicker{z-index:10000000000!important;}
+.img_rechargementSurListe{background:url(../../imgs_defaut/v5/ajax-loading.gif) no-repeat center;width:100px;height:100px;display:block;}
+.divRemplaceDivTarifsParSemaine{margin-bottom:10px;}
+.divRemplaceDivTarifsParSemaine table{width:100%;}
+.divRemplaceDivTarifsParSemaine table th, .divRemplaceDivTarifsParSemaine table td{padding:5px;border:1px #dddddd solid;}
+.divRemplaceDivTarifsParSemaine .colonneTarif{text-align:center;font-weight:bold;}
+.divRemplaceDivTarifsParSemaine tbody td.colonneTarif{vertical-align:middle;font-size:1.2em;}
+.divRemplaceDivTarifsParSemaine .lblSaison{display:block;font-weight:bold;font-size:1.2em;}
+.divRemplaceDivTarifsParSemaine tbody th{font-weight:normal;font-size:0.8em;}
+.widgetConnexionProp_form_auth form{border:1px solid #ccc;margin:20px auto;padding:10px;border-radius:5px 5px 5px 5px;clear:both;background:#fff;max-width:400px;box-sizing:border-box;}
+.widgetConnexionProp_form_auth form *{text-align:center;box-sizing:border-box;}
+.widgetConnexionProp_form_auth form .widgetConnexionProp_form_titre{font-size:1.4em;padding:0px 0px 20px;font-weight:bold;}
+.widgetConnexionProp_form_auth form .widgetConnexionProp_div_email, .widgetConnexionProp_form_auth form .widgetConnexionProp_div_mdp{padding:5px;}
+.widgetConnexionProp_form_auth form .widgetConnexionProp_div_valider{padding:8px;}
+.widgetConnexionProp_form_auth form .widgetConnexionProp_valider{cursor:pointer;background-color:#ccc;border-radius:5px;font-size:1.2em;font-weight:400;border:none;}
+.widgetConnexionProp_form_auth form label{font-weight:bold;display:block;}
+.widgetConnexionProp_form_auth form input[type="text"], .widgetConnexionProp_form_auth form input[type="password"]{width:100%;padding:5px;font-size:1.2em;border:solid 1px #ccc;background:#fff;display:block;}
+.widgetConnexionProp_form_auth form .widgetConnexionProp_erreur{font-weight:bold;color:#e4003a;display:none;}
+.widgetConnexionProp_form_auth form .widgetConnexionProp_valider:hover{background:#808077;}
+.fancybox-opened #div_ficheContentDetailPiece{background:#fff;padding:15px;}
+.sp_promo_excluWeb{display:none;}
+.i_helperInfoBulle:after{content:'?';display:inline-block;margin-left:5px;color:#fff;background:#444444;width:15px;height:15px;border-radius:50%;text-align:center;font-style:normal;font-size:0.8em;cursor:pointer;}
+.div_avisClientCertification{margin-bottom:20px;padding-top:10px;}
+.div_avisClientCertification *{box-sizing:border-box;}
+.div_avisClientCertification a{color:#333333;text-decoration:underline;}
+.div_avisClientCertificationAccroche{background: url('/imgs_defaut/avis/afnor-nf-detail-gris.svg') no-repeat left top;background-size:auto 50px;min-height:50px;padding:10px 0 0 70px;}
+.div_avisClientCertificationDetail{background:url('/imgs_defaut/avis/afnor-nf-detail.svg') no-repeat left top;background-size:auto 50px;padding:5px 0 0 70px;}
+
+.estCompatibleAfnor .div_avisClientCertificationAccroche{background: none;min-height:inherit;padding:10px 0}
+.estCompatibleAfnor .div_avisClientCertificationDetail{background:none;padding:10px 0}
+.estCompatibleAfnor .div_avisClientCertificationDetail ul{list-style: square;padding: 10px 0 10px 20px;}
+
+@media screen and (max-width:480px){.div_avisClientCertificationAccroche, .div_avisClientCertificationDetail{padding-top:0;}
+}
+.blocLogoAfnor{display:none !important;}
+.popinAFNOR{background:#fff;padding:20px 40px;line-height:20px;font-size:14px;text-align:justify;}
+.popinAFNOR .logo{text-align:center;border-bottom:1px solid #ccc;padding-bottom:20px;}
+.popinAFNOR .logo img{max-width:200px;width:100%;}
+.popinAFNOR .texte .blocTexte{margin:20px 0;}
+.popinAFNOR .texte .blocTexte p{padding:0;}
+.popinAFNOR .texte .blocTexte.center{text-align:center;margin-top:30px;font-size:13px;}
+.popinAFNOR .texte .blocTexte.center a{text-decoration:none;color:#444;}
+.popinAFNOR .texte .blocTexte.center a:hover{text-decoration:underline;}
+.popinAFNOR .texte .blocTexte ul{list-style:disc;padding-left:16px;}
+.fancyboxAfnor .fancybox-inner{border-radius:5px;}
+#div_loaderUnload{position:fixed;z-index:16000004;background-color:white;opacity:0.5;top:0px;left:0px;height:100%;width:100%;cursor:wait;}
+.div_loaderCSS{border:16px solid #f3f3f3;border-radius:50%!important;border-top:16px solid #899703;width:120px;height:120px;-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite;margin:auto;margin-top:120px;}
+@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg);}
+100%{-webkit-transform:rotate(360deg);}
+}
+@keyframes spin{0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+.txt_liste_alerte_avant{display:none;}
+body:not(.body_navMobile) .div_itea_GMAP iframe,
+body:not(.body_navTablette) .div_itea_GMAP iframe{pointer-events:none;}
+body:not(.body_navMobile) .div_itea_GMAP iframe.clicked,
+body:not(.body_navTablette) .div_itea_GMAP iframe.clicked{pointer-events:auto;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot div ul li, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca div ul li{width:50%;padding:0;background:none;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot div.goodSpot_detailsOnglets ul li,
+.goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca div.goodSpot_detailsOnglets ul li{width:auto;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite{margin-bottom:10px;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite:last-child, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite:last-child{margin-bottom:0;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_vignette, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_vignette{width:70px;height:66px;overflow:hidden;margin-right:15px;position:relative;display:inline-block;float:left;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_vignette img,
+.goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_vignette img{height:100%;top:-100%;bottom:-100%;left:-100%;right:-100%;margin:auto;position:absolute;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_detail, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_detail{display:inline-block;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_detail h3, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_detail h3{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:224px;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_detail h3 a, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_detail h3 a{color:#505050;text-decoration:none;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_detail h3:hover a, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_detail h3:hover a{text-decoration:underline;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_detail .goodSpot_accroche, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_detail .goodSpot_accroche{padding:0;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:233px;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_detail p, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_detail p{padding:0;font-size:11px;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_detail .goodSpot_bouton, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_detail .goodSpot_bouton{margin-top:3px;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_detail .goodSpot_bouton a, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_detail .goodSpot_bouton a{color:#cbbca1;background-image:url('/imgs_defaut/goodSpot/LOGO_simplifie_Goodspot.png');background-repeat:no-repeat;background-position:left;background-size:auto 90%;padding-left:22px;text-decoration:none;display:block;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_detail .goodSpot_bouton a p, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_detail .goodSpot_bouton a p{height:20px;line-height:20px;text-decoration:underline;display:inline-block;}
+.goodspot_site_departemental#unBlocEquipementsGoodSpot .goodSpot_uneActivite .goodSpot_detail .goodSpot_bouton a:hover p, .goodspot_site_departemental#unBlocEquipementsGoodSpotParLoca .goodSpot_uneActivite .goodSpot_detail .goodSpot_bouton a:hover p{text-decoration:none;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_retourListe{color:#505050;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_retourListe:hover{text-decoration:none;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsContent{margin:10px 0;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_vignette{margin-right:15px;width:100px;height:100px;overflow:hidden;float:left;position:relative;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_vignette img{height:100%;top:-100%;bottom:-100%;left:-100%;right:-100%;margin:auto;position:absolute;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_titre{min-height:100px;overflow:hidden;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_titre h3{color:#655434;font-size:1.5em;margin-bottom:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_accroche{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#8c9b03;font-size:1.2em;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_villeRegion{margin-top:10px;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_villeRegion .goodSpot_ville{padding:0;font-weight:bold;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsContent .goodSpot_villeRegion .goodSpot_region{font-style:italic;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsOnglets ul li{float:left !important;padding:5px 10px !important;margin-right:5px !important;border:solid 1px #cbbca1 !important;border-bottom:none !important;cursor:pointer !important;margin-bottom:0 !important;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsOnglets ul li:hover, .goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsOnglets ul li.active{background:#cec7b9 !important;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsOnglets .goodSpot_onglets{padding:10px 10px;border:solid 1px #cbbca1;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsOnglets .goodSpot_onglets >*.cache{display:none;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsOnglets .goodSpot_onglets p{padding-bottom:0;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsOnglets .goodSpot_onglets .goodSpot_onglet_prix p{padding-bottom:10px;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_bouton a{color:#655434;background-image:url('/imgs_defaut/goodSpot/LOGO_simplifie_Goodspot.png');background-repeat:no-repeat;background-position:left;background-size:auto 90%;padding-left:22px;text-decoration:none;display:block;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_bouton a p{height:20px;line-height:20px;text-decoration:underline;background-image:url('/imgs_defaut/goodSpot/Lien_externe.png');background-repeat:no-repeat;background-position:right;padding-right:17px;background-size:auto 80%;display:inline-block;padding:0 20px 0 0;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_bouton a:hover p{text-decoration:none;}
+.goodspot_site_departemental li.li_aGoodspotPlus{width:100% !important;}
+.goodspot_site_departemental li.li_aGoodspotPlus a{color:#505050;}
+.goodspot_site_departemental .goodSpot_unBlocDetails .goodSpot_detailsOnglets .goodSpot_onglets .goodSpot_bouton a:hover p{text-decoration:none;}
+.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+.clearfix{display:block;}
+html[xmlns] .clearfix{display:block;}
+* html .clearfix{height:1%;}
+.popinLienCgi{z-index:20000;}
+.popinLienCgi .input-group-addon{cursor:pointer;}
+.popinLienCgi input:not(#divInputDateLienCgi input){margin:8px 0;}
+.dateLienCgi{margin-left:7px;}
+#divBtnRadioDateLienCgi{margin:10px 0px;}
+#divBtnRadioDateLienCgi .input-group-addon{border:1px solid #cccccc;}
+#inputLienCgiComplet{cursor:text;}
+.btnCopierLienCgi{color:#ffffff !important;background:#428bca !important;border-color:#357ebd !important;}
+.btnCopierLienCgi:hover{color:#ffffff !important;background:#3276b1 !important;border-color:#285e8e !important;}
+
+
+/******************************************************************/
+/******************************************************************/
+/****** inscription newsletter gites de france v2 *****************/
+/******************************************************************/
+/******************************************************************/
+.popinNewsletterFdV2 *{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+.popinNewsletterFdV2.fancybox-opened{
+	z-index: 1000000 !important;	
+}
+.popinNewsletterFdV2 .fancybox-skin{
+  box-shadow: 0.14px 1.995px 9px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 3px 3px;
+  font-family: "Arial", sans-serif;
+}
+.popinNewsletterFdV2 .fancybox-inner{
+	width: 100%!important;
+}
+
+@media screen and (min-width: 651px){
+	#div_inscriptionNewletter_infoscompV2, #div_inscriptionNewletter_msgValidationV2{
+		width: 650px;
+	}
+}
+@media screen and (max-width: 650px){
+	#div_inscriptionNewletter_infoscompV2, #div_inscriptionNewletter_msgValidationV2{
+		width: 320px;
+	}
+}
+
+.popinNewsletterFdV2 .fancybox-close{
+	display:none;
+}
+	.popinNewsletterFdV2.msgValidation .fancybox-close{
+		display:block;		
+		top:-30px;
+		right:0;
+		background: url('/imgs_defaut/v5/modele-fede/closePopinNews.png') no-repeat center;
+		background-size: 22px 22px;
+		width: 22px;
+		height: 22px;
+	}
+
+.popinNewsletterFdV2 .titre{
+  font-size: 23px;  
+  color: #fff;
+  line-height: 2;
+  text-align: center;
+  background-color: #f45d5c;  
+  padding:4px 0;
+  margin: 0;
+}
+
+
+.popinNewsletterFdV2 .sousTitre{
+	text-align: center;
+	font-size: 16px;
+	line-height: 1.273em;
+	font-family: 'PT Sans', 'Arial', sans-serif;
+	color:#434343;
+	padding:14px 10px 12px;
+}
+	.popinNewsletterFdV2.msgValidation .sousTitre{
+		padding:23px 10px 37px;		
+	}
+
+	.popinNewsletterFdV2 .sousTitre p{
+		padding:0;
+		margin: 0;
+	}
+	@media screen and (max-width: 650px){
+		.popinNewsletterFdV2 .sousTitre p{
+			display: inline;			
+		}
+		.popinNewsletterFdV2 .sousTitre p:first-child{
+			margin-right: 3px;
+		}
+	}
+
+.popinNewsletterFdV2 .content{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#efefef+0,ffffff+40,ffffff+100 */
+	background: #efefef; /* Old browsers */
+	background: -moz-linear-gradient(top,  #efefef 0%, #ffffff 40%, #ffffff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 40%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #efefef 0%,#ffffff 40%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	border-top:1px #cdcdcd solid;
+	color:#434343;
+	font-family: 'PT Sans', 'Arial', sans-serif;
+}
+
+	.popinNewsletterFdV2 .div_contentCentresInterets .titre_centresInterets{
+		font-size: 18px;
+		text-align: center;
+		padding:38px 5px 37px;
+	}
+
+	.popinNewsletterFdV2 .div_listeCentreInteretContent{
+		display: table;
+		width: 100%;
+	}
+	.popinNewsletterFdV2 .div_listeCentreInteretContent > div{
+		display: table-cell;		
+	}
+	.popinNewsletterFdV2 .div_listeCentreInteretContent > div:first-child{
+		width: 50%;
+		padding-left: 47px;
+	}
+
+	@media screen and (max-width: 650px){
+		.popinNewsletterFdV2 .div_listeCentreInteretContent{
+			display: block;
+		}
+		.popinNewsletterFdV2 .div_listeCentreInteretContent > div{
+			display: block;		
+		}
+		.popinNewsletterFdV2 .div_listeCentreInteretContent > div,
+		.popinNewsletterFdV2 .div_listeCentreInteretContent > div:first-child{
+			width: 100%;
+			padding-left: 20px;
+		}
+	}
+
+	.popinNewsletterFdV2 .div_listeCentreInteretContent .div_listeCentreInteretColonne > div{
+		margin-bottom:13px;
+		font-size: 14px;
+	}
+
+	.popinNewsletterFdV2 .div_listeCentreInteretContent [type="checkbox"]:not(:checked), .popinNewsletterFdV2 .div_listeCentreInteretContent [type="checkbox"]:checked{position:absolute;left:-9999px;}
+
+	.popinNewsletterFdV2 .div_listeCentreInteretContent [type="checkbox"]:not(:checked) + label, .popinNewsletterFdV2 .div_listeCentreInteretContent [type="checkbox"]:checked + label{position:relative;padding-left:30px;cursor:pointer;}
+
+	.popinNewsletterFdV2 .div_listeCentreInteretContent [type="checkbox"]:not(:checked) + label:before,
+	.popinNewsletterFdV2 .div_listeCentreInteretContent [type="checkbox"]:checked + label:before{content:'';position:absolute;left:0;top:2px;display:block;width:13px;height:13px;border:1px solid #9e9e9e;background:#ffffff;z-index:1;}
+
+	.popinNewsletterFdV2 .div_listeCentreInteretContent [type="checkbox"]:not(:checked) + label:after,
+	.popinNewsletterFdV2 .div_listeCentreInteretContent [type="checkbox"]:checked + label:after{content:'';position:absolute;top:5px;left:3px;width:9px;height:9px;display:block;background:#80a51b;transition:all .2s;z-index:10;}
+
+	.popinNewsletterFdV2 .div_listeCentreInteretContent [type="checkbox"]:not(:checked) + label:after{opacity:0;transform:scale(0);}
+	.popinNewsletterFdV2 .div_listeCentreInteretContent [type="checkbox"]:checked + label:after{opacity:1;transform:scale(1);}
+
+	.popinNewsletterFdV2 .div_newsletterBtnConfirm, .popinNewsletterFdV2 .div_newsletterBtnPasseEtape{		
+		text-align: center;
+	}
+	.popinNewsletterFdV2 .div_newsletterBtnConfirm{
+		padding:29px 0 22px;
+	}
+	.popinNewsletterFdV2 .div_newsletterBtnConfirm input{
+	  border-radius: 4px;
+	  border:none;
+	  background-color: rgb(255, 103, 0);
+	  display: inline-block;
+	  padding:5px 55px;
+	  color:#fff;
+	  font-family: 'Arial', sans-serif;
+	  font-size: 23px;
+	  cursor: pointer;
+	}
+
+	.popinNewsletterFdV2 .div_newsletterBtnPasseEtape{
+		padding:0 0 40px;
+	}
+	.popinNewsletterFdV2 .div_newsletterBtnPasseEtape input{
+		background: none;
+		border:none;
+		text-decoration: underline;
+		color:#434343;
+		font-size: 13px;
+		cursor: pointer;
+	}
+	.popinNewsletterFdV2 .div_newsletterBtnPasseEtape input:hover{
+		text-decoration: none;
+	}
+
+.sp_choixModeResa label{
+	cursor: pointer;
+}
+
+/******************************************************************/
+/******************************************************************/
+/************** Responsive compte client - 311850 *****************/
+/******************************************************************/
+/******************************************************************/
+
+@media screen and (max-width: 650px) {
+  div#itea_page_contentCptClient { width:100%; }
+  div#div_identificationCptClient,
+  div#div_cptClient_recupPass{
+    width:100%;
+    box-sizing:border-box;
+  }
+  div#div_identificationCptClient #div_identificationCptClientSaisie>div,
+  div#div_cptClient_recupPass #form_recup_email>div{
+    width:100%;
+    margin-bottom:10px;
+  }
+  div#div_identificationCptClient #div_identificationCptClientSaisie>div input,
+  div#div_cptClient_recupPass #form_recup_email>div input{
+    box-sizing:border-box;
+    width:100%;
+  }
+  div#divHeaderCompteClient{
+	  width: 100%;
+	  box-sizing: border-box;
+  }
+  div#divHeaderCompteClient .divCompteClientDeconnexion{
+      position: static;
+      display: inline-block;
+      margin-bottom: 10px;
+  }
+  div.div_uneResaInfosResaUnElemRefResa .a_linkDetailResaCptCli{
+  	height: auto;
+  	line-height: 18px;
+  }
+  div#div_modifCoordCli,
+  div#div_modifCoordCli .div_saisieClientLigne2Colonnes>div,
+  div#div_modifCoordCli .div_saisieClientLigne2Colonnes>div input,
+  div#div_modifCoordCli .div_saisieClientLigne2Colonnes>div select,
+  div#div_modifPasswordCptCli,
+  div#div_modifPasswordCptCli #div_modifPasswordCptCliContent>div,
+  div#div_modifPasswordCptCli #div_modifPasswordCptCliContent>div input{
+  	width: 100% !important;
+  	box-sizing:border-box;
+  	min-width: inherit;
+  }
+  div#div_cptClient_detailResa #div_photo_heber{
+  	float: none;
+  	margin: 0;
+  	display: inline-block;
+  }
+  div#div_cptClient_detailResa #div_titreDetailResa{
+  	height: auto;
+  }
+  div#div_cptClient_detailResa #div_titreDetailResa a{
+  	margin-bottom: 15px;
+  }
+  div#div_cptClient_detailResa .div_infosResaLocalisation .div_gmapCptCli{
+  	float: none;
+  	margin: 0;
+  	display: inline-block;
+  }
+
+  /* code repris dans le look d'un site ou c'était déjà fait (99, demoV5) */
+
+  	#div_cptClient_accueil, #div_identificationCptClient, #div_cptClient_detailResa { width:auto !important; }
+    #div_identificationCptClient .div_ligneIdentCptClient, #div_identificationCptClient .div_ligneModifPasswordCptCli {
+      min-width:inherit;
+      width:100% !important;
+      float:none !important;
+      margin:0 0 5px;
+    }
+    #div_identificationCptClient .div_ligneIdentCptClient input, #div_identificationCptClient .div_ligneModifPasswordCptCli input {
+      -webkit-box-sizing:border-box;
+      -moz-box-sizing:border-box;
+      box-sizing:border-box;
+      width:98% !important;
+      background:none !important;
+    }
+    #div_cptCliInfoCliContentModif { float:none !important; }
+    #div_cptCliInfoCliContentModif .cptCliInfoCliBtModifInfos {
+      float:left !important;
+      width:50% !important;
+    }
+    #div_cptCliInfoCliContentModif .cptCliInfoCliBtModifInfos a {
+      padding:5px;
+      -webkit-box-sizing:border-box;
+      -moz-box-sizing:border-box;
+      box-sizing:border-box;
+      width:95% !important;
+      background:#efefef !important;
+      border:1px #ddd solid !important;
+      line-height:inherit !important;
+      height:auto !important;
+      text-align:center;
+    }
+
+}
+
+/* formulaire RGPD */
+#div_formContactRgpd, .div_formContactRgpd{
+	font-size: 1.2em;
+}
+#div_formContactRgpd *, .div_formContactRgpd *{
+	box-sizing: border-box;
+}
+
+#blockWidgetRGPD p, .blockWidgetRGPD p{
+	margin-bottom: 15px;
+	padding:0;
+}
+
+#div_formContactRgpd .p_titreFormRgpd, .div_formContactRgpd .p_titreFormRgpd{
+	margin-bottom: 25px;
+	padding:0;
+	font-weight:bold;
+}
+
+#div_formContactRgpd .ligneFormulaire, .div_formContactRgpd .ligneFormulaire {
+	margin-bottom: 15px;
+	vertical-align: top;
+}
+
+#div_formContactRgpd .ligneFormulaire label, .div_formContactRgpd .ligneFormulaire label {
+	display: inline-block;
+	width: 120px;
+}
+#div_formContactRgpd .ligneFormulaire input[type="text"],
+#div_formContactRgpd .ligneFormulaire textarea,
+.div_formContactRgpd .ligneFormulaire input[type="text"],
+.div_formContactRgpd .ligneFormulaire textarea {
+	padding: 5px;
+	border:1px #aaa solid;
+	width: 200px;
+	border-radius: 3px;
+}
+#div_formContactRgpd .ligneFormulaire textarea, .div_formContactRgpd .ligneFormulaire textarea {
+	width: 400px;
+	height: 100px;
+}
+#div_formContactRgpd .ligneFormulaire.submit, .div_formContactRgpd .ligneFormulaire.submit {
+	text-align: center;
+	max-width: 520px;
+}
+#div_formContactRgpd .ligneFormulaire.submit a, .div_formContactRgpd .ligneFormulaire.submit a {
+	display: inline-block;
+	padding: 10px 30px;
+	text-decoration: none;
+	color: #fff;
+	border-radius: 3px;
+	background: #ff7011;
+}
+
+#div_formContactRgpd #divMsgEnvoiRetour, .div_formContactRgpd #divMsgEnvoiRetour {
+	padding: 10px;
+	background-color: #dff0d8;
+	border: 1px #d0e9c6 solid
+	color: #3c763d;
+	text-align: center;
+}
+
+#introRGPDMultiInstance {
+	margin-bottom: 15px;
+}
+
+#introRGPDMultiInstance div {
+	display: inline;
+}
+
+#divSelectInstanceRGPD {
+	margin-left: 10px;
+	width: 250px;
+}
+
+@media screen and (max-width:650px){
+	#div_formContactRgpd .ligneFormulaire label, .div_formContactRgpd .ligneFormulaire label {
+		display: block;
+		margin-bottom: 5px;
+	}
+	#div_formContactRgpd .ligneFormulaire input[type="text"],
+	#div_formContactRgpd .ligneFormulaire textarea, 
+	.div_formContactRgpd .ligneFormulaire input[type="text"], 
+	.div_formContactRgpd .ligneFormulaire textarea{
+		width: 100%;
+	}
+}
+
+/* chargement carto */
+#divRechargementParDessus_carte{
+	height: 100%;
+}
+#divRechargementParDessus_carte td{
+	vertical-align: middle;
+}
+
+
+/**** loader css ****/
+
+.cp-spinnerLoader {
+ width:48px;
+ height:48px;
+ display:inline-block;
+ box-sizing:border-box;
+ position:relative
+}
+.cp-ballsLoader {
+ animation:cp-balls-animate 1s linear infinite
+}
+.cp-ballsLoader:before {
+ border-radius:50%;
+ content:" ";
+ width:24px;
+ height:24px;
+ display:inline-block;
+ box-sizing:border-box;
+ background-color:#191919;
+ position:absolute;
+ top:0;
+ left:0;
+ animation:cp-balls-animate-before 1s ease-in-out infinite
+}
+.cp-ballsLoader:after {
+ border-radius:50%;
+ content:" ";
+ width:24px;
+ height:24px;
+ display:inline-block;
+ box-sizing:border-box;
+ background-color:#545454;
+ position:absolute;
+ bottom:0;
+ right:0;
+ animation:cp-balls-animate-after 1s ease-in-out infinite
+}
+@keyframes cp-balls-animate {
+ 0% {
+  transform:rotate(0)
+ }
+ 100% {
+  transform:rotate(360deg)
+ }
+}
+@keyframes cp-balls-animate-before {
+ 0% {
+  transform:translate(-5px,-5px)
+ }
+ 50% {
+  transform:translate(0,0)
+ }
+ 100% {
+  transform:translate(-5px,-5px)
+ }
+}
+@keyframes cp-balls-animate-after {
+ 0% {
+  transform:translate(5px,5px)
+ }
+ 50% {
+  transform:translate(0,0)
+ }
+ 100% {
+  transform:translate(5px,5px)
+ }
+}
+
+.loaderMoteur{
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+
+/* google translate */
+#goog-gt-tt {display:none !important;}
+.goog-te-banner-frame {display:none !important;}
+.goog-te-menu-value:hover {text-decoration:none !important;}
+.goog-text-highlight{background-color: inherit !important;box-shadow: none !important;}
+
+
+/***********************************************/
+/***********************************************/
+/******** Compte client taxe de séjour *********/
+/***********************************************/
+/***********************************************/
+#div_detailPrixCptCli .infoTaxeSejour,
+#div_detailPrixCptCli .infoAnnulation{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: #333;
+	color:#fff;
+	text-align: center;
+	font-size: 11px;
+	cursor: pointer;
+	position: relative;
+	bottom: 2px;
+    text-decoration: none;
+}
+
+#div_popinTaxeSejourDetail{
+	color:#333;
+	font-size:13px;
+}
+#div_popinTaxeSejourDetail > .titre{
+	padding:0 0 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px #ddd solid;
+	font-size: 1.2em;
+}
+
+#div_popinTaxeSejourDetail .div_typeCalculTaxeSejour > .desc{
+	margin-bottom: 10px;
+}
+
+#div_popinTaxeSejourDetail .tarifApplicable{
+	margin-bottom: 20px;	
+	text-align: center;
+	line-height: 20px;
+}
+#div_popinTaxeSejourDetail .tarifApplicable .titre{
+	font-weight: bold;
+	padding:0;
+	margin:0 0 5px;
+	font-size: 1.2em;
+}
+#div_popinTaxeSejourDetail .tarifApplicable .sousTitre{
+	padding: 0;
+	margin: 0;
+}
+#div_popinTaxeSejourDetail .tarifApplicable ul{
+	list-style-type: none;
+	padding:0;
+	margin: 0;
+}
+#div_popinTaxeSejourDetail .tarifApplicable ul li:before{
+	content: '-';
+	margin-right: 5px;
+}
+
+#div_popinTaxeSejourDetail .modeCalcul{
+	padding: 10px;
+	text-align: center;
+	font-size: 1.1em;
+	background: #efefef;
+	border:1px #ddd solid;
+}
+#div_popinTaxeSejourDetail .modeCalcul span{
+	font-weight: bold;
+	font-size: 1.1em;
+	margin:0 3px;
+}
+
+/* btn ficheToListe quand accès fiche à partir du site fédé. Mis en place suite à la mise en ligne du site fédé fin 2018 */
+#div_ficheContentFilAriane #btn_ficheToListe{
+    margin-right: 20px;
+    color: #F45D5C;
+    text-decoration: none;
+    border: 2px solid #F45D5C;
+    padding: 3px 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+@media screen and (max-width:700px){
+    div#div_ficheContentFilAriane{
+        display: block;
+    }
+    div#div_ficheContentFilAriane .div_filArianeFiche>*:not(#btn_ficheToListe){
+        display: none;
+    }
+}
+
+.div_ficheTarifsAvecDispo .tarifTaxeSejour{
+	padding-top: 30px;
+}
+
+.tarifTaxeSejour .btnDetailCalculTaxeSejour{
+	margin-left:8px;
+	height: 15px;
+	width: 15px;
+	line-height: 15px;
+	font-size: 11px;
+	cursor:pointer;
+	text-decoration: underline;
+}
+
+#div_fiche_bloc_tarif_chmb_packDivDatesTarifs .tarifTaxeSejour{
+	padding-top: 15px;
+}
+
+/*** leaflet ****/
+.leaflet-control.updatemanager .updateListButton{
+	cursor: pointer;
+	border:1px #ddd solid;
+	display: inline-block;
+	padding: 10px 20px 10px 35px;
+	color:#333;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+	border-radius:3px;
+	background: #fff url(/imgs_defaut/v5/leaflet/search.svg) no-repeat left 10px center;
+	background-size:20px 20px;
+	font-size:13px;
+}
+
+.leaflet-control.updatemanager .updateListButton:hover{
+	background-color:#efefef;
+}
+
+.leaflet-control.updatemanagerauto{
+	border:1px #ddd solid;
+	padding: 10px 20px 10px 35px;
+	padding: 10px;
+	color:#333;
+	border-radius:3px;
+	font-size:13px;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+	background: #fff;
+}
+.leaflet-control.updatemanagerauto input{
+	margin-right: 10px;
+	position: relative;
+	top: 2px;
+}
+
+
+/***** nouvelle pagination *****/
+#div_pagination{
+	padding:10px;
+}
+#div_pagination .page_location{
+	margin:0 20px;
+	display: inline-block;
+	vertical-align: top;
+	line-height: 30px;
+	font-size: 1.1em;
+}	
+#div_pagination .button_prev_page,
+#div_pagination .button_next_page{
+	text-decoration: none;
+    border: 2px solid #919191;
+    border-radius: 50%;
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
+    text-indent: -999px;
+    overflow: hidden;
+    transition-duration: 0.10s;
+}
+
+#div_pagination .button_prev_page{
+	background-image: url(/imgs_defaut/arrowLeft91.svg);
+	background-position: center;
+}
+#div_pagination .button_next_page{
+	background-image: url(/imgs_defaut/arrowRight91.svg);
+	background-position: center;
+}
+#div_pagination .button_prev_page:hover,
+#div_pagination .button_next_page:hover{
+	transform: scale(1.2);
+}
+#div_pagination .button_prev_page[style="display: inline;"],
+#div_pagination .button_next_page[style="display: inline;"]{
+	display: inline-block!important;
+}
+
+.messageAlerteGeneral .fancybox-skin{
+	background-color: #fff!important;
+}
+
+#div_massageAlerteGeneralContent{
+	padding:30px;
+	text-align: center;
+	font-size: 1em;
+	line-height: 22px;
+}
+
+#div_massageAlerteGeneralContent .titre{
+	font-size: 1.4em;
+}
+
+#div_massageAlerteGeneralContent p{
+	margin-bottom: 20px;
+	padding: 0;
+}
+
+#div_massageAlerteGeneralContent a{
+	display: inline-block;
+	padding:10px 20px;
+	background-color: #626262;
+	color:#fff;
+	text-decoration: none;
+	border-radius: 3px;
+	cursor:pointer;	
+}
+
+
+
+/* Formulaire d'annulation séjour */
+
+#widgetItea_demandeAnnulation .widgetItea_demandeAnnulation_titre {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#widgetItea_demandeAnnulation form {
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_ligneFormulaire {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_ligneFormulaire label {
+    display: block;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-style: italic;
+    width: auto;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_ligneFormulaire input[type="text"],
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_ligneFormulaire textarea {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    border: none !important;
+    border-bottom: 1px solid #858585 !important;
+    background: none;
+    padding: 5px 10px !important;
+    font-size: 1.1em;
+    color: #3a485f;
+    font-weight: 500;
+    border-radius: 0 !important;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    font-family: 'Raleway', sans-serif;
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+    max-width: 500px;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_choixDatesReport input[type="text"] {
+    width: 235px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_choixDatesReport input[type="text"]:nth-of-type(2) {
+    margin-left: 30px;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_ligneFormulaire .LV_validation_message {
+    position: absolute;
+    bottom: 2px;
+    right: 25px;
+    padding: 5px;
+    background: #fff;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_ligneFormulaire .LV_invalid {
+    color: red;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_ligneFormulaire .LV_valid {
+    color: green;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_submit {
+    max-width: 500px;
+    text-align: center;
+    width: 100%;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_submit a {
+    display: inline-block;
+    color: #f45d5c;
+    text-decoration: none;
+    padding: 5px 30px;
+    border: 1px solid #f45d5c;
+    font-size: 1.1em;
+    font-weight: 500;
+    position: relative;
+    transition-duration: 0.15s;
+    border-radius: 0;
+    background: none;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_submit a:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: #f45d5c;
+    z-index: -1;
+    transition-duration: 0.15s;
+    right: 50%;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_submit a:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: #f45d5c;
+    z-index: -1;
+    transition-duration: 0.15s;
+    left: 50%;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_submit a:hover {
+    color: #fff;
+}
+
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_submit a:hover:before,
+#widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_submit a:hover:after{
+    width: 50%;
+}
+
+.fancybox-wrap.messageErreurDemandeAnnulation .fancybox-inner {
+    font-size: 1.2em;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 50px;
+}
+
+@media screen and (max-width:768px){
+    #widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_choixDatesReport input[type="text"] {
+        width: 100%;
+    }
+    
+    #widgetItea_demandeAnnulation form .widgetItea_demandeAnnulation_choixDatesReport input[type="text"]:nth-of-type(2) {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
+/* Fin formulaire d'annulation séjour */
+
+/* div_fiche_avisClient_resumeGlobalSeul */
+
+.div_fiche_avisClient_resumeGlobalSeul .resumeGlobal {
+    background: #f2f2f2;
+    display: table;
+}
+
+.div_fiche_avisClient_resumeGlobalSeul .resumeGlobal .noteGlobale {
+    display: table-cell;
+    border-right: 2px solid #fff;
+    text-align: center;
+    padding: 10px 20px;
+    vertical-align: middle;
+}
+
+.div_fiche_avisClient_resumeGlobalSeul .resumeGlobal .noteGlobale p {
+    margin-bottom: 5px;
+}
+
+.div_fiche_avisClient_resumeGlobalSeul .resumeGlobal .noteGlobale .libelle {
+    text-transform: uppercase;
+}
+
+.div_fiche_avisClient_resumeGlobalSeul .resumeGlobal .noteGlobale .noteValeur {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.div_fiche_avisClient_resumeGlobalSeul .resumeGlobal .noteGlobale .imgEtoiles img {
+    height: 18px;
+}
+
+.div_fiche_avisClient_resumeGlobalSeul .resumeGlobal .moyenneParCritere {
+    display: table-cell;
+    padding: 10px 20px;
+    width: 79%;
+}
+
+.div_fiche_avisClient_resumeGlobalSeul .resumeGlobal .moyenneParCritere .content .unCritere {
+    display: inline-block;
+    width: 45%; 
+}
+
+.div_fiche_avisClient_resumeGlobalSeul .resumeGlobal .moyenneParCritere .content .unCritere:nth-child(odd) {
+    margin-right: 10%;
+}
+
+.div_fiche_avisClient_resumeGlobalSeul .resumeGlobal .moyenneParCritere .content .unCritere .libelle {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.div_fiche_avisClient_resumeGlobalSeul .resumeGlobal .moyenneParCritere .content .unCritere .etoiles {
+    float: right;
+}
+
+@media screen and (max-width:767px){
+    .div_fiche_avisClient_resumeGlobalSeul .resumeGlobal .moyenneParCritere .content .unCritere:nth-child(n) {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* FIN div_fiche_avisClient_resumeGlobalSeul */
+
+/* cookies 2021 */
+#ot-sdk-btn { /* cookiesPro */
+    display: none;
+}
+
+.div_typeAnnonce{
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.repartitionsDesChambres .repartitionUneChambre .titre .surface, .repartitionsDesChambres .repartitionUneChambre .titre .etage{
+	display: none;
+}
+
+/* 655570 - porteur, mentions RGPD */
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.porteur_confidentialite {
+    margin: 50px 0;
+}
+
+.porteur_confidentialite > p {
+    margin-bottom: 20px;
+}
+
+#formPorteur .porteur_confidentialite .col_large input {
+    width: auto;
+    margin-left: 0;
+}
+
+#formPorteur .porteur_confidentialite .col_large label {
+    font-size: 1em;
+}
+
+/* fin 655570 - porteur, mentions RGPD */

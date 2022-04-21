@@ -1,0 +1,814 @@
+jQuery(document).ready(function () {
+
+    if (jQuery('.itea_widgetChangelange').length > 0) {
+        jQuery('.itea_widgetChangelange .current').click(function () {
+            if (jQuery('.itea_widgetChangelange.open').length > 0) {
+                jQuery('.itea_widgetChangelange').removeClass('open');
+            } else {
+                jQuery('.itea_widgetChangelange').addClass('open');
+            }
+        });
+    }
+
+    gereAnimeMenu();
+    gereMEA();
+
+    if (jQuery("#a_validFormContactDep").length > 0) {
+        jQuery("#a_validFormContactDep").click(function () {
+            checkForm($("frm_contactRelais"), envoiMailContactDep);
+        });
+    }
+
+    jQuery('.unArticle img').attr('style', '');
+
+    initWidgetLanguesAvecGoogleTranslate();
+    initPopinNewsletter();
+    initMoteurRechercheExterne();
+    initDerniersHebergementsConsultes();
+    afficherLaSuite_listeArticle();
+    retirerOmbrageSiPasDeMoteurPrincipal();
+    smoothScrollToTop();
+    checkConnexionCompteClient();
+    ouvrirUneFaq();
+
+});
+
+function ouvrirUneFaq() {
+    
+    var bouton = jQuery('.groupeMeaFaq .lesItems .item .itemContent a.ouvrirFaq');
+    var contenuItem = jQuery('.groupeMeaFaq .lesItems .item .itemContent');
+    var item = jQuery('.groupeMeaFaq .lesItems .item');
+
+    bouton.click(function () {
+        jQuery(this).children('.titre').toggleClass('masquerFaq');
+        jQuery(this).parent('.itemContent').toggleClass('contentOpened');
+        jQuery(this).siblings('.description').animate({
+            height: 'toggle'
+        }, 300);
+    });
+    
+    if (item.length == 1) {
+        item.addClass('itemSeul');
+    }
+    
+}
+
+function gereAnimeMenu() {
+
+    // animation icone menu
+
+    jQuery('.headerLienMenu').click(function () {
+
+        animerCroixMenu();
+
+    });
+
+    // ouverture / fermeture du menu header
+
+    var menuPrincipalOuvert = false;
+
+    jQuery('.headerLienMenu').click(function () {
+
+        if (!menuPrincipalOuvert) {
+
+            jQuery('#filtreOpaque').css('opacity', '1');
+            jQuery('#filtreOpaque').css('bottom', '0');
+
+            ouvrirMenuPrincipal();
+
+            menuPrincipalOuvert = true;
+
+        } else {
+
+            jQuery('#filtreOpaque').css('opacity', '0');
+            jQuery('#filtreOpaque').css('bottom', 'auto');
+
+            fermerMenuPrincipal();
+            menuPrincipalOuvert = false;
+        }
+
+    });
+
+    // clic sur filtre noir ou header
+
+    jQuery('#filtreOpaque').click(function () {
+        if (menuPrincipalOuvert) {
+            jQuery('.headerLienMenu').get(0).click();
+        }
+    });
+
+    jQuery('#simuleHeader').click(function () {
+        if (menuPrincipalOuvert) {
+            jQuery('.headerLienMenu').get(0).click();
+        }
+    });
+
+    setPositionMenuPrincipal();
+    jQuery(window).resize(function () {
+        setPositionMenuPrincipal();
+    });
+
+}
+
+function ouvrirMenuPrincipal() {
+
+    var hauteurLangues = 0;
+
+    if (jQuery(window).width() > 767) {
+
+        jQuery('nav').animate({
+            height: 'toggle'
+        }, 500, function () {
+            if (hauteurLangues == 0) {
+                jQuery('nav .langues ul').height("auto");
+                hauteurLangues = jQuery('nav .langues ul:not(.ul_adminV5_lstMenu)').height();
+                jQuery('nav .langues ul').height(0);
+                ecouteChangementLangue(hauteurLangues);
+            }
+        });
+
+    } else {
+
+        jQuery('nav').addClass('menuPrincipalMobileOuvert');
+        ecouteChangementLangue(hauteurLangues);
+
+    }
+
+}
+
+function fermerMenuPrincipal() {
+
+    if (jQuery(window).width() > 767) {
+        if (jQuery('nav .langues ul').length > 0 && jQuery('nav .langues ul').height() != 0) {
+            jQuery('#current').get(0).click();
+        }
+
+        jQuery('nav').height('0');
+        jQuery('nav').hide();
+        jQuery('nav').css('height', 'auto');
+    } else {
+        jQuery('nav .langues ul:not(.ul_adminV5_lstMenu)').removeClass("menuLangueMobileOuvert");
+        jQuery('nav').removeClass('menuPrincipalMobileOuvert');
+    }
+
+}
+
+function ecouteChangementLangue(hauteurLangues) {
+
+    var hauteurDispo = jQuery(window).height() - jQuery('#header').height() - jQuery('nav .conteneur').innerHeight();
+
+    jQuery('#current').off('click');
+
+    jQuery('#current').click(function () {
+
+        if (jQuery(window).width() > 767) {
+
+            if (jQuery('nav .langues ul:not(.ul_adminV5_lstMenu)').height() == 0) {
+                jQuery('.menu.langues .first a').addClass('ouvert');
+                jQuery('nav .langues ul:not(.ul_adminV5_lstMenu)').addClass('ouvert');
+
+                if (hauteurDispo < hauteurLangues) {
+                    // on ouvre vers le haut
+                    jQuery('nav .langues ul:not(.ul_adminV5_lstMenu)').css('bottom', '95px');
+                    jQuery('.div_langues>.first').css('width', jQuery('nav .langues ul').innerWidth());
+                }
+
+                jQuery('nav .langues ul:not(.ul_adminV5_lstMenu)').animate({
+                    height: hauteurLangues
+                });
+            } else {
+                jQuery('.menu.langues .first a').removeClass('ouvert');
+
+                jQuery('nav .langues ul:not(.ul_adminV5_lstMenu)').animate({
+                    height: '0',
+                }, function () {
+                    jQuery('.div_langues>.first').css('width', 'auto');
+                });
+                setTimeout(function () {
+                    jQuery('nav .langues ul:not(.ul_adminV5_lstMenu)').removeClass('ouvert');
+                }, 300);
+
+            }
+
+        } else { // sur mobile
+
+            if (jQuery('nav .langues ul:not(.ul_adminV5_lstMenu).menuLangueMobileOuvert').length == 0) {
+                jQuery('nav .langues ul:not(.ul_adminV5_lstMenu)').addClass("menuLangueMobileOuvert");
+                jQuery('nav .langues ul:not(.ul_adminV5_lstMenu)').before('<div class="fondOpaque"></div>');
+                jQuery('nav .langues .fondOpaque, nav .langues ul .titreWidgetLangue p:last-child').click(function () {
+                    jQuery('#current').get(0).click();
+                });
+            } else {
+                jQuery('nav .langues ul:not(.ul_adminV5_lstMenu)').removeClass("menuLangueMobileOuvert");
+                jQuery('nav .langues .fondOpaque').remove();
+            }
+
+        }
+
+
+    });
+
+}
+
+function animerCroixMenu() {
+
+    var clickDelayTimer = null;
+
+    if (clickDelayTimer == null) {
+
+        var burger = jQuery('.burger-click-region');
+
+        if (!burger.hasClass('active')) {
+            burger.addClass('active');
+        } else {
+            burger.removeClass('active');
+        }
+
+        if (!burger.hasClass('active')) {
+            burger.addClass('closing');
+        }
+
+        clickDelayTimer = setTimeout(function () {
+            burger.removeClass('closing');
+            clearTimeout(clickDelayTimer);
+            clickDelayTimer = null;
+        }, 500);
+    }
+
+}
+
+function setPositionMenuPrincipal() {
+
+    if (jQuery('#headerEtMenu').length > 0) {
+
+        if (jQuery(window).width() > 1411) {
+            var leftMenu = jQuery('#header_searchNav .headerLienMenu').offset().left - jQuery('nav').width() - 5;
+            jQuery('nav').css('left', leftMenu);
+
+        } else {
+            jQuery('nav').css('left', 'inherit');
+            jQuery('#cptGDF_accesCompte_menu').css('left', 'inherit');
+        }
+
+        var padding = (jQuery(window).width() - jQuery('#header').outerWidth()) / 2;
+        if (padding == 0) {
+            padding = 7; // minimum 7 de padding
+        } else if (padding > 56) {
+            padding = 56;
+        }
+
+        jQuery('nav').css('padding-right', padding);
+
+    }
+
+}
+
+function gereMEA() {
+
+    if (jQuery(".owl-carousel.par6:not(.sansLoop)").length > 0) {
+        jQuery('.owl-carousel.par6:not(.sansLoop)').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 2
+                },
+                650: {
+                    items: 3
+                },
+                778: {
+                    items: 6
+                }
+            }
+        })
+    }
+
+    if (jQuery(".owl-carousel.par6.sansLoop").length > 0) {
+        jQuery('.owl-carousel.par6.sansLoop').owlCarousel({
+            loop: false,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 2
+                },
+                650: {
+                    items: 3
+                },
+                778: {
+                    items: 6
+                }
+            }
+        })
+    }
+
+    if (jQuery(".owl-carousel.par5:not(.sansLoop)").length > 0) {
+        jQuery('.owl-carousel.par5:not(.sansLoop)').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 2
+                },
+                650: {
+                    items: 3
+                },
+                778: {
+                    items: 5
+                }
+            }
+        })
+    }
+
+    if (jQuery(".owl-carousel.par5.sansLoop").length > 0) {
+        jQuery('.owl-carousel.par5.sansLoop').owlCarousel({
+            loop: false,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 2
+                },
+                650: {
+                    items: 3
+                },
+                778: {
+                    items: 5
+                }
+            }
+        })
+    }
+
+    if (jQuery(".owl-carousel.par4:not(.sansLoop)").length > 0) {
+        jQuery('.owl-carousel.par4:not(.sansLoop)').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 2
+                },
+                650: {
+                    items: 3
+                },
+                778: {
+                    items: 4
+                }
+            }
+        })
+    }
+
+    if (jQuery(".owl-carousel.par4.sansLoop").length > 0) {
+        jQuery('.owl-carousel.par4.sansLoop').owlCarousel({
+            loop: false,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 2
+                },
+                650: {
+                    items: 3
+                },
+                778: {
+                    items: 4
+                }
+            }
+        })
+    }
+
+    if (jQuery(".owl-carousel.par3:not(.sansLoop)").length > 0) {
+        jQuery('.owl-carousel.par3:not(.sansLoop)').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                650: {
+                    items: 2
+                },
+                778: {
+                    items: 3
+                }
+            }
+        })
+    }
+
+    if (jQuery(".owl-carousel.par3.sansLoop").length > 0) {
+        jQuery('.owl-carousel.par3.sansLoop').owlCarousel({
+            loop: false,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                650: {
+                    items: 2
+                },
+                778: {
+                    items: 3
+                }
+            }
+        })
+    }
+
+    if (jQuery(".owl-carousel.par2:not(.sansLoop)").length > 0) {
+        jQuery('.owl-carousel.par2:not(.sansLoop)').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                650: {
+                    items: 2
+                },
+                778: {
+                    items: 2
+                }
+            }
+        })
+    }
+    if (jQuery(".owl-carousel.par2.sansLoop").length > 0) {
+        jQuery('.owl-carousel.par2.sansLoop').owlCarousel({
+            loop: false,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                650: {
+                    items: 2
+                },
+                778: {
+                    items: 2
+                }
+            }
+        })
+    }
+
+    if (jQuery(".owl-carousel.par1:not(.sansLoop)").length > 0) {
+        jQuery('.owl-carousel.par1:not(.sansLoop)').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                650: {
+                    items: 1
+                },
+                778: {
+                    items: 1
+                }
+            }
+        })
+    }
+    if (jQuery(".owl-carousel.par1.sansLoop").length > 0) {
+        jQuery('.owl-carousel.par1.sansLoop').owlCarousel({
+            loop: false,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                650: {
+                    items: 1
+                },
+                778: {
+                    items: 1
+                }
+            }
+        })
+    }
+
+    if (jQuery(".iteaV5_ul_galerieImage").length > 0) {
+        jQuery('.iteaV5_ul_galerieImage').addClass('owl-carousel').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            navText: ["<div><div><span><img src='/img/css/prev.svg'></span></div></div>", "<div><div><span><img src='/img/css/next.svg'></span></div></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                650: {
+                    items: 2
+                },
+                778: {
+                    items: 3
+                }
+            }
+        });
+        jQuery('.iteaV5_ul_galerieImage a').fancybox();
+    }
+
+    loadImgBackground();
+    var onAttend;
+    jQuery(window).resize(function () {
+        clearTimeout(onAttend);
+        onAttend = setTimeout(function () {
+            loadImgBackground();
+        }, 500);
+    });
+
+}
+
+function loadImgBackground() {
+
+    jQuery('[data-background]').each(function () {
+        var urlImg = jQuery(this).attr('data-background') + '?width=' + jQuery(this).outerWidth() + '&height=' + jQuery(this).outerHeight();
+        var testPresenceVideo = urlImg.indexOf('www.youtube.com');
+        if(testPresenceVideo >= 1) {
+            var indexCodeVideo = urlImg.indexOf('/v/') + 3;
+            var codeVideo = urlImg.substr(indexCodeVideo,11);
+            var widthVideo = jQuery(this).innerWidth();
+            var heightVideo = jQuery(this).innerHeight();
+            jQuery(this).addClass('video').find('a').hide();
+            jQuery(this).find('iframe').remove();
+            jQuery(this).append('<iframe width="'+widthVideo+'px" height="'+heightVideo+'px" src="https://www.youtube.com/embed/'+codeVideo+'?controls=0&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+        } else {
+            jQuery(this).css('background-image', 'url(' + urlImg + ')');
+        }        
+    });
+
+}
+
+function envoiMailContactDep() {
+    envoiMailByAjaxByForm("frm_contactRelais", "div_formContactDep", true);
+
+    if (window.initMailContactEnvoye) { // fonction définie dans certains looks
+        initMailContactEnvoye();
+    }
+}
+
+function initWidgetLanguesAvecGoogleTranslate() {
+    if (jQuery('.langues.avecGoogleTanslate').length > 0) {
+        setTimeout(function () {
+            var ancienneLangCurr = jQuery('.menu.langues.avecGoogleTanslate #current').attr('data-lang');
+            var nouvelleLangCurr = jQuery('html').attr('lang');
+            if (nouvelleLangCurr == 'zh-CN') {
+                nouvelleLangCurr = 'cn';
+            }
+            if (nouvelleLangCurr == "auto") {
+                nouvelleLangCurr = "fr";
+            }
+            jQuery('.langues.avecGoogleTanslate .listeLangues li.langueCourante').removeClass('langueCourante').show();
+            jQuery('.langues.avecGoogleTanslate .listeLangues li.' + nouvelleLangCurr.toUpperCase()).addClass('langueCourante').hide();
+            var nouvelleLangCurrText = jQuery('.langues.avecGoogleTanslate .listeLangues li.langueCourante span').attr('data-langue');
+            jQuery('.langues.avecGoogleTanslate #current').attr('data-lang', nouvelleLangCurr.toUpperCase());
+            jQuery('html').attr('lang', nouvelleLangCurr).attr('xml:lang', nouvelleLangCurr);
+            if (nouvelleLangCurr == "en") {
+                nouvelleLangCurr = "uk";
+            }
+            jQuery('.langues.avecGoogleTanslate #current img').attr('src', '/imgs_defaut/css/header/' + nouvelleLangCurr + '.gif');
+            jQuery('.langues.avecGoogleTanslate #current img').attr('alt', nouvelleLangCurrText);
+            jQuery('.langues.avecGoogleTanslate #current span').html(nouvelleLangCurrText);
+            initTranslatePlaceholder();
+        }, 3000);
+        jQuery('.menu.langues.avecGoogleTanslate li a').off('click');
+        jQuery('.menu.langues.avecGoogleTanslate li a').click(function () {
+            jQuery('#filtreOpaque').get(0).click();
+            initWidgetLanguesAvecGoogleTranslate();
+        });
+    }
+
+}
+
+function initTranslatePlaceholder() {
+    // Find all placeholders
+    var placeholders = document.querySelectorAll('input[placeholder]');
+
+    if (placeholders.length) {
+        // convert to array
+        placeholders = Array.prototype.slice.call(placeholders);
+
+        // copy placeholder text to a hidden div
+        var div = jQuery('<div id="placeholders" style="position:absolute;opacity:0;top:0;z-index:-1;"></div>');
+
+        placeholders.forEach(function (input) {
+            var text = input.placeholder;
+            div.append('<div>' + text + '</div>');
+        });
+
+        jQuery('body').append(div);
+
+        // save the first placeholder in a closure
+        var originalPH = placeholders[0].placeholder;
+
+        // check for changes and update as needed
+        setInterval(function () {
+            if (isTranslated()) {
+                updatePlaceholders();
+                originalPH = placeholders[0].placeholder;
+            }
+        }, 500);
+
+        // hoisted ---------------------------
+        function isTranslated() { // true if the text has been translated
+            var currentPH = jQuery(jQuery('#placeholders > div')[0]).text();
+            return !(originalPH == currentPH);
+        }
+
+        function updatePlaceholders() {
+            jQuery('#placeholders > div').each(function (i, div) {
+                placeholders[i].placeholder = jQuery(div).text();
+            });
+        }
+    }
+}
+
+function initPopinNewsletter() {
+    (function ($) {
+        if ($('#incriptionNewsPopin .itea_inscriptionNewsletter').length > 0 && $(window).width() >= 780) {
+            if (getCookie('POPIN_NEWS') != 'ouvert') {
+                loadingTimer = setTimeout(function () {
+                    $('#incriptionNewsPopin').addClass('is-visible');
+                    setCookie("POPIN_NEWS", 'ouvert');
+                }, 1000);
+            }
+
+            //close popup
+            $('#close_incriptionNewsPopin').bind('click', function (event) {
+                event.preventDefault();
+                $('#incriptionNewsPopin').removeClass('is-visible').addClass('is-closed');
+            });
+
+
+            //close popup when clicking the esc keyboard button
+            $(document).keyup(function (event) {
+                if (event.which == '27') {
+                    $('#incriptionNewsPopin').removeClass('is-visible').addClass('is-closed');
+                }
+            });
+        }
+    })(jQuery);
+}
+
+function initMoteurRechercheExterne() {
+    (function ($) {
+        if ($('.widgetItea_rechercheExterne').length > 0) {
+            $('.widgetItea_rechercheExterne form').submit(function () {
+                var url = '/liste.html?' + $(this).serialize();
+                window.open(url);
+                return false;
+            });
+        }
+        if ($('#inpt_pasdedateprecise').length > 0) {
+            $('#inpt_pasdedateprecise').click(function () {
+                if ($(this).is(':checked')) {
+                    $('#moteur_datePickerDeb').val('');
+                    $('#moteur_datePickerFin').val('');
+                }
+            });
+        }
+    })(jQuery);
+}
+
+function ajouterFondDatepicker() {
+    (function ($) {
+        $('#inpt_pasdedateprecise').attr('checked', false);
+    })(jQuery);
+}
+
+function initDerniersHebergementsConsultes() {
+    if (jQuery('#derniersHebergements').length > 0) {
+        jQuery('#derniersHebergements a.boutonAfficher').click(function () {
+            jQuery('#derniersHebergements').addClass('open');
+        });
+        jQuery('#derniersHebergements .bandeauTitre a').click(function () {
+            jQuery('#derniersHebergements').removeClass('open');
+        });
+    }
+}
+
+function afficherLaSuite_listeArticle() {
+    var elementAMasquer = jQuery('.listingArticles .ul_lstAutresArticles');
+    var btnAfficherMasquer = jQuery('.listingArticles .div_voirPlusDarticles a');
+    elementAMasquer.addClass('close');
+    btnAfficherMasquer.click(function () {
+        if (jQuery('.listingArticles .ul_lstAutresArticles.close').length > 0) {
+            elementAMasquer.removeClass('close').addClass('open');
+            btnAfficherMasquer.html(btnAfficherMasquer.attr('data-ferme'));
+
+        } else {
+            elementAMasquer.removeClass('open').addClass('close');
+            btnAfficherMasquer.html(btnAfficherMasquer.attr('data-defaut'));
+        }
+    });
+}
+
+function retirerOmbrageSiPasDeMoteurPrincipal() {
+    if (jQuery('#div_moteurPrincipalFirst #div_moteurPrincipal').children().length == 0) {
+        jQuery('#div_moteurPrincipalFirst #div_moteurPrincipal').hide();
+    }
+}
+
+/** SMOOTH SCROLL TO TOP */
+function smoothScrollToTop() {
+    if (jQuery('#footer_menu .flecheScrollToTop').click(function () {
+        jQuery('html, body').animate({
+            scrollTop: 0
+        }, 1000);
+    }));
+}
+
+function checkConnexionCompteClient() {
+    if (jQuery('#div_cptClient_accueil').length > 0) {
+        jQuery('#bodyPage').addClass('compteClientConnecte');
+    }
+}
+
+function initClickDrpRangeSelected() {
+    var ObjDateDeb = new OBJDate(jQuery("#input-drp-start-id").val());
+    var ObjDateFin = new OBJDate(jQuery("#input-drp-end-id").val());
+    var ecartNbj = ObjDateDeb.getNbJourEcartWithOBJDate(ObjDateFin, true);
+    jQuery('#moteurPrincipalDate').append('<input id="inputSuppNbj" type="hidden" name="nbj" value="' + ecartNbj + '" />');
+}
+
+function initClickDrpInputsCleared() {
+    jQuery('input[name="nbj"]').remove();
+}
+jQuery(document).ready(function(){	
+
+    if(jQuery('.widgetCarte .carteHome').length > 0){
+    	jQuery('.widgetCarte .departements li a').mouseenter(function(){
+            var laZone = jQuery(this).attr('class');
+            jQuery('.widgetCarte .carteHome #zones a.'+laZone).addClass('hover');			
+    	});
+        jQuery('.widgetCarte .departements li a').mouseleave(function(){
+            var laZone = jQuery(this).attr('class');
+            jQuery('.widgetCarte .carteHome #zones a.'+laZone).removeClass('hover');			
+    	});
+        jQuery('.widgetCarte .carteHome #zones a').mouseenter(function(){
+            var laZone = jQuery(this).attr('class');
+            jQuery('.widgetCarte .departements li a.'+laZone).addClass('hover');			
+    	});
+        jQuery('.widgetCarte .carteHome #zones a').mouseleave(function(){
+            var laZone = jQuery(this).attr('class');
+            jQuery('.widgetCarte .departements li a.'+laZone).removeClass('hover');			
+    	});
+    }
+
+});
+
