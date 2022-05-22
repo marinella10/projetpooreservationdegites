@@ -1,0 +1,20 @@
+{
+    "name": "calandri/poophpreservation",
+    "description": "php poo",
+    "autoload": {
+        "psr-4": {
+            "Calandri\\Poophpreservation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "marine",
+            "email": "marine.calandri1@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "dev-master",
+      "ext-pdo": "*"
+    }
+}

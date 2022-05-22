@@ -1,9 +1,11 @@
 <?php
 require_once "backend/Categorie.php";
 require_once "backend/Region.php";
+require_once "backend/Gites.php";
 
-$categorieClasse = new Categories();
-$regionsClasse = new Regions();
+$categorieClasse = new Categorie();
+$regionsClasse = new Region();
+$gitesclasse = new Gites();
 
 $categories = $categorieClasse->getCategories();
 $regions = $regionsClasse->getRegions();
@@ -55,14 +57,13 @@ $regions = $regionsClasse->getRegions();
 
         <div class="mt-3">
             <label for="regions">Choix de la  catégorie
-                <select name="zone_geo" class="form-control">
+                <select name="type_gite" class="form-control">
                     <?php
                     //for each(table) as (alias)
-                    foreach ($categories
-                             as $category){
+                    foreach ($categories as $category){
                         ?>
                         <option value="<?= $category['id_categorie'] ?>">
-                            <?= $category['type_gite'] ?>
+                            <?= $category['type_categorie'] ?>
                         </option>
                         <?php
                     }
@@ -73,7 +74,7 @@ $regions = $regionsClasse->getRegions();
 
         <div class="mt-3">
             <label for="categories">Choix de la  catégorie
-                <select name="categories" class="form-control">
+                <select name="nom_region" class="form-control">
                     <?php
                     foreach ($regions  as $region){
                         ?>
@@ -118,6 +119,7 @@ $regions = $regionsClasse->getRegions();
 
     <?php
     if(isset($_POST['btn-ajouter-gite'])){
+        $gitesclasse->setGites();
         echo "ca marche";
     }
     ?>

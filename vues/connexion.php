@@ -9,16 +9,16 @@ $userClasse = new Utilisateurs();
 
 ?>
 <h3 class="text-danger">Vous êtes : </h3>
-<span>
+<div class="text-center" id="btn-parent">
     <a class="btn btn-outline-secondary" id="toggle-admin">Administateur</a>
     <a class="btn btn-outline-info" id="toggle-user">Client</a>
-</span>
+</div>
 
 
 <div id="form-admin">
     <?php
     //Si on est connecter en tant qu'administrateur
-    if(isset($_SESSION['connecter']) && $_SESSION['connecter'] === true){
+    if(isset($_SESSION['connecter_admin']) && $_SESSION['connecter_admin'] === true){
         //On redirige vers la page vues/administration.php
         header("administration");
     }else{
@@ -36,7 +36,7 @@ $userClasse = new Utilisateurs();
                 <input type="password" name="password_admin" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
             </div>
             <!--Ce bouton est recup via son attribut name et methode post $_POST['btn_valid_admin']-->
-            <button name="btn_valid_admin" type="submit" class="btn btn-success">Connexion</button>
+            <button name="btn_valid_admin" type="submit" class="btn btn-primary">Connexion</button>
 
         </form>
 
@@ -69,16 +69,41 @@ $userClasse = new Utilisateurs();
                 <input type="password" name="password_user" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
             </div>
             <!--Ce bouton est recup via son attribut name et methode post $_POST['btn_valid_user']-->
-            <button name="btn_valid_user" type="submit" class="btn btn-info">CONNEXION</button>
+            <button name="btn_valid_user" type="submit" class="btn btn-secondary">CONNEXION</button>
 
         </form>
 
         <?php
-        //Au clic on appel la methode de connexion de la classe Utilisateur
+        //Au clic on appel la methode de connexion de la classe Utilisateur->connexionUtilisateurs()
         if(isset($_POST['btn_valid_user'])){
+
             $userClasse->connexionUtilisateur();
         }
 
     }
     ?>
 </div>
+
+<script>
+    //Acces au DOM et on stock les elements grace leurs id
+
+    //les 2 bouttons
+
+    let btnAdminForm = document.getElementById("toggle-admin");
+    let btnUserForm = document.getElementById("toggle-user");
+
+    //recyup les 2 formulaires
+    let formAdmin = document.getElementById("form-admin");
+    let userForm = document.getElementById("form-user");
+
+    //Declencher un evenement au clic
+    btnAdminForm.addEventListener("click", () => {
+        formAdmin.classList.toggle("show");
+    });
+
+    btnUserForm.addEventListener("click", () => {
+        userForm.classList.toggle("show");
+    });
+
+</script>
+

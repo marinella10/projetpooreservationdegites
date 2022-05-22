@@ -1,9 +1,11 @@
 <?php
+
+//appelle le fichier database
 require_once "backend/Database.php";
 
 //créer la class gites qui est une méthode
-class
-Gites extends Database
+// class gites qui hérites du  la class  database
+class Gites extends Database
 {
 
     //Afficher les gites
@@ -19,6 +21,9 @@ Gites extends Database
     private $disponible;
     private $date_arrivee;
     private $date_depart;
+    private $nom_region;
+    private $type_gite;
+    private $id_commentaire;
 
     public function getGites()
     {
@@ -27,23 +32,45 @@ Gites extends Database
 
         //faire ma requete sql
         $sql = "SELECT * FROM location_gite";
+
+
+        //On stock le resultats dans une variables $gites
         $gites = $baseGites->query($sql);
 
         //faire le return
         return $gites;
     }
 
+    //Cette methode est destinée a recupérer tous les gites de la table phpMyADmin et a etre afficher sur le tableau de bord Administrateur
+    public function getLocation_gite()
+    {
+        //Appel de la methode getPDO de la classe MERE Database.php
+        //La connexion a PDO est stocké dans une variable
+        $db = $this->getPDO();
+        //la requètes SQL
+        $sql = "SELECT * FROM `location_gite` 
+                INNER JOIN categorie ON location_gite.gite_categorie = categories.id_categorie 
+                INNER JOIN regions ON location_gite.nom_region = regions.id_region ORDER BY id_gite DESC";
+        //On stock le resultats dans une variables $gites
+        $gites = $db->query($sql);
+        //la fonction getGites() retourne un tableau associatif contenant toutes les données de la table gites phpMyAdmin
+        //Ici $gites sera utilisé dans la vue accueil.php
+        return $gites;
 
+    }
 
-//Afficher les gites par ID
-//recup la connexion depusi methode getPDO de la classe
+    //Cette methode est destinée a recupérer un gite de la table phpMyADmin a l'aide de son ID
     public function getGiteById()
     {
         //Appel de la methode getPDO de la classe MERE Database.php
         //La connexion a PDO est stocké dans une variable
         $db = $this->getPDO();
         //Requète SQL filtrer par id_gite
-        $sql = "SELECT * FROM location_gite WHERE id_gite = ?";
+        $sql = "SELECT * FROM location_gite
+                                    INNER JOIN categorie ON location_gite.categorie_id= categorie.id_categorie
+                                    INNER JOIN  regions ON location_gite.region_id = regions.id_region          
+                                    INNER JOIN commentaires ON location_gite.commentaire_id = commentaires.id_commentaire
+                                    WHERE location_gite.id_gite = ?";
         //Requète preparée lutte contre les injections SQL methode prepare de la classe PDO + (requète SQL en paramètre)
         $request = $db->prepare($sql);
         //Recup de l'id du gite passée dans l'url de la page administration via <a href="<?= details_gite&id=<?= $row['id_gite']" ? > ></a>
@@ -59,9 +86,8 @@ Gites extends Database
         return $details;
     }
 
-
-//Cette methode est destinée a ajouter un gites de la table phpMyADmin a l'aide d'un formulaire
-//Ici un mutateur = setters
+    //Cette methode est destinée a ajouter un gites de la table phpMyADmin a l'aide d'un formulaire
+    //Ici un mutateur = setters
     public function setGites()
     {
         //On verifie tous les champs du formulaires existe et ne sont pas vide
@@ -81,9 +107,9 @@ Gites extends Database
 
         //UPLOAD D' IMAGE
         if (isset($_FILES['image_gite'])) {
-            $dossierDestination = "assets/image/";
-            $img_gite = $dossierDestination . basename($_FILES['image_gite_gite']['name']);
-            $_POST['img_gite'] = $img_gite;
+            $dossierDestination = "image/";
+            $img_gite = $dossierDestination . basename($_FILES['image_gite']['name']);
+            $_POST['image_gite'] = $img_gite;
             if (move_uploaded_file($_FILES['image_gite']['tmp_name'], $img_gite)) {
                 echo '<p class="alert alert-success">Le fichier est valide et à été téléchargé avec succès !</p>';
             } else {
@@ -93,7 +119,7 @@ Gites extends Database
 
         //LE POSTE DE L'IMAGE
         if (isset($_POST['image_gite'])) {
-            $this->img_gite = $_POST['image_gite'];
+            $this->image_gite = $_POST['image_gite'];
         } else {
             echo "<p class='alert-danger p-2'>Merci de remplir le champ image du gite</p>";
         }
@@ -112,8 +138,8 @@ Gites extends Database
         }
 
         //LA REGION DE FRANCE
-        if (isset($_POST['zone_geo'])) {
-            $this->zone_geo = $_POST['zone_geo'];
+        if (isset($_POST['nom_region'])) {
+            $this->nom_region = $_POST['nom_region'];
         } else {
             echo "<p class='alert-danger p-2'>Merci de remplir le champ departement</p>";
         }
@@ -170,7 +196,7 @@ Gites extends Database
         //var_dump($_POST['image_gite']);
         //var_dump($_POST['nbr_chambre']);
         //var_dump($_POST['nbr_sdb']);
-        //var_dump($_POST['zone_geo']);
+        //var_dump($_POST['nom_region']);
         //var_dump($_POST['prix']);
         //var_dump($_POST['disponible']);
         //var_dump($_POST['date_arrivee']);
@@ -184,8 +210,8 @@ Gites extends Database
             $db = $this->getPDO();
             //La requète SQL
 
-            $sql = "INSERT INTO gites
-            (nom_gite, description_gite, image_gite, nbr_chambre, nbr_sdb, zone_geo, prix_gite, disponible, date_arrivee, date_depart, gite_categorie, commentaire_id) 
+            $sql = "INSERT INTO location_gite
+            (nom_gite, description_gite, image_gite, nbr_chambre, nbr_sdb, nom_region, prix_gite, disponible, date_arrivee, date_depart, gite_categorie, commentaire_id) 
             VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ";
             //Lutte contre les injections SQL
             $req = $db->prepare($sql);
@@ -195,8 +221,8 @@ Gites extends Database
             $req->bindParam(3, $this->image_gite);
             $req->bindParam(4, $this->nbr_chambre);
             $req->bindParam(5, $this->nbr_sdb);
-            $req->bindParam(6, $this->zone_geo);
-            $req->bindParam(7, $this->prix);
+            $req->bindParam(6, $this->nom_region);
+            $req->bindParam(7, $this->prix_gite);
             $req->bindParam(8, $this->disponible);
             $req->bindParam(9, $this->date_arrivee);
             $req->bindParam(10, $this->date_depart);
@@ -210,8 +236,8 @@ Gites extends Database
                     $this->image_gite,
                     $this->nbr_chambre,
                     $this->nbr_sdb,
-                    $this->zone_geo,
-                    $this->prix,
+                    $this->nom_region,
+                    $this->prix_gite,
                     $this->disponible,
                     $this->date_arrivee,
                     $this->date_depart,
@@ -253,32 +279,32 @@ Gites extends Database
         }
     }
 
-//mettre a un jour un gite
+    //mettre a un jour un gite
     public function updateGite()
     {
         //recup de la connexion a la base de donnée via la methode getPDO de la classe mere
         $db = $this->getPDO();
         //On verifie tous les champs du formulaires existe et ne sont pas vide
         //On assigne les $_POST[] = attribut HTML name="" au propriétés privées (variables)
-        if (isset($_POST['nom_gite'])) {
+        if (isset($_POST['nom_gite']) && !empty($_POST['nom_gite'])) {
             $this->nom_gite = trim(htmlspecialchars($_POST['nom_gite']));
         } else {
             echo "<p class='alert-danger p-2'>Merci de remplir le champ nom du gite</p>";
         }
 
         //LA DESCRIPTION
-        if (isset($_POST['description_gite'])) {
+        if (isset($_POST['description_gite']) && !empty($_POST['description_gite'])) {
             $this->description_gite = trim(htmlspecialchars($_POST['description_gite']));
         } else {
             echo "<p class='alert-danger p-2'>Merci de remplir le champ description du gite</p>";
         }
 
         //UPLOAD D' IMAGE
-        if (isset($_FILES['image_gite_gite'])) {
+        if (isset($_FILES['image_gite'])) {
             $dossierDestination = "image/";
             $img_gite = $dossierDestination . basename($_FILES['image_gite']['name']);
             $_POST['img_gite'] = $img_gite;
-            if (move_uploaded_file($_FILES['image_gite_gite']['tmp_name'], $img_gite)) {
+            if (move_uploaded_file($_FILES['image_gite']['tmp_name'], $img_gite)) {
                 echo '<p class="alert alert-success">Le fichier est valide et à été téléchargé avec succès !</p>';
             } else {
                 echo '<p class="alert-danger">Une erreur s\'est produite, le fichier n\'est pas valide !</p>';
@@ -287,7 +313,7 @@ Gites extends Database
 
         //LE POSTE DE L'IMAGE
         if (isset($_POST['image_gite'])) {
-            $this->img_gite = $_POST['image_gite'];
+            $this->image_gite = $_POST['image_gite'];
         } else {
             echo "<p class='alert-danger p-2'>Merci de remplir le champ image du gite</p>";
         }
@@ -306,8 +332,8 @@ Gites extends Database
         }
 
         //LA REGION DE FRANCE
-        if (isset($_POST['zone_geo'])) {
-            $this->zone_geo = $_POST['zone_geo'];
+        if (isset($_POST['nom_region'])) {
+            $this->nom_region = $_POST['nom_region'];
         } else {
             echo "<p class='alert-danger p-2'>Merci de remplir le champ departement</p>";
         }
@@ -346,7 +372,7 @@ Gites extends Database
             echo "<p class='alert-danger p-2'>Merci de remplir le champ type de gite</p>";
         }
 
-        //LES COMMENTAIRES = champs caché avec valeurs par defaut
+        //LES COMMENTAIRES'' = champs caché avec valeurs par defaut
 
         if (isset($_POST['commentaires'])) {
             $this->id_commentaire = $_POST['commentaires'];
@@ -359,18 +385,18 @@ Gites extends Database
             echo "<p class='alert-danger p-2'>ATTENTION : la date d'arrivée est supérieur à la date de part !</p>";
         }
 
-        $sql = "UPDATE gites SET 
+        $sql = "UPDATE location_gite SET 
                  nom_gite = ?, 
                  description_gite = ?, 
                  image_gite = ?, 
+                 prix_gite = ?,
                  nbr_chambre = ?, 
                  nbr_sdb = ?, 
-                 zone_geo = ?, 
-                 prix_gite = ?, 
+                 region_id = ?, 
                  disponible = ?, 
                  date_arrivee = ?, 
                  date_depart = ?, 
-                 gite_categorie = ?, 
+                 categorie_id = ?, 
                  commentaire_id = ? 
                 WHERE id_gite = ?";
 
@@ -383,7 +409,7 @@ Gites extends Database
         $req->bindParam(3, $this->image_gite);
         $req->bindParam(4, $this->nbr_chambre);
         $req->bindParam(5, $this->nbr_sdb);
-        $req->bindParam(6, $this->zone_geo);
+        $req->bindParam(6, $this->nom_region);
         $req->bindParam(7, $this->prix);
         $req->bindParam(8, $this->disponible);
         $req->bindParam(9, $this->date_arrivee);
@@ -397,7 +423,7 @@ Gites extends Database
             $this->image_gite,
             $this->nbr_chambre,
             $this->nbr_sdb,
-            $this->zone_geo,
+            $this->nom_region,
             $this->prix,
             $this->disponible,
             $this->date_arrivee,
@@ -412,10 +438,52 @@ Gites extends Database
         } else {
             echo "<p class='alert-danger p-2'>Erreur lors de la mise a jour : Merci de verifié et remplir tous les champs !</p>";
         }
-
     }
+
+
+///////////////////////////////////////QUAND ON EST CONNECTER UTILISATEUR OU SIMPLE VISITEUR////////////////////////
+public function getGiteDisponible(){
+    //Recupere de la date du jour grace a php date()
+    /*
+     * Retourne une date sous forme d'une chaîne, au format donné par le paramètre format,
+     * fournie par le paramètre timestamp ou la date et l'heure courantes si aucun timestamp n'est fourni.
+     * En d'autres termes, le paramètre timestamp est optionnel et vaut par défaut la valeur de la fonction time().
+     */
+    $today = date('Y-m-d');
+    //La connexion a la bdd via la classe mere Database
+    $db = $this->getPDO();
+
+    //la requète de selection + jointure + prediquat WHERE filtre de gite par date et bool disponible = true
+    $sql = "SELECT * FROM location_gite 
+            INNER JOIN categorie ON location_gite.categorie_id= categorie.id_categorie
+            INNER JOIN  regions ON location_gite.region_id = regions.id_region 
+             WHERE date_depart < '".$today."' AND disponible = 1";
+    //parcours de la table gites filtrées
+    $disponible = $db->query($sql);
+    return $disponible;
 }
 
+public function getGiteIndisponible(){
+    //Recupere de la date du jour grace a php date()
+    /*
+     * Retourne une date sous forme d'une chaîne, au format donné par le paramètre format,
+     * fournie par le paramètre timestamp ou la date et l'heure courantes si aucun timestamp n'est fourni.
+     * En d'autres termes, le paramètre timestamp est optionnel et vaut par défaut la valeur de la fonction time().
+     */
+    $today = date('Y-m-d');
+    //La connexion via la classe mere Database
+    $db = $this->getPDO();
+
+    //la requete de selection (inverse) + jointure + date jour < date de depart
+    $sql = "SELECT * FROM location_gite 
+                INNER JOIN categorie ON location_gite.categorie_id= categorie.id_categorie
+                INNER JOIN  regions ON location_gite.region_id = regions.id_region 
+                WHERE date_depart > '".$today."' AND disponible = 1";
+    //parcours de la table gites PhpMyAdmin filtrées
+    $indisponible = $db->query($sql);
+    return $indisponible;
+}
+}
 
 
 

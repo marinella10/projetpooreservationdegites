@@ -1,82 +1,64 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
         <img class="logo-gite" src="image/logogite.jpg" alt="logo gite" title="Gite"/>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Inscription</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                </li>
-            </ul>
             <!--POUR AFFICHER UN BONJOUR PERSONNALISE SELON LA PERSONNE CONNECTEE (dans la NAVBAR)-->
 
-            <?php
-            if (isset($_SESSION["utilisateur_connecte"]) && ($_SESSION["utilisateur_connecte"] === true)){
-                ?>
-                <li id="bonjourConnecte">
-                    <a class="nav-link text-warning">Bonjour <?= $_SESSION["prenom_utilisateur"]?></a>
+                <li class="nav-item">
+                    <?php
+                    //On demarre la session
+
+                    //si on est connecter en tant qu'utilisateur = on retourne la page d'accueil + on affiche l'email de l'utilisateur
+                    if(isset($_SESSION['connecter_user']) && $_SESSION['connecter_user'] === true){
+                        ?>
+
+                        <h4 class="text-danger mt-1"><b style="color: #2c4f56;font-size: 14px">Vous êtes connectez en tant que :</b> <?= $_SESSION['email_utilisateur'] ?></h4>
+                        <?php
+                        //Sinon si on est connecter en tant qu'adminsitrateur = on affiche un onglet administation + email de l'administrateur dans la navbar
+                    }elseif(isset($_SESSION['connecter']) && $_SESSION['connecter'] === true){
+                        ?>
+                        <div class="d-flex">
+                            <a class="nav-link" href="administration">ADMINISTRATION</a>
+                            <h4 class="text-danger mt-1">
+                                <b style="color: #2c4f56;font-size: 14px">Vous êtes connectez en tant que  :</b> <?= $_SESSION['email_admin']  ?>
+                            </h4>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <a class="nav-link" href="#"></a>
+                        <?php
+                    }
+                    ?>
                 </li>
-                <?php
-            }elseif (isset($_SESSION["administrateur_connecte"]) && ($_SESSION["administrateur_connecte"] === true)){
-                ?>
-                <li>
-                    <a href="administration" class="nav-link text-danger">ADMINISTRATION</a>
-                </li>
-                <li id="bonjourConnecte">
-                    <a class="nav-link text-danger">Bonjour <?= $_SESSION["prenom_administrateur"]?></a>
-                </li>
-                <?php
-            }
-            ?>
+                </ul>
 
             <!--POUR LE BOUTON DECONNEXION QUI APPARAIT SI UN UTILISATEUR ou UN ADMIN EST CONNECTE-->
-
-            <?php
-            if (isset($_SESSION["utilisateur_connecte"]) && ($_SESSION["utilisateur_connecte"] === true) ||
-                isset($_SESSION["administrateur_connecte"]) && ($_SESSION["administrateur_connecte"] === true)){
-                ?>
-                <form action="deconnexion" method="POST">
-                    <button type="submit" name="btn-deconnexion" id="btn-deconnexion" class="btn btn-sm btn-outline-light mb-2">Déconnexion</button>
-                </form>
-                <?php
-            }else{
-                ?>
-                <a href="connexion" id="btn-connexion" class="btn btn-sm btn-outline-light mb-2">Connexion</a>
-                <?php
-            }
-            ?>
-
-            <!--POUR LE BOUTON DECONNEXION QUI APPARAIT SI UN UTILISATEUR ou UN ADMIN EST CONNECTE-->
-            <?php
-            if (isset($_SESSION["utilisateur_connecte"]) && ($_SESSION["utilisateur_connecte"] === true) ||
-                isset($_SESSION["administrateur_connecte"]) && ($_SESSION["administrateur_connecte"] === true)){
-                ?>
-                <form action="deconnexion" method="POST">
-                    <button type="submit" name="btn-deconnexion" id="btn-deconnexion" class="btn btn-sm btn-outline-light mb-2">Déconnexion</button>
-                </form>
-                <?php
-            }else{
-                ?>
-                <a href="connexion" id="btn-connexion" class="btn btn-sm btn-outline-light mb-2">Connexion</a>
-                <?php
-            }
-            ?>
 
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
 
                 <a href="inscription" class="btn btn-warning mx-3">Inscription</a>
-                <a href="connexion" class="btn btn-primary mx-3">Connexion</a>
+                <?php
+                if (isset($_SESSION['connecter_user']) && ($_SESSION['connecter_user'] === true) ||
+                    isset($_SESSION['connecter']) && ($_SESSION['connecter'] === true)){
+                    ?>
+                    <a class="nav-link btn btn-danger" href="deconnexion">DECONNEXION</a>
+                    <?php
+                }else{
+                    ?>
+                    <a href="connexion" id="btn-connexion" class="btn btn-sm btn-outline-success mb-2">Connexion</a>
+                    <?php
+                }
+                ?>
+
             </form>
-        </div>
+
     </div>
 </nav>
+
 
 

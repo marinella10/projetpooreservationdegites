@@ -22,8 +22,91 @@ class Utilisateurs extends Database
 
     ////////////////INSCRIRE UN UTILISATEUR POUR RESERVER UN GITE ET ECRIRE UN COMMENTAIRES//////////////
     public function inscriptionUtilisateur()
-    {
 
+    {
+        //Connexion a la base de données a l'aide de l'instance de la classe mere (database) heritage
+        //Et appel de sa methode public getPDO();
+
+        $db = $this->getPDO();
+
+        if(isset($_POST['email_user']) && !empty($_POST['email_user'])){
+            /*
+            * En français, on pourrait traduire cela par "désinfecter". Quand les utilisateurs peuvent entrer des données
+            * comme dans un formulaire de contact, il est important de s'assurer qu'il ne s'agit pas d'une tentative d'attaque (comme par exemple, les injections sql)
+            * voire une tentative de piratage. C'est pour cela que nous allons désinfecter TOUTES les données entrées par l'utilisateur AVANT de les manipuler dans notre script.
+             * //On assigle les champs du formumaire au propréirées privée de la classe
+             *
+            */
+            $this->email_user = trim(htmlspecialchars($_POST['email_user']));
+        }
+
+        if(isset($_POST['password_user']) && !empty($_POST['password_user'])){
+            /*
+            * En français, on pourrait traduire cela par "désinfecter". Quand les utilisateurs peuvent entrer des données
+            * comme dans un formulaire de contact, il est important de s'assurer qu'il ne s'agit pas d'une tentative d'attaque (comme par exemple, les injections sql)
+            * voire une tentative de piratage. C'est pour cela que nous allons désinfecter TOUTES les données entrées par l'utilisateur AVANT de les manipuler dans notre script.
+             * //On assigle les champs du formumaire au propréirées privée de la classe
+             *
+            */
+            $this->password_user = trim(htmlspecialchars($_POST['password_user']));
+        }
+
+        if(isset($_POST['password_repeat']) && !empty($_POST['password_repeat'])){
+            /*
+            * En français, on pourrait traduire cela par "désinfecter". Quand les utilisateurs peuvent entrer des données
+            * comme dans un formulaire de contact, il est important de s'assurer qu'il ne s'agit pas d'une tentative d'attaque (comme par exemple, les injections sql)
+            * voire une tentative de piratage. C'est pour cela que nous allons désinfecter TOUTES les données entrées par l'utilisateur AVANT de les manipuler dans notre script.
+             * //On assigle les champs du formumaire au propréirées privée de la classe
+             *
+            */
+            $this->repeatPassword = trim(htmlspecialchars($_POST['password_repeat']));
+        }
+
+        //Veririfier le mot passe repeter
+        if($this->password_user != $this->repeatPassword){
+            echo "<p class='alert alert-danger p-3 mt-3'>ATTENTION ! Les 2 mot de passe ne sont pas identique.</p>";
+        }
+
+        //la requète d'insertion
+
+        $sql = "INSERT INTO utilisateur_location (email, password) VALUE (?,?)";
+
+        //requète préparée
+        $insert_user = $db->prepare($sql);
+
+        //On lie les champs du formulaire a ma requète sql
+        $insert_user->bindParam(1, $this->email_user);
+        $insert_user->bindParam(2, $this->password_user);
+
+        //On hash le mot de passe a l'aide de la fonction : password_hash — Crée une clé de hachage pour un mot de passe
+        //Celle ci prend 2 paramètres obligatoire + options
+        //password_hash(string $password, string|int|null $algo, array $options = []): string
+        //L'entrée de l'utilisateur + l'algo de hashage + option (cost, etc...)
+        $hash_password = password_hash($this->password_user, PASSWORD_DEFAULT);
+
+        //Lors de l'execution de la requète, on passe le mot de passe hashé dans dans le tableau de paramètres
+        $insert_user->execute(array(
+            $this->email_user,
+            $hash_password,
+        ));
+
+        //Si ca marche
+        if($insert_user){
+            //On redirige vers la page d'accueil
+            ?>
+            <p class="alert alert-success p-3 mt-3">Bienvenue : vous êtes desormais inscrit sur notre site.</p>
+            <a href="connexion" class="mt-3 btn btn-success">Se connecter à votre espace</a>
+            <style>
+                /*On cache le formulaire*/
+                #form-register-user{
+                    display: none;
+                }
+            </style>
+            <?php
+        }else{
+            //Sinon on affiche une erreur
+            echo "<p class='alert-danger p-2'>Une erreur est survenue, merci de verifié et de remplir tous les champs !</p>";
+        }
     }
 
     //////////////////////CONNECTER UN UTILISTEUR//////////////////////////////////
@@ -54,12 +137,12 @@ class Utilisateurs extends Database
 //Si le champ existe et n'est pas vide
 //Dans le DOM un utilisateur peut supprimer attribut required des inputs => donc on check que c pas vide
 
-        if (isset($_POST['email_utilisateur']) && !empty($_POST['email_utilisateur'])) {
+        if (isset($_POST['email_user']) && !empty($_POST['email_user'])) {
             //On sanitize = desinfecter les champs
             //trim supprimer les espaces en debut et fin de chaine de caractère
             //htmlspecialchar transforme les caractère spéciaux en chaine de caracteres
             //faille xss => ex: <script>js malvaillant</script>
-            $this->email_user = trim(htmlspecialchars($_POST['email_utlisateur']));
+            $this->email_user = trim(htmlspecialchars($_POST['email_user']));
         } else {
             //Sinon on affiche une erreur
             echo "<p class='alert-danger p-3'>Merci remplir le champ Email</p>";
@@ -82,7 +165,7 @@ class Utilisateurs extends Database
 
             //Bind des paramètre (on lie les champs du formulaire aux paramètre de la requète SQL)
 
-            $stmt->bindParam(1, $this->email_utilisateur);
+            $stmt->bindParam(1, $this->email_user);
             $stmt->bindParam(2, $this->password_user);
             //Attention ici 2 paramètres a liés
             $stmt->execute();
@@ -108,7 +191,7 @@ class Utilisateurs extends Database
                     //Et email de la personne connecter
                     //Ses element sont utilisé dans le routeur + la navbar pour afficher l'utilisateur courant
                     $_SESSION['connecter_user'] = true;
-                    $_SESSION['email_utilisateur'] = $this->email_utilisateur;
+                    $_SESSION['email_utilisateur'] = $row['email'];
                     //La redirection = si on est connecter on redirige vers la page d'accueil
                     header("Location: accueil");
                 } else {

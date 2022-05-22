@@ -19,9 +19,9 @@ class Database
             //PDO:: represente l'acces a des methode static = sans instance de la classe PDO
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //Si ca marche
-            echo "<div class='text-center'>
+        /*    echo "<div class='text-center'>
                     <p class='mt-3 alert alert-success'>Vous êtes connectez a PDO MySQL !</p>
-                </div>";
+                </div>";*/
             //Sinon on declenche une erreur = on appel la methode getMessage de la Classe PDOException
         }catch (PDOException $exception){
             echo "<div class='text-center'>

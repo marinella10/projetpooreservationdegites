@@ -1,0 +1,31 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*************************LES FORMULAIRE DE CONNEXION********************/
+
+
+#form-admin {
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+
+#form-user {
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+
+#form-admin.show {
+    opacity: 1;
+}
+
+#form-user.show {
+    opacity: 1;
+}
+
