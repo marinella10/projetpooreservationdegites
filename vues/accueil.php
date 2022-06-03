@@ -24,13 +24,13 @@ $gitesIndisponible = $gitesClasse->getGiteIndisponible()
     //On parcours les resultats à l'aide d'une boucle foreach et un alias pour les gites disponible
     foreach ($gites as $row) {
         ?>
-        <div class="mt-3 p-3 col-md-4 col-sm-12">
-            <div class="card">
+  
                 <img  src="<?= $row['image_gite'] ?>" class="card-img-top img-fluid" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-info"><?= $row['nom_gite'] ?></h5>
                     <h6 class="text-success">Regions : <?= $row['nom_region'] ?></h6>
-                    <p><b>Nombre de chambre : </b><b class="text-danger"><?= $row['nbr_chambre'] ?></b></p>
+                    <p><b>Nombr      <div class="mt-3 p-3 col-md-4 col-sm-12">
+            <div class="card">e de chambre : </b><b class="text-danger"><?= $row['nbr_chambre'] ?></b></p>
                     <div class=" container text-center m-2">
                         <a href="gites_detail?id_gite=<?= $row['id_gite'] ?>" class="btn btn-primary">Détails</a>
 
