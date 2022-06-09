@@ -145,7 +145,7 @@ class Gites extends Database
         }
         //LE PRIX DU GITE / SEMAINE
         if (isset($_POST['prix_gite'])) {
-            $this->prix = $_POST['prix_gite'];
+            $this->prix_gite = $_POST['prix_gite'];
         } else {
             echo "<p class='alert-danger p-2'>Merci de remplir le champ prix du gite</p>";
         }
@@ -180,8 +180,8 @@ class Gites extends Database
 
         //LES COMMENTAIRE = champs caché avec valeurs par defaut
 
-        if (isset($_POST['commentaires'])) {
-            $this->id_commentaire = $_POST['commentaires'];
+        if (isset($_POST['commentaire_id'])) {
+            $this->commentaire_id = $_POST['commentaire_id'];
         } else {
             echo "<p class='alert-danger p-2'>Merci de remplir le champ commentaire de gite</p>";
         }
@@ -211,7 +211,7 @@ class Gites extends Database
             //La requète SQL
 
             $sql = "INSERT INTO location_gite
-            (nom_gite, description_gite, image_gite, nbr_chambre, nbr_sdb, nom_region, prix_gite, disponible, date_arrivee, date_depart, gite_categorie, commentaire_id) 
+            (nom_gite, description_gite, image_gite, nbr_chambre, nbr_sdb, prix_gite, disponible, date_arrivee, date_depart, categorie_id, commentaire_id, region_id) 
             VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ";
             //Lutte contre les injections SQL
             $req = $db->prepare($sql);
@@ -221,13 +221,13 @@ class Gites extends Database
             $req->bindParam(3, $this->image_gite);
             $req->bindParam(4, $this->nbr_chambre);
             $req->bindParam(5, $this->nbr_sdb);
-            $req->bindParam(6, $this->nom_region);
-            $req->bindParam(7, $this->prix_gite);
-            $req->bindParam(8, $this->disponible);
-            $req->bindParam(9, $this->date_arrivee);
-            $req->bindParam(10, $this->date_depart);
-            $req->bindParam(11, $this->type_gite);
-            $req->bindParam(12, $this->id_commentaire);
+            $req->bindParam(6, $this->prix_gite);
+            $req->bindParam(7, $this->disponible);
+            $req->bindParam(8, $this->date_arrivee);
+            $req->bindParam(9, $this->date_depart);
+            $req->bindParam(10, $this->type_gite);
+            $req->bindParam(11, $this->commentaire_id);
+            $req->bindParam(12, $this->nom_region);
             //On execute la requète et on retourne uhn tableau associatif
             $insert = $req->execute(
                 array(
@@ -236,14 +236,15 @@ class Gites extends Database
                     $this->image_gite,
                     $this->nbr_chambre,
                     $this->nbr_sdb,
-                    $this->nom_region,
                     $this->prix_gite,
                     $this->disponible,
                     $this->date_arrivee,
                     $this->date_depart,
                     $this->type_gite,
-                    $this->id_commentaire
+                    $this->commentaire_id,
+                    $this->nom_region,
                 ));
+                var_dump($insert);
             //Si l'execution fonctionne
             //On fais une redirection sur une page de succès Sinon on affiche une erreur
             if ($insert) {

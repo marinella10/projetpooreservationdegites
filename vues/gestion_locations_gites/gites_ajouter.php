@@ -10,6 +10,7 @@ $gitesclasse = new Gites();
 $categories = $categorieClasse->getCategories();
 $regions = $regionsClasse->getRegions();
 
+var_dump($_POST);
 ?>
 <div class="container">
     <!--La methode post recup les trriburs name de chaque elements du formulaire a l'aide de la super globale $_POST['name=nom_gite']-->
@@ -33,7 +34,7 @@ $regions = $regionsClasse->getRegions();
         </div>
 
         <div class="mt-3">
-            <label for="nbr_chambre">Choix de la  catégorie
+            <label for="nbr_chambre">Choix du nombre de chambre
                 <select name="nbr_chambre" class="form-control">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -46,7 +47,7 @@ $regions = $regionsClasse->getRegions();
         </div>
 
         <div class="mt-3">
-            <label for="nbr_sdb">Choix de la  catégorie
+            <label for="nbr_sdb">Choix du nombre de salle de bain
                 <select name="nbr_sdb" class="form-control">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -90,7 +91,7 @@ $regions = $regionsClasse->getRegions();
 
         <div class="form-group">
             <label for="prix">Prix / semaine : </label>
-            <input type="number" step="0.01" class="form-control" id="prix" name="prix_gite" placeholder="250.50">
+            <input type="number" step="0.01" class="form-control" id="prix_gite" name="prix_gite" placeholder="Entrez un prix">
         </div>
 
         <div class="mt-3">
@@ -112,7 +113,7 @@ $regions = $regionsClasse->getRegions();
             <input type="date" class="form-control" name="date_depart" id="date_depart" placeholder="<?= date('Y-m-d') ?>" value="<?= date('Y-m-d') ?>" required>
         </div>
 
-        <input type="hidden" name="commentaires" value="0">
+        <input type="hidden" name="commentaire_id" value="1">
 
         <button type="submit" name="btn-ajouter-gite" class="btn btn-outline-success">Ajouter le gite</button>
     </form>

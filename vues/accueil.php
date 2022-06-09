@@ -40,6 +40,7 @@ $gitesIndisponible = $gitesClasse->getGiteIndisponible()
             </div>
         </div>
         <?php
+
     }
     ?>
     <?php

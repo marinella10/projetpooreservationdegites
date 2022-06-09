@@ -21,6 +21,9 @@ $details = $giteClasse->getGiteById();
 $categories = $categorieClasse->getCategories();
 $regions = $regionClasse->getRegions();
 $commentaires = $commentaireClasse->getComments();
+
+var_dump($_FILES);
+var_dump($_POST);
 ?>
 
 
@@ -136,12 +139,12 @@ if (isset($_SESSION['connecter_user']) && $_SESSION['connecter_user'] === true) 
         <div class="form-group">
             <label for="img_gite">Image du gite : </label>
             <br/>
-            <input class="btn btn-outline-success" type="file" id="img_gite" name="image_gite"
+            <input class="btn btn-outline-success" type="file" id="image_gite" name="image_gite"
                    accept="image/png, image/jpeg, image/webp image/bmp, image/svg">
         </div>
 
         <div class="mt-3">
-            <label for="nbr_chambres">Choix du nombre de chambre
+            <label for="nbr_chambre">Choix du nombre de chambre
                 <select name="nbr_chambre" class="form-control">
                     <option selected>Nombre de chambre</option>
                     <option value="1">1</option>
