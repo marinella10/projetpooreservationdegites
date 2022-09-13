@@ -22,8 +22,6 @@ $categories = $categorieClasse->getCategories();
 $regions = $regionClasse->getRegions();
 $commentaires = $commentaireClasse->getComments();
 
-var_dump($_FILES);
-var_dump($_POST);
 ?>
 
 

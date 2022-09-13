@@ -20,12 +20,12 @@ $gites = $giteClasse->getGites();
             <h5 class="class="card-title text-infos"><?= $gite['nom_gite'] ?></h5>
             <p> <?=$gite['description_gite'] ?></p>
             <img src=<?= $gite['image_gite'] ?>>
-            <p><?= $gite['prix_gite'] ?></p>
-            <p><?= $gite['nbr_chambre'] ?></p>
-            <p><?= $gite['nbr_sdb'] ?></p>
-            <p><?= $gite['disponible'] ?></p>
-            <p><?= $gite['date_arrivee'] ?></p>
-            <p><?= $gite['date_depart'] ?></p>
+            <p>Prix : <?= $gite['prix_gite'] ?> €</p>
+            <p>Nombre de chambre : <?= $gite['nbr_chambre'] ?></p>
+            <p>Nombre de salle de bains : <?= $gite['nbr_sdb'] ?></p>
+            <p>Gite disponible ? : <?= $gite['disponible'] ?></p>
+            <p>Date de disponibilité : <?= $gite['date_arrivee'] ?></p>
+            <p>Disponible a partir du : <?= $gite['date_depart'] ?></p>
             <?php
             $dispo = $gite['disponible'];
             if($dispo == false) {
@@ -41,7 +41,7 @@ $gites = $giteClasse->getGites();
             ?>
 
             <p><b>Date du dernier depart : </b></p>
-            <p class="alert-info p-2 text-center text-white font-weight-bold"> <?= $date_d->format('d-m-y')?></p>
+            <p class="alert-info p-2 text-center text-white font-weight-bold"> <?= $date_d->format('d-m-Y')?></p>
             <a href="gites_detail?id_gite=<?= $gite['id_gite'] ?>" class="btn btn-outline-info">Plus d'infos</a>
             <a href="supprimer-gite?id_gite=<?= $gite['id_gite'] ?>" class="btn btn-outline-danger">Supprimer</a>
 

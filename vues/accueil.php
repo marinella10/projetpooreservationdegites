@@ -15,7 +15,7 @@ $gitesIndisponible = $gitesClasse->getGiteIndisponible()
 
 ?>
 <div class="text-center pt-5">
-<h3 data-heading="Slide" class="text-danger">Liste de nos gites</h3>
+    <h3 data-heading="Slide" class="text-danger">Liste de nos gites</h3>
 </div>
 
 
@@ -24,62 +24,63 @@ $gitesIndisponible = $gitesClasse->getGiteIndisponible()
     //On parcours les resultats à l'aide d'une boucle foreach et un alias pour les gites disponible
     foreach ($gites as $row) {
         ?>
-  
-                <img  src="<?= $row['image_gite'] ?>" class="card-img-top img-fluid" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title text-info"><?= $row['nom_gite'] ?></h5>
-                    <h6 class="text-success">Regions : <?= $row['nom_region'] ?></h6>
-                    <p><b>Nombr      <div class="mt-3 p-3 col-md-4 col-sm-12">
-            <div class="card">e de chambre : </b><b class="text-danger"><?= $row['nbr_chambre'] ?></b></p>
+
+
+        <div class="mt-3 p-3 col-md-4 col-sm-12">
+            <img src="<?= $row['image_gite'] ?>" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-info"><?= $row['nom_gite'] ?></h5>
+                <h6 class="text-success">Regions : <?= $row['nom_region'] ?></h6>
+                <div class="card">Nombre de chambre : <?= $row['nbr_chambre'] ?>
                     <div class=" container text-center m-2">
                         <a href="gites_detail?id_gite=<?= $row['id_gite'] ?>" class="btn btn-primary">Détails</a>
-
                     </div>
 
                 </div>
             </div>
         </div>
+
         <?php
 
     }
     ?>
-    <?php
-    //On parcours les resultats à l'aide d'une boucle foreach et un alias pour les gites indisponible
-    foreach ($gitesIndisponible as $row) {
-        //Pour les gites insponible on ajoute un fond rouge + titre + la date de depart bien visible
-        ?>
-        <div class="mt-3 p-3 col-md-3 col-sm-12 bg-danger">
-            <div class="card">
-                <div class="text-center p-3">
-                    <h4 class="text-warning">INDISPONIBLE</h4>
-                </div>
+</div>
+<?php
+//On parcours les resultats à l'aide d'une boucle foreach et un alias pour les gites indisponible
+foreach ($gitesIndisponible as $row) {
+    //Pour les gites insponible on ajoute un fond rouge + titre + la date de depart bien visible
+    ?>
+    <div class="mt-3 p-3 col-md-3 col-sm-12 bg-danger">
+        <div class="card">
+            <div class="text-center p-3">
+                <h4 class="text-warning">INDISPONIBLE</h4>
+            </div>
 
-                <img  src="<?= $row['image_gite'] ?>" class="card-img-top img-fluid" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title text-info"><?= $row['nom_gite'] ?></h5>
-                    <h6 class="text-success">Regions : <?= $row['nom_region'] ?></h6>
-                    <p><b>Nombre de chambre : </b><b class="text-danger"><?= $row['nbr_chambre'] ?></b></p>
+            <img src="<?= $row['image_gite'] ?>" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-info"><?= $row['nom_gite'] ?></h5>
+                <h6 class="text-success">Regions : <?= $row['nom_region'] ?></h6>
+                <p class="text-info">Nombre de chambre : <?= $row['nbr_chambre'] ?>
                     <?php
 
                     $date_d = new DateTime($row['date_depart']);
                     ?>
+                </p>
+                <h5 class="text-danger">Ce gite sera disponible à partir du : </h5>
+                <h4 class="alert-info p-2 text-center text-white font-weight-bold"> <?= $date_d->format('d-m-Y') ?></h4>
+                <div class="text-center">
+                    <a href="gites_detail?id_gite=<?= $row['id_gite'] ?>" class="btn btn-danger">Plus d'infos</a>
 
-                    <h5 class="text-danger">Ce gite sera disponible à partir du : </h5>
-                    <h4 class="alert-info p-2 text-center text-white font-weight-bold"> <?=  $date_d->format('d-m-Y')?></h4>
-                    <div class="text-center">
-                        <a href="gites_detail?id_gite=<?= $row['id_gite'] ?>" class="btn btn-danger">Plus d'infos</a>
-
-
-                    </div>
 
                 </div>
+
             </div>
         </div>
-        <?php
-    }
-    ?>
+    </div>
+    <?php
+}
+?>
 
 
 
-</div>
 

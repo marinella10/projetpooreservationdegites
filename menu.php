@@ -1,7 +1,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
+        <a href="accueil">
         <img class="logo-gite" src="image/logogite.jpg" alt="logo gite" title="Gite"/>
+        </a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <!--POUR AFFICHER UN BONJOUR PERSONNALISE SELON LA PERSONNE CONNECTEE (dans la NAVBAR)-->
@@ -38,8 +40,7 @@
             <!--POUR LE BOUTON DECONNEXION QUI APPARAIT SI UN UTILISATEUR ou UN ADMIN EST CONNECTE-->
 
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+
 
                 <a href="inscription" class="btn btn-warning mx-3">Inscription</a>
                 <?php
