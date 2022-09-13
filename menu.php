@@ -42,7 +42,7 @@
             <form class="d-flex">
 
 
-                <a href="inscription" class="btn btn-warning mx-3">Inscription</a>
+                <a href="inscription" class="btn btn-outline-danger mx-3">Inscription</a>
                 <?php
                 if (isset($_SESSION['connecter_user']) && ($_SESSION['connecter_user'] === true) ||
                     isset($_SESSION['connecter']) && ($_SESSION['connecter'] === true)){
@@ -51,7 +51,7 @@
                     <?php
                 }else{
                     ?>
-                    <a href="connexion" id="btn-connexion" class="btn btn-sm btn-outline-success mb-2">Connexion</a>
+                    <a href="connexion" id="btn-connexion" class="btn btn-outline-success mx-3">Connexion</a>
                     <?php
                 }
                 ?>
